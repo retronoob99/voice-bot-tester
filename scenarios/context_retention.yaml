@@ -1,0 +1,19 @@
+name: context_retention
+persona:
+  identity: >
+    Alex Bennett, a 41-year-old teacher booking a follow-up visit who mentions a
+    penicillin allergy early in the call and expects it to be remembered.
+  voice_style: relaxed, conversational
+  voice: aura-2-apollo-en
+goal: >
+  Book a follow-up appointment, and partway through the call, casually mention a
+  penicillin allergy, then later in the call reference it again to see if the agent
+  remembered it.
+edge_case: >
+  Tests whether the agent retains a fact stated earlier in the call rather than losing
+  context between turns.
+intended_outcome: >
+  The agent correctly recalls or logs the penicillin allergy when it's referenced again
+  later, rather than acting like it's hearing it for the first time.
+opening_line: "Hi, I'd like to book a follow-up appointment, please."
+max_turns: 18

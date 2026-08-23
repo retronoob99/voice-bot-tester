@@ -1,0 +1,26 @@
+# Telephony
+twilio
+
+# Deepgram STT + TTS
+deepgram-sdk
+
+# WebSocket media bridge server
+fastapi
+uvicorn[standard]
+websockets
+
+# LLM persona engine + bug analysis
+groq
+
+# Scenario definitions
+pyyaml
+
+# Audio handling (mulaw <-> wav/mp3 conversion for saved recordings)
+pydub
+audioop-lts
+
+# Env config
+python-dotenv
+
+# HTTP for Twilio recording download, etc.
+httpx

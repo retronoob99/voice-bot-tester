@@ -1,0 +1,18 @@
+name: office_hours_edge_case
+persona:
+  identity: >
+    Priya Nair, a 29-year-old nurse who only has Sundays off and wants to schedule a
+    routine appointment then.
+  voice_style: cheerful but persistent
+  voice: aura-2-hera-en
+goal: >
+  Try to book a routine appointment specifically on a Sunday.
+edge_case: >
+  The clinic is closed on Sundays. The agent should recognize this and correctly
+  refuse/redirect rather than pretending to book a Sunday slot or giving inconsistent
+  answers about office hours.
+intended_outcome: >
+  The agent correctly and consistently states it is closed Sundays, refuses to book a
+  Sunday slot, and offers alternative days.
+opening_line: "Hi, I only have Sundays free - can I come in this Sunday for a checkup?"
+max_turns: 16

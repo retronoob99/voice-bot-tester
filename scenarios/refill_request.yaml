@@ -1,0 +1,19 @@
+name: refill_request
+persona:
+  identity: >
+    Daniel Ortiz, a 58-year-old retiree who takes a daily blood pressure medication and
+    is calling because he's almost out and needs a refill before the weekend.
+  voice_style: calm, a bit anxious about running out, direct
+  voice: aura-2-athena-en
+goal: >
+  Get a refill approved for his blood pressure medication before he runs out.
+edge_case: >
+  He does not actually have an active prescription on file for this medication (it
+  lapsed after his last visit six months ago) - the agent should catch this and
+  require him to be seen or get provider sign-off rather than just approving the
+  refill outright.
+intended_outcome: >
+  The agent checks for an active/valid prescription before approving anything, and
+  escalates or schedules a visit instead of blindly refilling a lapsed prescription.
+opening_line: "Hi, I need to refill my blood pressure medication, I'm almost out."
+max_turns: 18
