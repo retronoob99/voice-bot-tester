@@ -84,8 +84,12 @@ class CallSession:
             self.bot_speaking = False
 
     async def start_turn(self, text: str, end_call: bool) -> None:
+        if not text:
+            return
         if self.speak_task and not self.speak_task.done():
             self.speak_task.cancel()
+            self.bot_speaking = False
+            await self.send_clear()
         self.history.append({"speaker": "patient", "text": text})
         self.logger.log_turn("patient", text)
         self.speak_task = asyncio.create_task(self.speak(text, end_call))
