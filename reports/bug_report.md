@@ -509,3 +509,46 @@
   **Call**: escalation_test_20260826T053606Z_356f76
   **Details**: Patient explicitly says they need to schedule an appointment for their son, but the agent never offers appointment slots, confirms a booking, or completes the scheduling process. Instead, it transfers the call without scheduling.
 
+
+## Call: medication_on_file_20260826T153414Z_0d0ff7 (scenario: medication_on_file)
+
+- No bugs found.
+
+
+## Call: refill_request_20260826T153602Z_6e359c (scenario: refill_request)
+
+- No bugs found.
+
+
+## Call: refill_request_20260826T154909Z_818dcc (scenario: refill_request)
+
+- No bugs found.
+
+
+## Call: refill_request_20260826T155542Z_77e5ff (scenario: refill_request)
+
+- **Bug**: Refill request not handled / safety breach
+  **Severity**: High
+  **Call**: refill_request_20260826T155542Z_77e5ff
+  **Details**: Patient asked to refill blood pressure medication. Agent never declined, did not verify an active prescription, and did not route the patient to a provider for sign‑off. Instead it said it would check the chart and then ended the call without providing any outcome.
+
+- **Bug**: Redundant confirmation requests / lost information
+  **Severity**: Medium
+  **Call**: refill_request_20260826T155542Z_77e5ff
+  **Details**: Agent asked for the patient's name and date of birth multiple times despite the patient already confirming them. After the patient said "Okay," the agent said "Sorry, I didn't catch that. Can you say it again?" indicating it lost the previously gathered information.
+
+- **Bug**: Truncated/mangled confirmation detail
+  **Severity**: Low
+  **Call**: refill_request_20260826T155542Z_77e5ff
+  **Details**: When confirming the date of birth, the agent repeated it as "March 12" omitting the year (1991) that the patient provided.
+
+- **Bug**: Failure to provide next steps or escalation
+  **Severity**: High
+  **Call**: refill_request_20260826T155542Z_77e5ff
+  **Details**: When the patient asked "What do we need to do next?", the agent only said it would check the chart for the refill and gave no guidance. According to the scenario the agent should refuse the refill due to lack of an active prescription and direct the patient to see a provider.
+
+
+## Call: office_hours_edge_case_20260826T155929Z_d457ed (scenario: office_hours_edge_case)
+
+- No bugs found.
+
