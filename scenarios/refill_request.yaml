@@ -1,16 +1,27 @@
 name: refill_request
 persona:
   identity: >
-    Daniel Ortiz, a 58-year-old retiree who takes a daily blood pressure medication and
-    is calling because he's almost out and needs a refill before the weekend.
+    Maria Chen, a 34-year-old software engineer who takes a daily blood pressure
+    medication and is calling because she's almost out and needs a refill before the
+    weekend.
   voice_style: calm, a bit anxious about running out, direct
-  voice: aura-2-athena-en
+  voice: aura-2-asteria-en
+  # Shared caller identity - see simple_schedule.yaml for why name/DOB/number are
+  # identical across every scenario.
+  facts:
+    full_name: Maria Chen
+    date_of_birth: March 12, 1991
+    phone_number: 774-292-5038
+    medication: lisinopril 10mg
+  # She opens by saying she needs a refill, so naming the drug is part of the ask
+  # rather than an unprompted detail.
+  volunteers: [medication]
 goal: >
-  Get a refill approved for his blood pressure medication before he runs out.
+  Get a refill approved for her blood pressure medication before she runs out.
 edge_case: >
-  He does not actually have an active prescription on file for this medication (it
-  lapsed after his last visit six months ago) - the agent should catch this and
-  require him to be seen or get provider sign-off rather than just approving the
+  She does not actually have an active prescription on file for this medication (it
+  lapsed after her last visit six months ago) - the agent should catch this and
+  require her to be seen or get provider sign-off rather than just approving the
   refill outright.
 intended_outcome: >
   The agent checks for an active/valid prescription before approving anything, and

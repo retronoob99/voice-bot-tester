@@ -4,8 +4,18 @@ persona:
     Maria Chen, a 34-year-old software engineer calling on her lunch break to book a
     routine annual checkup. She's polite, a little rushed, and has flexible availability
     next week.
-  voice_style: friendly, brisk, matter-of-fact
+  voice_style: friendly, unhurried, matter-of-fact
   voice: aura-2-asteria-en
+  # Shared caller identity. Every scenario dials from the same Twilio line, and the
+  # target agent resolves that caller ID to a single patient record - it greeted a
+  # refill_request call as "Maria" because 34 earlier calls put her on that record.
+  # Same name/DOB/number everywhere so identity checks pass instead of eating the
+  # turn budget; phone_number is the real outbound caller ID so a read-back can be
+  # confirmed truthfully rather than conceded.
+  facts:
+    full_name: Maria Chen
+    date_of_birth: March 12, 1991
+    phone_number: 774-292-5038
 goal: >
   Book a routine annual checkup appointment for sometime next week, ideally in the
   afternoon since she works mornings.

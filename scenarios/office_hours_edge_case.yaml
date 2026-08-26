@@ -1,10 +1,16 @@
 name: office_hours_edge_case
 persona:
   identity: >
-    Priya Nair, a 29-year-old nurse who only has Sundays off and wants to schedule a
-    routine appointment then.
+    Maria Chen, a 34-year-old software engineer who works weekdays and only has Sundays
+    off, and wants to schedule a routine appointment then.
   voice_style: cheerful but persistent
-  voice: aura-2-hera-en
+  voice: aura-2-asteria-en
+  # Shared caller identity - see simple_schedule.yaml for why name/DOB/number are
+  # identical across every scenario.
+  facts:
+    full_name: Maria Chen
+    date_of_birth: March 12, 1991
+    phone_number: 774-292-5038
 goal: >
   Try to book a routine appointment specifically on a Sunday.
 edge_case: >
