@@ -6,7 +6,13 @@ from typing import Optional
 
 from dotenv import load_dotenv
 
-load_dotenv()
+# override=True so .env is the source of truth locally. Without it, a GROQ_MODEL (or
+# any other name) left in the OS environment silently wins and edits to .env do
+# nothing — which is exactly what happened: .env said gpt-oss-120b, a stale shell
+# variable said gpt-oss-20b, and the call ran on 20b with no indication anywhere.
+# Deployments are unaffected: there is no .env on Railway, so platform variables are
+# still the only source there.
+load_dotenv(override=True)
 
 
 @dataclass(frozen=True)
@@ -29,7 +35,10 @@ class Settings:
             target_phone_number=os.environ.get("TARGET_PHONE_NUMBER", "+18054398008"),
             deepgram_api_key=os.environ.get("DEEPGRAM_API_KEY"),
             groq_api_key=os.environ.get("GROQ_API_KEY"),
-            groq_model=os.environ.get("GROQ_MODEL", "llama-3.3-70b-versatile"),
+            # The llama-3.x chat models are no longer served on this Groq account, so
+            # the old default failed outright when GROQ_MODEL was unset. Check
+            # `client.models.list()` before changing this — Groq's catalogue moves.
+            groq_model=os.environ.get("GROQ_MODEL", "openai/gpt-oss-120b"),
             public_ws_url=os.environ.get("PUBLIC_WS_URL"),
         )
 

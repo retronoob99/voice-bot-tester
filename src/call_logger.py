@@ -1,6 +1,7 @@
 from __future__ import annotations
 
 import json
+import time
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -13,6 +14,27 @@ class CallLogger:
         self.scenario_name = scenario_name
         self.turns: list[dict] = []
         self.prompts: list[dict] = []
+        self.timings: list[dict] = []
+
+    def log_timing(self, event: str, **fields) -> None:
+        """Append one timing datapoint to calls/<uid>/timing.json.
+
+        Written so a finished call can be audited for tempo: each entry carries both
+        a wall-clock timestamp and a monotonic one, because wall-clock is what lines
+        up with the transcript while monotonic is what durations should be computed
+        from.
+        """
+        self.timings.append(
+            {
+                "event": event,
+                "timestamp": datetime.now(timezone.utc).isoformat(),
+                "monotonic": round(time.monotonic(), 3),
+                **fields,
+            }
+        )
+        (self.dir / "timing.json").write_text(
+            json.dumps(self.timings, indent=2), encoding="utf-8"
+        )
 
     def log_turn(self, speaker: str, text: str) -> None:
         self.turns.append(
