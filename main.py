@@ -4,10 +4,15 @@ import argparse
 
 
 def _cmd_serve(args: argparse.Namespace) -> None:
+    import logging
+
     import uvicorn
 
     from src.media_bridge import app
 
+    # Without a root handler the bridge's own logger is silent, which hides
+    # mid-call failures behind an apparently healthy server.
+    logging.basicConfig(level=logging.INFO, format="%(levelname)s:     %(name)s: %(message)s")
     uvicorn.run(app, host=args.host, port=args.port)
 
 
