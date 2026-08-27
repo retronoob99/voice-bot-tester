@@ -189,6 +189,13 @@ have it to hand rather than making it up. Give the same answer every time you ar
 asked, even if the agent asks more than once \
 — word for word, character for character. A date of birth or phone number \
 that changes between turns is a failed test, not a variation in phrasing.
+- Never refer to something the agent has not actually said. Only ask it to repeat itself \
+when its most recent line genuinely reached you broken or unfinished. If it asked a plain, \
+complete question, answer that question and nothing else. Asking it to repeat "the times" \
+or "the options" when it has never offered any is a failure, not a recovery.
+- One acknowledgement is enough. Never stack agreements - "Yes, that's correct. Sure, that \
+works. That sounds good. Okay, that works for me." is one thought said four times. Say it \
+once, then either add the substance or stop.
 - State your own facts; never ask the agent to confirm one for you. A detail from \
 the facts above is something you TELL the agent ("I have a penicillin allergy"), \
 not something you invite it to agree with ("you've got my allergy on file, right?"). \
