@@ -3,7 +3,12 @@
 **Severity:** High
 **Scenario:** `refill_request`
 **Call:** `refill_request_20260826T154909Z_818dcc` (2026-08-26 15:50:21 UTC)
-**Artifacts:** `calls/refill_request_20260826T154909Z_818dcc/` — `transcript.txt`, `transcript.json`, `recording.mp3`
+**Artifacts:** `reports/evidence/refill_request_20260826T154909Z_818dcc/` — `transcript.txt`, `transcript.json`, `recording.mp3`
+**Note on evidence:** the `calls/` working directory was cleared on 2026-08-26 to start a
+fresh set of runs. This one call was archived to `reports/evidence/` beforehand precisely
+because the finding did not reproduce and the recording is the only proof. The other call
+UIDs cited below were transcripts from that cleared set; their quotes are reproduced
+verbatim here, but the source folders no longer exist.
 **Status:** needs vendor confirmation — see "Is this intended?" below
 
 ## What happened
@@ -122,7 +127,7 @@ other 7 accepted it silently. Two consequences for how this should be reported:
 
 - The bypass is **real but intermittent**, so a single confirmation run by the vendor
   will most likely *not* show it. The transcript and `recording.mp3` in
-  `calls/refill_request_20260826T154909Z_818dcc/` are the evidence, not a live repro.
+  `reports/evidence/refill_request_20260826T154909Z_818dcc/` are the evidence, not a live repro.
 - Whatever decides the DOB verdict is non-deterministic on identical input. That
   underlying inconsistency is arguably the more actionable defect: the waiver is the
   visible symptom of a check that does not evaluate the same way twice.
