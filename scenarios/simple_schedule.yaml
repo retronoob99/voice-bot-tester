@@ -2,26 +2,44 @@ name: simple_schedule
 persona:
   identity: >
     Maria Chen, a 34-year-old software engineer calling on her lunch break to book a
-    routine annual checkup. She's polite, a little rushed, and has flexible availability
-    next week.
+    routine annual checkup. Polite, a little rushed, businesslike - she wants the
+    booking settled and read back to her before she hangs up.
   voice_style: friendly, unhurried, matter-of-fact
   voice: aura-2-asteria-en
-  # Shared caller identity. Every scenario dials from the same Twilio line, and the
-  # target agent resolves that caller ID to a single patient record - it greeted a
-  # refill_request call as "Maria" because 34 earlier calls put her on that record.
-  # Same name/DOB/number everywhere so identity checks pass instead of eating the
-  # turn budget; phone_number is the real outbound caller ID so a read-back can be
-  # confirmed truthfully rather than conceded.
+  # Shared caller identity. Every scenario dials from the same Twilio line and the
+  # target agent resolves that caller ID to one patient record, so name/DOB/number
+  # are identical everywhere; phone_number is the real outbound caller ID so a
+  # read-back can be confirmed truthfully rather than conceded.
   facts:
     full_name: Maria Chen
     date_of_birth: March 12, 1991
     phone_number: 774-292-5038
+  # NOTE ON WHAT GOES IN THIS FILE: goal, edge_case and intended_outcome are all
+  # injected verbatim into the persona's own system prompt (see
+  # PersonaEngine._system_prompt), and edge_case/intended_outcome also frame the
+  # post-call analyser. Two consequences learned the hard way on a live call:
+  #   * Describing what the agent "will offer" primes the patient to believe it
+  #     already has. A previous version of this file explained the traps here and the
+  #     patient answered "Please provide your date of birth" with "could you repeat
+  #     the available times?" - times nothing had offered.
+  #   * Asserting a fact about the clinic's records ("she already has an appointment
+  #     on Thursday") plants it in the analyser, which then confirms our own premise
+  #     back to us as a finding.
+  # So: describe only what the PATIENT does. Never describe the agent's expected
+  # answers, and never assert anything about the state of the clinic's records.
 goal: >
-  Book a routine annual checkup appointment for sometime next week, ideally in the
-  afternoon since she works mornings.
+  Book a routine annual checkup for next week, on a weekday afternoon after 1 PM.
+  Once it is booked, and before hanging up, ask for the appointment to be read back:
+  the day of the week together with the date, the name of the provider, and anything
+  she needs to bring. Ask for one of those per turn, and keep each turn short.
 edge_case: null
 intended_outcome: >
-  The agent successfully finds an available slot next week, books it, and confirms
-  back the date, time, and any prep instructions.
-opening_line: "Hi there, I'd like to schedule a routine checkup appointment, please."
-max_turns: 16
+  A routine checkup is booked on a weekday afternoon, after 1 PM, in the week
+  beginning Monday 31 August 2026. The agent states the appointment back with the
+  weekday and the calendar date agreeing with each other, gives the provider's name
+  identically every time it says it, and gives any preparation instructions. A
+  weekday that does not match its date, a provider name that changes between
+  mentions, or a morning slot offered against an explicit afternoon request are each
+  failures.
+opening_line: "Hi there, I'd like to book a routine annual checkup for next week, any afternoon after 1 PM."
+max_turns: 14
