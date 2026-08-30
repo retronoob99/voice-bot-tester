@@ -22,7 +22,7 @@ from .call_logger import CallLogger
 from .config import settings
 from .persona_engine import PersonaEngine
 from .scenario import Scenario, find_scenario
-from .stt import MULAW_SAMPLE_RATE, stt_connection
+from .stt import ENDPOINTING_MS, MULAW_SAMPLE_RATE, UTTERANCE_END_MS, stt_connection
 from .tts import TtsSession
 
 logger = logging.getLogger("media_bridge")
@@ -64,7 +64,13 @@ MULAW_CHUNK_BYTES = 3200  # 400ms of mulaw @ 8kHz
 # Trimmed 1.3 -> 1.0 to take ~0.3s off every speech_final turn. Live calls at 1.3
 # showed frags=1 on essentially every turn, i.e. the window was rarely doing any
 # merging at 800ms endpointing; the guard test floor is 0.5.
-AGENT_QUIET_S = _env_float("AGENT_QUIET_S", 1.0)
+#
+# Trimmed again 1.0 -> 0.6. The archive shows fragments=1 on every logged turn, so
+# this window has not merged anything in a long time -- at 800ms endpointing the STT
+# does the merging itself, and a genuinely split sentence is caught by the
+# _sounds_unfinished path below, which gets its own longer windows. What was left was
+# pure latency on the agent's side of the line.
+AGENT_QUIET_S = _env_float("AGENT_QUIET_S", 0.6)
 
 # Deepgram's `utterance_end_ms` (1500ms, see src/stt.py) means an `UtteranceEnd`
 # fragment has ALREADY sat in silence for 1.5s by the time it reaches us. Waiting a
@@ -79,13 +85,19 @@ AGENT_QUIET_S = _env_float("AGENT_QUIET_S", 1.0)
 # fragments start arriving mid-sentence again.
 #
 # Do not drop below ~0.3s — that is about how long a genuinely-continuing agent
-# takes to start its next fragment.
-AGENT_QUIET_AFTER_UTTERANCE_END_S = _env_float("AGENT_QUIET_AFTER_UTTERANCE_END_S", 0.5)
+# takes to start its next fragment. Now AT that floor: with utterance_end_ms cut to
+# 1000ms the fragment has still sat in a full second of silence before it reaches us,
+# and an agent that carries on anyway is picked up by _catch_up() rather than by
+# holding every single turn open longer.
+AGENT_QUIET_AFTER_UTTERANCE_END_S = _env_float("AGENT_QUIET_AFTER_UTTERANCE_END_S", 0.3)
 
 # Catch-up runs when the agent talked over our thinking time, so it is already known
 # to have been mid-thought — a much shorter settle is enough, and paying the full
 # window twice was the single biggest contributor to the dead air above.
-CATCHUP_QUIET_S = 0.8
+# Kept below AGENT_QUIET_S (a guard test enforces it): catch-up is draining a known
+# backlog, not deciding whether a turn ended, so it must never cost more than the
+# turn window it follows.
+CATCHUP_QUIET_S = _env_float("CATCHUP_QUIET_S", 0.45)
 
 # Hard ceiling on silence before the patient speaks. Past this, answering a slightly
 # stale question beats sounding like the line has dropped.
@@ -117,6 +129,24 @@ UNFINISHED_QUIET_S = _env_float("UNFINISHED_QUIET_S", 1.2)
 # transcript is clean. This is the configurable "silence buffer" knob: raise it if
 # the patient still sounds like it is cutting in.
 MIN_GAP_BEFORE_SPEAK_S = _env_float("MIN_GAP_BEFORE_SPEAK_S", 0.25)
+
+# How long Deepgram itself sat on silence before telling us an utterance ended. A
+# `speech_final` has already cost `endpointing` ms and an `UtteranceEnd` has cost
+# `utterance_end_ms`, so by the time a fragment reaches us the agent has ALREADY been
+# listening to that much dead air.
+#
+# This exists because every latency number this project logged was wrong in the same
+# direction. `agent_stopped_at` used to be stamped on arrival, so `reply_gap_s` began
+# counting from the moment Deepgram spoke, not the moment the agent stopped, and the
+# archive reported a 1.26s median gap for calls the caller actually experienced as
+# ~2.8s (p90 3.25s, worst 3.75s). Backdating the timestamp by the lag that provably
+# already elapsed makes `reply_gap_s` the real silence, and makes every budget
+# measured against it -- MIN_GAP_BEFORE_SPEAK_S below, MAX_REPLY_DELAY_S above --
+# mean what its comment claims.
+DETECTION_LAG_S = {
+    "speech_final": ENDPOINTING_MS / 1000.0,
+    "UtteranceEnd": UTTERANCE_END_MS / 1000.0,
+}
 
 # Words a sentence does not end on unless the speaker was cut off. Deepgram's
 # smart_format sometimes appends a period to a fragment, which defeats the
@@ -334,12 +364,18 @@ class CallSession:
         # Which Deepgram event finalised the most recent fragment. Decides how much
         # extra quiet the turn needs on top of what Deepgram already waited out.
         self.last_fragment_source = "speech_final"
+        # Set once the scenario's closing probe has actually been delivered, so the
+        # call is not allowed to end before it has been asked.
+        self.closing_probe_asked = False
         # Wall clock for the whole call, used to close out before Twilio's hard cut.
         self.call_started_at = time.monotonic()
         self.end_call_deferrals = 0
         # Consecutive turns where the agent's line arrived cut off, so the patient's
         # request to repeat escalates instead of being the same sentence every time.
         self.partial_streak = 0
+        # (draft text, task) for a reply being generated during the settle window.
+        # See _start_prefetch.
+        self._prefetch: Optional[tuple[str, asyncio.Task]] = None
 
     def log_timing(self, event: str, **fields) -> None:
         """Record one timing datapoint, to the log and to calls/<uid>/timing.json.
@@ -484,12 +520,17 @@ class CallSession:
         """
         text = text.strip()
         if text:
+            lag = DETECTION_LAG_S.get(source, UTTERANCE_END_MS / 1000.0)
             self.pending_agent.append(text)
-            self.agent_stopped_at = time.monotonic()
+            # Backdated by `lag`: the agent stopped talking that long ago, and every
+            # downstream budget is about the silence IT hears, not about how promptly
+            # Deepgram reported the silence.
+            self.agent_stopped_at = time.monotonic() - lag
             self.last_fragment_source = source
             self.log_timing(
                 "agent_fragment_final",
                 source=source,
+                detection_lag_s=lag,
                 looks_unfinished=_sounds_unfinished(text),
                 text=text,
             )
@@ -507,7 +548,8 @@ class CallSession:
         return AGENT_QUIET_S
 
     async def _take_agent_turn(
-        self, quiet_s: Optional[float] = None, until_question: bool = False
+        self, quiet_s: Optional[float] = None, until_question: bool = False,
+        prefetch: bool = False,
     ) -> str:
         """Wait for agent speech and merge the fragments of a single thought.
 
@@ -518,6 +560,11 @@ class CallSession:
         """
         explicit_quiet = quiet_s
         await self.agent_speech.wait()
+        if prefetch:
+            # Start thinking about the answer now, while the window below decides
+            # whether the agent has actually finished. Only the main turn loop asks
+            # for this: the opening and catch-up paths are not on the hot path.
+            self._start_prefetch()
         base_quiet = self._default_quiet() if explicit_quiet is None else explicit_quiet
         quiet_s = base_quiet
         started = time.monotonic()
@@ -596,6 +643,18 @@ class CallSession:
             reply, should_end = await self._reply_to(extra, partial=partial, repeated=repeated)
         return reply, should_end
 
+    def _closing_probe_due(self) -> bool:
+        """True once enough patient turns have passed to ask the late question.
+
+        Counts the patient's own turns, not total history, so a chatty agent does
+        not bring the probe forward.
+        """
+        probe = getattr(self.scenario, "closing_probe", None)
+        if not probe or self.closing_probe_asked:
+            return False
+        said = sum(1 for t in self.history if t.get("speaker") == "patient")
+        return said >= self.scenario.closing_probe_after_turns
+
     def _honour_end_call(self, reply: str, should_end: bool) -> bool:
         """Veto an end-of-call that hangs up while the patient is still asking.
 
@@ -642,6 +701,68 @@ class CallSession:
         )
         return False
 
+    def _start_prefetch(self) -> None:
+        """Begin generating a reply to what the agent has said SO FAR.
+
+        The settle window and the Groq call used to run one after the other, so every
+        turn paid both: Deepgram's detection lag, then the window, and only then ~0.7s
+        of inference before a single byte of audio existed. Running the two together
+        takes the whole Groq call off the critical path in the case that actually
+        happens — `fragments: 1`, i.e. the agent said its piece in one go, which is
+        every logged turn in the archive.
+
+        Deliberately side-effect free: it calls the persona directly rather than going
+        through `_reply_to`, so a draft that turns out to be stale can simply be
+        dropped. Nothing is logged, no counter moves, and no prompt reaches
+        prompts.json until the result is actually claimed and spoken.
+
+        Skipped when the draft looks unfinished — that is precisely the case where
+        more text IS still coming, so generating against it would be wasted work
+        against a half-question.
+        """
+        draft = " ".join(self.pending_agent).strip()
+        if not draft or _sounds_unfinished(draft):
+            return
+        repeated = _looks_repeated(draft, self.history)
+        coro = self.persona.next_line(
+            self.scenario,
+            list(self.history),
+            draft,
+            partial=False,
+            repeated=repeated,
+            partial_attempt=1,
+            closing_due=self._closing_probe_due(),
+            probe_asked=self.closing_probe_asked,
+        )
+        self._prefetch = (draft, asyncio.create_task(coro))
+
+    async def _claim_prefetch(self, text: str, partial: bool, repeated: bool):
+        """Return the prefetched generation if it was made against this exact text.
+
+        Anything else — the agent carried on, the turn came back partial, the draft
+        never started — is discarded. A discarded task is cancelled rather than left
+        running, so it cannot land a stray Groq response into a later turn.
+        """
+        prefetch, self._prefetch = self._prefetch, None
+        if prefetch is None:
+            return None
+        draft, task = prefetch
+        stale = partial or draft != text
+        if stale:
+            task.cancel()
+            self.log_timing("prefetch_discarded", draft=draft, actual=text, partial=partial)
+            return None
+        try:
+            result = await task
+        except asyncio.CancelledError:
+            return None
+        # Any other failure is deliberately allowed to propagate. A prefetch is the
+        # turn's one generation attempt, not a free extra one: swallowing the error
+        # here and regenerating would quietly turn every Groq failure into two calls
+        # and bypass the REPEAT_LINE fallback that _reply_to's handler exists to give.
+        self.log_timing("prefetch_used", chars=len(text))
+        return result
+
     async def _reply_to(
         self, text: str, partial: bool = False, repeated: bool = False
     ) -> tuple[str, bool]:
@@ -662,15 +783,25 @@ class CallSession:
             # history[:-1] is the whole call in order, minus the utterance being
             # replied to — that one is passed separately as `text`. Nothing is
             # truncated and nothing is dropped, so the persona always sees every
-            # fact it has already given.
-            reply, should_end, messages = await self.persona.next_line(
-                self.scenario,
-                self.history[:-1],
-                text,
-                partial=partial,
-                repeated=repeated,
-                partial_attempt=max(self.partial_streak, 1),
-            )
+            # fact it has already given. A prefetched generation was made against
+            # exactly this text and exactly this history, so it is the same call —
+            # just one that started while the settle window was still running.
+            prefetched = await self._claim_prefetch(text, partial, repeated)
+            if prefetched is not None:
+                reply, should_end, messages = prefetched
+            else:
+                reply, should_end, messages = await self.persona.next_line(
+                    self.scenario,
+                    self.history[:-1],
+                    text,
+                    partial=partial,
+                    repeated=repeated,
+                    partial_attempt=max(self.partial_streak, 1),
+                    closing_due=self._closing_probe_due(),
+                    probe_asked=self.closing_probe_asked,
+                )
+            if self._closing_probe_due():
+                self.closing_probe_asked = True
             should_end = self._honour_end_call(reply, should_end)
             self.log_timing(
                 "llm_reply",
@@ -739,7 +870,7 @@ class CallSession:
 
         await self.opening_line(greeting)
         while not self.hangup_requested:
-            text = await self._take_agent_turn()
+            text = await self._take_agent_turn(prefetch=True)
             if not text:
                 continue
             partial = self.last_turn_was_partial

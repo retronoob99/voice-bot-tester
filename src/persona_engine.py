@@ -152,6 +152,20 @@ AGENT_REPEATED_NUDGE = (
     "at it. Say briefly that you already gave that, and push for the next step.)"
 )
 
+def closing_probe_nudge(probe: str) -> str:
+    """Transient instruction delivered only once the probe is due.
+
+    Never written into history. The probe text does not appear anywhere in the prompt
+    before this fires, which is what stops the model asking it in turn 2.
+    """
+    return (
+        "It is now time for your final question. Ask exactly this, in your own words, "
+        "as your next line, and ask nothing else alongside it: " + probe + " Do not "
+        "answer it yourself, and do not restate any detail you gave earlier that would "
+        "hand over the answer."
+    )
+
+
 SYSTEM_PROMPT = """You are role-playing as a patient on a phone call to a medical clinic's \
 voice agent, for the purpose of QA-testing that agent. Stay fully in character.
 
@@ -159,7 +173,7 @@ Persona: {identity}
 Speaking style: {voice_style}
 {facts_block}
 Your goal for this call: {goal}
-{edge_case_line}
+{edge_case_line}{closing_probe_line}
 What a successful test of this scenario looks like: {intended_outcome}
 
 Rules:
@@ -193,6 +207,17 @@ that changes between turns is a failed test, not a variation in phrasing.
 when its most recent line genuinely reached you broken or unfinished. If it asked a plain, \
 complete question, answer that question and nothing else. Asking it to repeat "the times" \
 or "the options" when it has never offered any is a failure, not a recovery.
+- Never accept something that was not offered. Do not say a time, date, slot or option \
+works for you unless the agent actually named one in the line you are replying to. If it \
+asked you a question and offered nothing, just answer the question. Answering "Is this a \
+routine follow-up?" with "Sure, that works. Okay, that slot is fine." accepts an appointment \
+that was never mentioned, and puts words in the agent's mouth that the transcript will \
+later be judged against.
+- Never answer by echoing back a word the agent just said. If it asks something yes-or-no, \
+answer yes or no. If it tells you a detail and then asks whether to carry on, say whether \
+to carry on - do not simply repeat the detail. Being told "I have your allergy listed as \
+penicillin. Would you like to continue booking?" is answered with "Yes, please continue", \
+never with "Penicillin."
 - One acknowledgement is enough. Never stack agreements - "Yes, that's correct. Sure, that \
 works. That sounds good. Okay, that works for me." is one thought said four times. Say it \
 once, then either add the substance or stop.
@@ -277,6 +302,74 @@ def _carries_a_fact(sentence: str, facts: dict) -> bool:
     """True when this sentence states one of the persona's pinned details."""
     key = _key(sentence)
     return bool(key) and any(value in key for value in _protected_keys(facts))
+
+
+# Sentences that carry no information at all - pure agreement noise. Only ever removed
+# when there was nothing on the table to agree TO; see _drop_unearned_acceptances.
+_STOCK_AGREEMENT = frozenset(
+    [
+        "sure", "sure that works", "that works", "that works for me", "yes that's fine",
+        "that's fine", "that sounds good", "sounds good", "okay", "okay great",
+        "ok great", "great", "okay that works", "okay that works for me",
+        "yes that works", "that slot is fine", "okay that's fine", "perfect",
+        "yes please", "alright", "that'll work", "that will work",
+    ]
+)
+
+# Signs the agent actually put something concrete on the table in its last line.
+_OFFER_HINT_RE = re.compile(
+    r"\d|\b(mon|tues|wednes|thurs|fri|satur|sun)day\b|\b(january|february|march|april|may|june|"
+    r"july|august|september|october|november|december)\b|\b(available|availability|opening|"
+    r"openings|slot|slots|appointment at|we have|would you like)\b",
+    re.IGNORECASE,
+)
+
+
+# Discourse markers the model stacks in front of an agreement ("Okay, that slot is
+# fine."). Stripped one at a time so the remainder can be matched against the stock set.
+_LEADING_FILLER = frozenset(
+    ["okay", "ok", "sure", "yes", "yeah", "yep", "alright", "great", "perfect", "well",
+     "and", "so", "also"]
+)
+
+
+def _is_stock_agreement(sentence: str) -> bool:
+    """True when a sentence is nothing but agreement, once filler is peeled off."""
+    words = re.sub(r"[^a-z' ]", "", sentence.lower()).split()
+    while words:
+        if " ".join(words) in _STOCK_AGREEMENT:
+            return True
+        if words[0] in _LEADING_FILLER:
+            words = words[1:]
+            continue
+        return False
+    # Everything peeled away, e.g. "Okay, great." - pure filler, still agreement.
+    return True
+
+
+def _drop_unearned_acceptances(text: str, latest_agent_utterance: Optional[str]) -> str:
+    """Strip stock agreement sentences when nothing was offered to agree to.
+
+    Encodes a live failure: replying to "Can you please provide your date of birth?"
+    with "March 12, 1991. Sure, that works. Yes, that's fine. Okay, great." accepts an
+    appointment the agent never mentioned, and the transcript is later judged against
+    that acceptance.
+
+    Narrow on purpose - the first sentence is never touched, only whole sentences that
+    are nothing but agreement are candidates, and nothing is removed at all when the
+    agent's line looks like it contained a real offer.
+    """
+    if latest_agent_utterance and _OFFER_HINT_RE.search(latest_agent_utterance):
+        return text
+    sentences = _split_sentences(text)
+    if len(sentences) <= 1:
+        return text
+    kept = [sentences[0]]
+    for sentence in sentences[1:]:
+        if _is_stock_agreement(sentence):
+            continue
+        kept.append(sentence)
+    return " ".join(kept).strip() or text
 
 
 def _drop_sentences_already_said(
@@ -496,9 +589,18 @@ class PersonaEngine:
             self._reasoning_effort or "(unset)",
         )
 
-    def _system_prompt(self, scenario: Scenario) -> str:
+    def _system_prompt(self, scenario: Scenario, probe_pending: bool = True) -> str:
         edge_case_line = (
             f"Edge case to actively probe for: {scenario.edge_case}" if scenario.edge_case else ""
+        )
+        # Deliberately does NOT reveal the question. Naming it here is what let a
+        # live call ask it in turn 3, defeating the point of a late probe.
+        closing_probe_line = (
+            "\nThere is one more question you must ask before this call ends. You will be "
+            "told when. Do NOT ask it before you are told, and do not end the call until "
+            "you have asked it."
+            if scenario.closing_probe and probe_pending
+            else ""
         )
         facts = scenario.persona.facts or {}
         volunteers = scenario.persona.volunteers or []
@@ -512,6 +614,7 @@ class PersonaEngine:
             facts_block=facts_block,
             goal=scenario.goal,
             edge_case_line=edge_case_line,
+            closing_probe_line=closing_probe_line,
             intended_outcome=scenario.intended_outcome,
             end_token=END_TOKEN,
         )
@@ -524,6 +627,8 @@ class PersonaEngine:
         partial: bool = False,
         repeated: bool = False,
         partial_attempt: int = 1,
+        closing_due: bool = False,
+        probe_asked: bool = False,
     ) -> list[dict]:
         """Assemble the full call so far, oldest turn first, then the newest line.
 
@@ -533,12 +638,21 @@ class PersonaEngine:
         conversation, and never written back into history) telling the model the
         last line arrived cut off.
         """
-        messages = [{"role": "system", "content": self._system_prompt(scenario)}]
+        # Once the probe has been asked, drop the line telling the persona a question
+        # is still outstanding - leaving it in made one call ask the probe twice.
+        probe_pending = not probe_asked
+        messages = [
+            {"role": "system", "content": self._system_prompt(scenario, probe_pending)}
+        ]
         for turn in history:
             role = "assistant" if turn["speaker"] == "patient" else "user"
             messages.append({"role": role, "content": turn["text"]})
         if latest_agent_utterance is not None:
             messages.append({"role": "user", "content": latest_agent_utterance})
+        if closing_due and scenario.closing_probe:
+            messages.append(
+                {"role": "system", "content": closing_probe_nudge(scenario.closing_probe)}
+            )
         if partial:
             messages.append(
                 {"role": "system", "content": partial_utterance_nudge(partial_attempt)}
@@ -555,9 +669,12 @@ class PersonaEngine:
         partial: bool = False,
         repeated: bool = False,
         partial_attempt: int = 1,
+        closing_due: bool = False,
+        probe_asked: bool = False,
     ) -> tuple[str, bool, list[dict]]:
         messages = self.build_messages(
-            scenario, history, latest_agent_utterance, partial, repeated, partial_attempt
+            scenario, history, latest_agent_utterance, partial, repeated,
+            partial_attempt, closing_due, probe_asked,
         )
         # The model intermittently returns nothing at all — 5 of 13 turns on one
         # observed call — and every blank turn costs the patient a canned fallback
@@ -645,4 +762,5 @@ class PersonaEngine:
         text = _drop_repeated_sentences(text)
         text = _drop_sentences_already_said(text, history, facts)
         text = _drop_unrequested_facts(text, asked, facts, volunteers)
+        text = _drop_unearned_acceptances(text, asked)
         return _cap_length(text), should_end

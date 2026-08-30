@@ -48,6 +48,12 @@ class Scenario:
     edge_case: Optional[str] = None
     opening_line: Optional[str] = None
     max_turns: int = 20
+    # A single question the patient must ask LATE in the call, withheld from the
+    # persona prompt until `closing_probe_after_turns` patient turns have passed.
+    # Putting a late question in `goal` does not work - the model sees the whole
+    # goal every turn and front-loads it.
+    closing_probe: Optional[str] = None
+    closing_probe_after_turns: int = 4
 
 
 def load_scenario(path: Path) -> Scenario:
@@ -61,6 +67,8 @@ def load_scenario(path: Path) -> Scenario:
         edge_case=data.get("edge_case"),
         opening_line=data.get("opening_line"),
         max_turns=int(data.get("max_turns", 20)),
+        closing_probe=data.get("closing_probe"),
+        closing_probe_after_turns=int(data.get("closing_probe_after_turns", 4)),
     )
 
 
