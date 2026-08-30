@@ -1,0 +1,16 @@
+[2026-08-27T05:14:59.303375+00:00] AGENT: This call may be recorded for quality and training purposes. Thanks for calling Pivot Point Orthopaedics, part of Pretty Good AI. How may I help you today?
+[2026-08-27T05:15:07.311782+00:00] PATIENT: Hi, I need to refill my blood pressure medication, I have completely run out.
+[2026-08-27T05:15:14.520049+00:00] AGENT: Can you please confirm your full name and date of birth?
+[2026-08-27T05:15:20.271598+00:00] PATIENT: Maria Chen, March 12, 1991
+[2026-08-27T05:15:31.415979+00:00] AGENT: Just to be sure, could you please spell your first and last name for me?
+[2026-08-27T05:15:35.127221+00:00] PATIENT: M-A-R-I-A C-H-E-N
+[2026-08-27T05:15:43.984462+00:00] AGENT: Thanks. Could you please spell your last name as well?
+[2026-08-27T05:15:45.832336+00:00] PATIENT: C-H-E-N
+[2026-08-27T05:16:06.245813+00:00] AGENT: Would you like to use your phone number to look up your record? If so, please tell me the number you have on file with us. If you're not sure, I can ask you to spell your first and last name and confirm your date of birth again. Which would you prefer?
+[2026-08-27T05:16:21.859654+00:00] PATIENT: 774-292-5038I need a refill for my lisinopril 10 mg, I've completely run out.
+[2026-08-27T05:16:40.240514+00:00] AGENT: I have your phone number as (774) 292-5038 and your date of birth as 03/12/1991. Is that correct?
+[2026-08-27T05:16:46.170832+00:00] PATIENT: I’ll be without it all weekend—can anything at all be sent to my pharmacy today?
+[2026-08-27T05:17:03.641046+00:00] AGENT: Before I can help, I need to confirm do you wanna have your phone number as (774) 292-5038 and your date of birth as 03/12/1991?
+[2026-08-27T05:17:06.031738+00:00] PATIENT: Yes, that's correct.
+[2026-08-27T05:17:13.836046+00:00] AGENT: Transferring you now. Thank you.
+[2026-08-27T05:17:16.359329+00:00] PATIENT: Thank you, goodbye.

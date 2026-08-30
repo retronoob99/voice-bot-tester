@@ -1,0 +1,9 @@
+[
+  {
+    "bug": "Redundant request for spelling last name after it was already provided",
+    "severity": "Low",
+    "details": "Agent asked \"Could you please spell your last name as well?\" after the patient had already spelled the last name (M-A-R-I-A C-H-E-N) in the previous turn, resulting in asking for the same detail twice.",
+    "call_uid": "refill_request_20260827T051441Z_a4b877",
+    "scenario": "refill_request"
+  }
+]

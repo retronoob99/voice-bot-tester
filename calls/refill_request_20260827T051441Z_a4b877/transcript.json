@@ -1,0 +1,86 @@
+{
+  "call_uid": "refill_request_20260827T051441Z_a4b877",
+  "scenario": "refill_request",
+  "turns": [
+    {
+      "speaker": "agent",
+      "text": "This call may be recorded for quality and training purposes. Thanks for calling Pivot Point Orthopaedics, part of Pretty Good AI. How may I help you today?",
+      "timestamp": "2026-08-27T05:14:59.303375+00:00"
+    },
+    {
+      "speaker": "patient",
+      "text": "Hi, I need to refill my blood pressure medication, I have completely run out.",
+      "timestamp": "2026-08-27T05:15:07.311782+00:00"
+    },
+    {
+      "speaker": "agent",
+      "text": "Can you please confirm your full name and date of birth?",
+      "timestamp": "2026-08-27T05:15:14.520049+00:00"
+    },
+    {
+      "speaker": "patient",
+      "text": "Maria Chen, March 12, 1991",
+      "timestamp": "2026-08-27T05:15:20.271598+00:00"
+    },
+    {
+      "speaker": "agent",
+      "text": "Just to be sure, could you please spell your first and last name for me?",
+      "timestamp": "2026-08-27T05:15:31.415979+00:00"
+    },
+    {
+      "speaker": "patient",
+      "text": "M-A-R-I-A C-H-E-N",
+      "timestamp": "2026-08-27T05:15:35.127221+00:00"
+    },
+    {
+      "speaker": "agent",
+      "text": "Thanks. Could you please spell your last name as well?",
+      "timestamp": "2026-08-27T05:15:43.984462+00:00"
+    },
+    {
+      "speaker": "patient",
+      "text": "C-H-E-N",
+      "timestamp": "2026-08-27T05:15:45.832336+00:00"
+    },
+    {
+      "speaker": "agent",
+      "text": "Would you like to use your phone number to look up your record? If so, please tell me the number you have on file with us. If you're not sure, I can ask you to spell your first and last name and confirm your date of birth again. Which would you prefer?",
+      "timestamp": "2026-08-27T05:16:06.245813+00:00"
+    },
+    {
+      "speaker": "patient",
+      "text": "774-292-5038I need a refill for my lisinopril 10\u202fmg, I've completely run out.",
+      "timestamp": "2026-08-27T05:16:21.859654+00:00"
+    },
+    {
+      "speaker": "agent",
+      "text": "I have your phone number as (774) 292-5038 and your date of birth as 03/12/1991. Is that correct?",
+      "timestamp": "2026-08-27T05:16:40.240514+00:00"
+    },
+    {
+      "speaker": "patient",
+      "text": "I\u2019ll be without it all weekend\u2014can anything at all be sent to my pharmacy today?",
+      "timestamp": "2026-08-27T05:16:46.170832+00:00"
+    },
+    {
+      "speaker": "agent",
+      "text": "Before I can help, I need to confirm do you wanna have your phone number as (774) 292-5038 and your date of birth as 03/12/1991?",
+      "timestamp": "2026-08-27T05:17:03.641046+00:00"
+    },
+    {
+      "speaker": "patient",
+      "text": "Yes, that's correct.",
+      "timestamp": "2026-08-27T05:17:06.031738+00:00"
+    },
+    {
+      "speaker": "agent",
+      "text": "Transferring you now. Thank you.",
+      "timestamp": "2026-08-27T05:17:13.836046+00:00"
+    },
+    {
+      "speaker": "patient",
+      "text": "Thank you, goodbye.",
+      "timestamp": "2026-08-27T05:17:16.359329+00:00"
+    }
+  ]
+}
