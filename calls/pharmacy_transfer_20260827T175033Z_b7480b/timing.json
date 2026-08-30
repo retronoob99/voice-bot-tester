@@ -1,0 +1,349 @@
+[
+  {
+    "event": "agent_fragment_final",
+    "timestamp": "2026-08-27T17:50:43.142612+00:00",
+    "monotonic": 151632.138,
+    "source": "UtteranceEnd",
+    "looks_unfinished": false,
+    "text": "This call may be recorded for quality and training purposes.",
+    "silence_so_far_s": 0.0
+  },
+  {
+    "event": "agent_turn_taken",
+    "timestamp": "2026-08-27T17:50:47.144713+00:00",
+    "monotonic": 151636.14,
+    "waited_s": 4.001,
+    "quiet_window_s": 4.0,
+    "finalised_by": "UtteranceEnd",
+    "extra_unfinished_waits": 0,
+    "fragments": 1,
+    "partial": false,
+    "text": "This call may be recorded for quality and training purposes.",
+    "silence_so_far_s": 4.002
+  },
+  {
+    "event": "agent_fragment_final",
+    "timestamp": "2026-08-27T17:50:54.098385+00:00",
+    "monotonic": 151643.093,
+    "source": "speech_final",
+    "looks_unfinished": false,
+    "text": "For calling Pivot Point Orthopaedics, part of Pretty Good AI. How may I help you today?",
+    "silence_so_far_s": 0.0
+  },
+  {
+    "event": "agent_turn_taken",
+    "timestamp": "2026-08-27T17:50:54.099347+00:00",
+    "monotonic": 151643.094,
+    "waited_s": 0.0,
+    "quiet_window_s": 4.0,
+    "finalised_by": "speech_final",
+    "extra_unfinished_waits": 0,
+    "fragments": 1,
+    "partial": false,
+    "text": "For calling Pivot Point Orthopaedics, part of Pretty Good AI. How may I help you today?",
+    "silence_so_far_s": 0.001
+  },
+  {
+    "event": "silence_buffer_held",
+    "timestamp": "2026-08-27T17:50:54.101782+00:00",
+    "monotonic": 151643.097,
+    "held_s": 0.246,
+    "silence_so_far_s": 0.004
+  },
+  {
+    "event": "patient_speech_start",
+    "timestamp": "2026-08-27T17:50:54.358080+00:00",
+    "monotonic": 151643.353,
+    "reply_gap_s": 0.26,
+    "chars": 73,
+    "ends_call": false,
+    "silence_so_far_s": 0.26
+  },
+  {
+    "event": "tts_streamed",
+    "timestamp": "2026-08-27T17:50:57.794274+00:00",
+    "monotonic": 151646.789,
+    "first_audio_s": 0.795,
+    "total_s": 3.435,
+    "audio_s": 5.76,
+    "silence_so_far_s": 3.696
+  },
+  {
+    "event": "agent_turn_taken",
+    "timestamp": "2026-08-27T17:51:02.143435+00:00",
+    "monotonic": 151651.138,
+    "waited_s": 1.005,
+    "quiet_window_s": 1.0,
+    "finalised_by": "speech_final",
+    "extra_unfinished_waits": 0,
+    "fragments": 0,
+    "partial": false,
+    "text": "",
+    "silence_so_far_s": 8.045
+  },
+  {
+    "event": "agent_fragment_final",
+    "timestamp": "2026-08-27T17:51:10.682914+00:00",
+    "monotonic": 151659.678,
+    "source": "UtteranceEnd",
+    "looks_unfinished": false,
+    "text": "I see you're calling from the number we have on file. Am I speaking with Maria?",
+    "silence_so_far_s": 0.0
+  },
+  {
+    "event": "agent_turn_taken",
+    "timestamp": "2026-08-27T17:51:11.184969+00:00",
+    "monotonic": 151660.18,
+    "waited_s": 0.501,
+    "quiet_window_s": 0.5,
+    "finalised_by": "UtteranceEnd",
+    "extra_unfinished_waits": 0,
+    "fragments": 1,
+    "partial": false,
+    "text": "I see you're calling from the number we have on file. Am I speaking with Maria?",
+    "silence_so_far_s": 0.502
+  },
+  {
+    "event": "llm_reply",
+    "timestamp": "2026-08-27T17:51:11.899483+00:00",
+    "monotonic": 151660.895,
+    "elapsed_s": 0.713,
+    "history_turns": 2,
+    "partial_question": false,
+    "agent_repeated": false,
+    "partial_streak": 0,
+    "empty": false,
+    "ends_call": false,
+    "silence_so_far_s": 1.217
+  },
+  {
+    "event": "patient_speech_start",
+    "timestamp": "2026-08-27T17:51:11.900683+00:00",
+    "monotonic": 151660.896,
+    "reply_gap_s": 1.218,
+    "chars": 4,
+    "ends_call": false,
+    "silence_so_far_s": 1.218
+  },
+  {
+    "event": "tts_streamed",
+    "timestamp": "2026-08-27T17:51:12.428826+00:00",
+    "monotonic": 151661.424,
+    "first_audio_s": 0.223,
+    "total_s": 0.527,
+    "audio_s": 0.68,
+    "silence_so_far_s": 1.746
+  },
+  {
+    "event": "agent_fragment_final",
+    "timestamp": "2026-08-27T17:51:19.809533+00:00",
+    "monotonic": 151668.805,
+    "source": "speech_final",
+    "looks_unfinished": false,
+    "text": "Please provide your date of birth.",
+    "silence_so_far_s": 0.0
+  },
+  {
+    "event": "agent_turn_taken",
+    "timestamp": "2026-08-27T17:51:20.820151+00:00",
+    "monotonic": 151669.815,
+    "waited_s": 1.01,
+    "quiet_window_s": 1.0,
+    "finalised_by": "speech_final",
+    "extra_unfinished_waits": 0,
+    "fragments": 1,
+    "partial": false,
+    "text": "Please provide your date of birth.",
+    "silence_so_far_s": 1.011
+  },
+  {
+    "event": "llm_reply",
+    "timestamp": "2026-08-27T17:51:21.363712+00:00",
+    "monotonic": 151670.359,
+    "elapsed_s": 0.541,
+    "history_turns": 4,
+    "partial_question": false,
+    "agent_repeated": false,
+    "partial_streak": 0,
+    "empty": false,
+    "ends_call": false,
+    "silence_so_far_s": 1.554
+  },
+  {
+    "event": "patient_speech_start",
+    "timestamp": "2026-08-27T17:51:21.364976+00:00",
+    "monotonic": 151670.36,
+    "reply_gap_s": 1.555,
+    "chars": 15,
+    "ends_call": false,
+    "silence_so_far_s": 1.555
+  },
+  {
+    "event": "tts_streamed",
+    "timestamp": "2026-08-27T17:51:22.929835+00:00",
+    "monotonic": 151671.925,
+    "first_audio_s": 0.239,
+    "total_s": 1.564,
+    "audio_s": 2.84,
+    "silence_so_far_s": 3.12
+  },
+  {
+    "event": "agent_fragment_final",
+    "timestamp": "2026-08-27T17:51:48.611178+00:00",
+    "monotonic": 151697.606,
+    "source": "speech_final",
+    "looks_unfinished": false,
+    "text": "The birthday doesn't match our records, but for demo purposes, I'll accept it. I don't see any medications on your chart that we can refill or send to a pharmacy. If you believe this is a mistake or need further help, would you like to speak with our patient support team?",
+    "silence_so_far_s": 0.0
+  },
+  {
+    "event": "agent_turn_taken",
+    "timestamp": "2026-08-27T17:51:49.623700+00:00",
+    "monotonic": 151698.619,
+    "waited_s": 1.012,
+    "quiet_window_s": 1.0,
+    "finalised_by": "speech_final",
+    "extra_unfinished_waits": 0,
+    "fragments": 1,
+    "partial": false,
+    "text": "The birthday doesn't match our records, but for demo purposes, I'll accept it. I don't see any medications on your chart that we can refill or send to a pharmacy. If you believe this is a mistake or need further help, would you like to speak with our patient support team?",
+    "silence_so_far_s": 1.013
+  },
+  {
+    "event": "llm_reply",
+    "timestamp": "2026-08-27T17:51:51.024133+00:00",
+    "monotonic": 151700.019,
+    "elapsed_s": 1.396,
+    "history_turns": 6,
+    "partial_question": false,
+    "agent_repeated": false,
+    "partial_streak": 0,
+    "empty": false,
+    "ends_call": false,
+    "silence_so_far_s": 2.413
+  },
+  {
+    "event": "patient_speech_start",
+    "timestamp": "2026-08-27T17:51:51.025397+00:00",
+    "monotonic": 151700.02,
+    "reply_gap_s": 2.414,
+    "chars": 95,
+    "ends_call": false,
+    "silence_so_far_s": 2.414
+  },
+  {
+    "event": "tts_streamed",
+    "timestamp": "2026-08-27T17:51:54.776900+00:00",
+    "monotonic": 151703.772,
+    "first_audio_s": 0.235,
+    "total_s": 3.751,
+    "audio_s": 6.84,
+    "silence_so_far_s": 6.166
+  },
+  {
+    "event": "agent_fragment_final",
+    "timestamp": "2026-08-27T17:52:10.096938+00:00",
+    "monotonic": 151719.092,
+    "source": "speech_final",
+    "looks_unfinished": false,
+    "text": "I haven't started the transfer yet. You'd like, I can connect you to our patient support team now so they can help move your prescription. You like me to do that?",
+    "silence_so_far_s": 0.0
+  },
+  {
+    "event": "agent_turn_taken",
+    "timestamp": "2026-08-27T17:52:11.107030+00:00",
+    "monotonic": 151720.102,
+    "waited_s": 1.009,
+    "quiet_window_s": 1.0,
+    "finalised_by": "speech_final",
+    "extra_unfinished_waits": 0,
+    "fragments": 1,
+    "partial": false,
+    "text": "I haven't started the transfer yet. You'd like, I can connect you to our patient support team now so they can help move your prescription. You like me to do that?",
+    "silence_so_far_s": 1.01
+  },
+  {
+    "event": "llm_reply",
+    "timestamp": "2026-08-27T17:52:12.102179+00:00",
+    "monotonic": 151721.097,
+    "elapsed_s": 0.991,
+    "history_turns": 8,
+    "partial_question": false,
+    "agent_repeated": false,
+    "partial_streak": 0,
+    "empty": false,
+    "ends_call": false,
+    "silence_so_far_s": 2.005
+  },
+  {
+    "event": "patient_speech_start",
+    "timestamp": "2026-08-27T17:52:12.103628+00:00",
+    "monotonic": 151721.099,
+    "reply_gap_s": 2.007,
+    "chars": 23,
+    "ends_call": false,
+    "silence_so_far_s": 2.007
+  },
+  {
+    "event": "tts_streamed",
+    "timestamp": "2026-08-27T17:52:13.110337+00:00",
+    "monotonic": 151722.105,
+    "first_audio_s": 0.214,
+    "total_s": 1.006,
+    "audio_s": 1.8,
+    "silence_so_far_s": 3.013
+  },
+  {
+    "event": "agent_fragment_final",
+    "timestamp": "2026-08-27T17:52:19.974312+00:00",
+    "monotonic": 151728.969,
+    "source": "speech_final",
+    "looks_unfinished": false,
+    "text": "Transferring you now. Thank you.",
+    "silence_so_far_s": 0.0
+  },
+  {
+    "event": "agent_turn_taken",
+    "timestamp": "2026-08-27T17:52:20.978277+00:00",
+    "monotonic": 151729.973,
+    "waited_s": 1.003,
+    "quiet_window_s": 1.0,
+    "finalised_by": "speech_final",
+    "extra_unfinished_waits": 0,
+    "fragments": 1,
+    "partial": false,
+    "text": "Transferring you now. Thank you.",
+    "silence_so_far_s": 1.004
+  },
+  {
+    "event": "llm_reply",
+    "timestamp": "2026-08-27T17:52:21.446637+00:00",
+    "monotonic": 151730.442,
+    "elapsed_s": 0.466,
+    "history_turns": 10,
+    "partial_question": false,
+    "agent_repeated": false,
+    "partial_streak": 0,
+    "empty": false,
+    "ends_call": true,
+    "silence_so_far_s": 1.472
+  },
+  {
+    "event": "patient_speech_start",
+    "timestamp": "2026-08-27T17:52:21.448085+00:00",
+    "monotonic": 151730.443,
+    "reply_gap_s": 1.474,
+    "chars": 19,
+    "ends_call": true,
+    "silence_so_far_s": 1.474
+  },
+  {
+    "event": "tts_streamed",
+    "timestamp": "2026-08-27T17:52:22.254054+00:00",
+    "monotonic": 151731.249,
+    "first_audio_s": 0.201,
+    "total_s": 0.805,
+    "audio_s": 1.36,
+    "silence_so_far_s": 2.28
+  }
+]
