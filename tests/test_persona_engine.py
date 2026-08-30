@@ -562,3 +562,39 @@ def test_both_are_kept_when_they_fit():
 def test_a_question_too_long_to_fit_falls_back_to_the_first_sentence():
     reply = "Sure. " + ("a" * 120) + "?"
     assert pe._cap_length(reply) == "Sure."
+
+
+def test_stock_agreement_is_dropped_when_nothing_was_offered():
+    """The persona must not accept an appointment that was never mentioned.
+
+    Live failure: asked only for a date of birth, the persona replied "March 12, 1991.
+    Sure, that works. Yes, that's fine. Okay, great." - three acceptances of a slot the
+    agent had not named. The transcript is later judged against that acceptance, so it
+    manufactures agreement that never happened. A prompt rule naming this exact case did
+    not stop it (two stacked agreements became three), hence the filter.
+    """
+    from src.persona_engine import _drop_unearned_acceptances as drop
+
+    assert drop(
+        "March 12, 1991. Sure, that works. Yes, that's fine. Okay, great.",
+        "Can you please provide your date of birth?",
+    ) == "March 12, 1991."
+
+    assert drop(
+        "It's a routine follow-up. Sure, that works. Okay, that slot is fine.",
+        "Is this for a recent visit or a specific concern?",
+    ) == "It's a routine follow-up."
+
+
+def test_a_real_acceptance_of_a_real_offer_survives():
+    """The filter must never eat agreement to something the agent actually offered."""
+    from src.persona_engine import _drop_unearned_acceptances as drop
+
+    real = "Tuesday at 2 PM works for me. That sounds good."
+    assert drop(real, "We have an opening on Tuesday, September 1 at 2PM.") == real
+    # A substantive second sentence is not agreement noise and stays either way.
+    assert drop("Yes. My number is 555-0142.", "What is your number?") == (
+        "Yes. My number is 555-0142."
+    )
+    # A single sentence is never trimmed, whatever it says.
+    assert drop("Sure, that works.", "anything at all") == "Sure, that works."

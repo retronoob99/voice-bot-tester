@@ -68,12 +68,14 @@ class FakePersona:
         self.partials: list[bool] = []
         self.repeats: list[bool] = []
         self.partial_attempts: list[int] = []
+        self.closing_dues: list[bool] = []
 
-    async def next_line(self, scenario, history, latest=None, partial=False, repeated=False, partial_attempt=1):
+    async def next_line(self, scenario, history, latest=None, partial=False, repeated=False, partial_attempt=1, closing_due=False, probe_asked=False):
         self.seen.append(latest)
         self.partials.append(partial)
         self.repeats.append(repeated)
         self.partial_attempts.append(partial_attempt)
+        self.closing_dues.append(closing_due)
         return f"reply to <{latest}>", False, [{"role": "user", "content": latest or ""}]
 
 

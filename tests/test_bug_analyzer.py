@@ -80,6 +80,61 @@ def test_the_rubric_protects_attribution():
     assert "Do not report the agent for anything the patient did." in ba.RUBRIC
 
 
+def test_a_promise_to_go_and_check_is_collected_as_evidence():
+    """"Let me find available slots" and then never naming one is the bug.
+
+    Verbatim from a live simple_schedule call: the agent said it would find afternoon
+    slots for next week, named none, and pivoted to an appointment the caller had not
+    asked about. The analyser read straight past it, so the two lines are now put side
+    by side for it the way truncated turns already were.
+    """
+    turns = [
+        {"speaker": "patient", "text": "Any afternoon next week?"},
+        {"speaker": "agent", "text": "Let me find available afternoon slots for next week."},
+        {"speaker": "agent", "text": "Your chart shows an office visit on Tuesday, September 1."},
+    ]
+    evidence = ba._unfulfilled_promises(turns)
+    assert len(evidence) == 1, evidence
+    assert "Let me find available afternoon slots" in evidence[0]
+    # The line that followed has to travel with it, or the promise cannot be judged.
+    assert "Your chart shows an office visit" in evidence[0]
+
+    # An agent that says it will check and then answers is not flagged by wording alone.
+    assert ba._unfulfilled_promises([{"speaker": "agent", "text": "Tuesday works."}]) == []
+
+
+def test_the_evidence_blocks_reach_the_prompt():
+    """Computed evidence is worthless if it never gets sent."""
+    from src.scenario import Persona, Scenario
+
+    scenario = Scenario(
+        name="s", persona=Persona(identity="i"), goal="g", intended_outcome="o"
+    )
+    turns = [
+        {"speaker": "agent", "text": "Let me check the schedule for you."},
+        {"speaker": "agent", "text": "Can I take your date of birth?"},
+    ]
+    prompt = ba._build_prompt(scenario, turns)
+    assert "said it would go and check" in prompt
+
+
+def test_the_rubric_does_not_treat_a_declined_request_as_a_bug():
+    """An agent holding a line it was right to hold is not a defect.
+
+    A live simple_schedule call had the agent say it could not access the record and
+    route the caller to staff. That was correct behaviour, and it was filed as a High
+    "scheduling logic error ... refusing to schedule despite patient saying 'No,
+    please just schedule it now'" - the patient's insistence read as severity. The
+    rubric has to separate "did not do what the patient wanted" from "was dishonest
+    or inconsistent about what it could do".
+    """
+    assert "Declining is not failing." in ba.RUBRIC
+    assert "never whether it did what the patient wanted" in ba.RUBRIC
+    # The carve-out must not become a blanket excuse: claiming a thing was done when
+    # it was not is still a bug, and is the failure mode that actually matters.
+    assert "claiming an action was completed when the transcript shows it was not" in ba.RUBRIC
+
+
 def test_the_rubric_asks_about_talking_over_the_caller():
     assert "Talking over the caller" in ba.RUBRIC
 

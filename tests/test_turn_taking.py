@@ -23,6 +23,38 @@ async def test_shipped_quiet_window_is_sane():
     assert 0.5 <= mb.AGENT_QUIET_S <= 6.0
 
 
+async def test_closing_probe_is_hidden_until_it_is_due():
+    """A late question must not be visible to the persona early, or it front-loads it.
+
+    On a live context_retention call the probe lived in `goal`, so the model saw it on
+    every turn and asked it in turn 3 - in the same breath as stating the allergy
+    ("I have a penicillin allergy. Which allergy do you have on record for me?").
+    Nothing was ever tested across distance. The probe text must therefore be absent
+    from the prompt entirely until the turn threshold is reached.
+    """
+    from src.persona_engine import PersonaEngine
+    from src.scenario import Persona, Scenario
+
+    persona = Persona(identity="x", voice_style="y", voice="aura-2-asteria-en")
+    scenario = Scenario(
+        name="probe", persona=persona, goal="g", intended_outcome="o",
+        closing_probe="Which allergy do you have on record for me?",
+        closing_probe_after_turns=4,
+    )
+    engine = PersonaEngine.__new__(PersonaEngine)
+    history = [{"speaker": "patient", "text": "a"}, {"speaker": "agent", "text": "b"}]
+
+    early = engine.build_messages(scenario, history, "hi", closing_due=False)
+    assert not any("Which allergy" in m["content"] for m in early)
+
+    due = engine.build_messages(scenario, history, "hi", closing_due=True)
+    assert any("Which allergy" in m["content"] for m in due)
+
+    # A scenario without a probe must be completely unaffected.
+    plain = Scenario(name="p", persona=persona, goal="g", intended_outcome="o")
+    assert "more question you must ask" not in engine._system_prompt(plain)
+
+
 async def test_complete_question_ending_on_a_function_word_is_not_treated_as_cut_off():
     """A "?" is never invented by smart_format, so it outranks the dangling-word check.
 
@@ -191,7 +223,7 @@ async def test_a_failed_turn_does_not_mute_the_patient(make_session, run_loop, q
 
     calls = {"n": 0}
 
-    async def flaky_next_line(scenario, history, latest=None, partial=False, repeated=False, partial_attempt=1):
+    async def flaky_next_line(scenario, history, latest=None, partial=False, repeated=False, partial_attempt=1, **_kwargs):
         calls["n"] += 1
         if calls["n"] == 1:
             raise RuntimeError("groq exploded")
@@ -221,7 +253,7 @@ async def test_an_empty_persona_reply_never_leaves_the_patient_mute(
     """
     session, _ws = make_session()
 
-    async def empty_next_line(scenario, history, latest=None, partial=False, repeated=False, partial_attempt=1):
+    async def empty_next_line(scenario, history, latest=None, partial=False, repeated=False, partial_attempt=1, **_kwargs):
         return "", False, [{"role": "user", "content": latest or ""}]
 
     session.persona.next_line = empty_next_line
@@ -243,7 +275,7 @@ async def test_fallbacks_escalate_instead_of_parroting(make_session, run_loop, q
     """
     session, _ws = make_session()
 
-    async def always_empty(scenario, history, latest=None, partial=False, repeated=False, partial_attempt=1):
+    async def always_empty(scenario, history, latest=None, partial=False, repeated=False, partial_attempt=1, **_kwargs):
         return "", False, [{"role": "user", "content": latest or ""}]
 
     session.persona.next_line = always_empty
@@ -267,7 +299,7 @@ async def test_a_good_reply_resets_the_fallback_escalation(make_session, run_loo
     session, _ws = make_session()
     replies = ["", "I'd like the afternoon slot.", ""]
 
-    async def flaky(scenario, history, latest=None, partial=False, repeated=False, partial_attempt=1):
+    async def flaky(scenario, history, latest=None, partial=False, repeated=False, partial_attempt=1, **_kwargs):
         return replies.pop(0), False, [{"role": "user", "content": latest or ""}]
 
     session.persona.next_line = flaky
@@ -287,7 +319,7 @@ async def test_an_empty_reply_that_ends_the_call_says_goodbye(make_session, run_
     """A bare end-call token strips to nothing; the patient should still sign off."""
     session, _ws = make_session()
 
-    async def end_with_no_words(scenario, history, latest=None, partial=False, repeated=False, partial_attempt=1):
+    async def end_with_no_words(scenario, history, latest=None, partial=False, repeated=False, partial_attempt=1, **_kwargs):
         return "", True, [{"role": "user", "content": latest or ""}]
 
     session.persona.next_line = end_with_no_words
@@ -321,16 +353,25 @@ async def test_tts_failure_is_flagged_in_the_transcript(make_session, run_loop, 
     assert any("not spoken: TTS failed" in line for line in patient_lines(session))
 
 
-async def test_answers_the_latest_question_not_a_stale_one(make_session, run_loop, quiet_s):
+async def test_answers_the_latest_question_not_a_stale_one(
+    make_session, run_loop, quiet_s, monkeypatch
+):
     """The agent often asks its next question while Groq and TTS are still working.
 
     Observed live: the patient's line landed as the agent's greeting was still
     playing, so the answer arrived before the question it belonged to.
     """
+    # Catch-up is the path taken when a reply is generated AFTER the settle window
+    # closed: a discarded prefetch, or the agent speaking during commit/TTS. These
+    # fakes model "the agent gets a word in while we are thinking" by injecting at
+    # persona-call time, which with prefetching lands INSIDE the window instead —
+    # where it is merged into the same turn (covered separately below). Pinning
+    # prefetch off here keeps this test on the ordering it was written to guard.
+    monkeypatch.setattr(mb.CallSession, "_start_prefetch", lambda self: None)
     session, _ws = make_session()
     asked: list[str] = []
 
-    async def slow_persona(scenario, history, latest=None, partial=False, repeated=False, partial_attempt=1):
+    async def slow_persona(scenario, history, latest=None, partial=False, repeated=False, partial_attempt=1, **_kwargs):
         asked.append(latest)
         # The agent gets a word in while we are "thinking".
         if latest == "Am I speaking with Maria?":
@@ -353,12 +394,19 @@ async def test_answers_the_latest_question_not_a_stale_one(make_session, run_loo
     )
 
 
-async def test_catch_up_is_bounded(make_session, run_loop, quiet_s):
+async def test_catch_up_is_bounded(make_session, run_loop, quiet_s, monkeypatch):
     """A continuously talking agent must not keep the patient silent forever."""
+    # Catch-up is the path taken when a reply is generated AFTER the settle window
+    # closed: a discarded prefetch, or the agent speaking during commit/TTS. These
+    # fakes model "the agent gets a word in while we are thinking" by injecting at
+    # persona-call time, which with prefetching lands INSIDE the window instead —
+    # where it is merged into the same turn (covered separately below). Pinning
+    # prefetch off here keeps this test on the ordering it was written to guard.
+    monkeypatch.setattr(mb.CallSession, "_start_prefetch", lambda self: None)
     session, _ws = make_session()
     rounds = {"n": 0}
 
-    async def never_quiet(scenario, history, latest=None, partial=False, repeated=False, partial_attempt=1):
+    async def never_quiet(scenario, history, latest=None, partial=False, repeated=False, partial_attempt=1, **_kwargs):
         rounds["n"] += 1
         session.note_agent_utterance(f"And another thing {rounds['n']}.")
         return f"reply {rounds['n']}", False, [{"role": "user", "content": latest or ""}]
@@ -376,6 +424,105 @@ async def test_catch_up_is_bounded(make_session, run_loop, quiet_s):
     # One initial generation plus at most MAX_CATCHUP_ROUNDS re-answers before
     # the patient stops waiting for the agent and speaks.
     assert int(spoken[0].split()[1]) <= mb.MAX_CATCHUP_ROUNDS + 1, spoken
+
+
+async def test_the_reply_is_generated_during_the_settle_window_not_after_it(
+    make_session, run_loop, quiet_s
+):
+    """The Groq call must overlap the window, not queue behind it.
+
+    Serialised, every turn paid Deepgram's detection lag, then the settle window,
+    then ~0.7s of inference before any audio existed — the "4 second wait" heard on
+    the recording. The persona must therefore be called while the window is still
+    open, and the result reused rather than regenerated once it closes.
+    """
+    session, _ws = make_session()
+    called_at: list[float] = []
+
+    async def persona(scenario, history, latest=None, partial=False, repeated=False, partial_attempt=1, **_kwargs):
+        called_at.append(asyncio.get_running_loop().time())
+        return f"answer to <{latest}>", False, [{"role": "user", "content": latest or ""}]
+
+    session.persona.next_line = persona
+    run_loop(session)
+    session.note_agent_utterance("Thanks for calling.")
+    await asyncio.sleep(quiet_s + 0.5)
+
+    called_at.clear()
+    fragment_at = asyncio.get_running_loop().time()
+    session.note_agent_utterance("What is your date of birth?")
+    await asyncio.sleep(quiet_s + 0.8)
+
+    assert len(called_at) == 1, f"generated {len(called_at)} times for one turn"
+    assert called_at[0] - fragment_at < quiet_s, (
+        "the persona was called after the settle window closed, not during it"
+    )
+    assert "answer to <What is your date of birth?>" in patient_lines(session)
+    assert any(e["event"] == "prefetch_used" for e in session.logger.timings)
+
+
+async def test_a_fragment_arriving_inside_the_window_is_merged_not_answered_twice(
+    make_session, run_loop, quiet_s
+):
+    """A draft that the agent then adds to must be thrown away, not spoken.
+
+    Prefetching means a reply now exists before the turn is final. If the agent adds
+    a second fragment inside the window, that reply answers half of what was said —
+    exactly the half-question failure the settle window exists to prevent — so it has
+    to be discarded and regenerated against the merged text.
+    """
+    session, _ws = make_session()
+    asked: list[str] = []
+
+    async def persona(scenario, history, latest=None, partial=False, repeated=False, partial_attempt=1, **_kwargs):
+        asked.append(latest)
+        return f"answer to <{latest}>", False, [{"role": "user", "content": latest or ""}]
+
+    session.persona.next_line = persona
+    run_loop(session)
+    session.note_agent_utterance("Thanks for calling.")
+    await asyncio.sleep(quiet_s + 0.5)
+
+    session.note_agent_utterance("Am I speaking with Maria?")
+    await asyncio.sleep(quiet_s * 0.4)                       # inside the window
+    session.note_agent_utterance("And what is your date of birth?")
+    await asyncio.sleep(quiet_s + 0.8)
+
+    merged = "Am I speaking with Maria? And what is your date of birth?"
+    spoken = patient_lines(session)
+    assert f"answer to <{merged}>" in spoken, spoken
+    assert "answer to <Am I speaking with Maria?>" not in spoken, (
+        f"spoke a reply to half the turn: {spoken}"
+    )
+    assert any(e["event"] == "prefetch_discarded" for e in session.logger.timings)
+
+
+async def test_a_discarded_prefetch_never_reaches_the_prompt_log(
+    make_session, run_loop, quiet_s
+):
+    """prompts.json is the record of what drove the call (hard rule #5).
+
+    A speculative generation that was thrown away drove nothing. Logging it would put
+    a prompt and a reply in the record that the agent never heard, which is the same
+    class of dishonesty as a transcript claiming unspoken words.
+    """
+    session, _ws = make_session()
+
+    async def persona(scenario, history, latest=None, partial=False, repeated=False, partial_attempt=1, **_kwargs):
+        return f"answer to <{latest}>", False, [{"role": "user", "content": latest or ""}]
+
+    session.persona.next_line = persona
+    run_loop(session)
+    session.note_agent_utterance("Thanks for calling.")
+    await asyncio.sleep(quiet_s + 0.5)
+
+    session.note_agent_utterance("Am I speaking with Maria?")
+    await asyncio.sleep(quiet_s * 0.4)
+    session.note_agent_utterance("And what is your date of birth?")
+    await asyncio.sleep(quiet_s + 0.8)
+
+    logged = [p["response"] for p in session.logger.prompts]
+    assert "answer to <Am I speaking with Maria?>" not in logged, logged
 
 
 async def test_reply_latency_budget_fits_the_agents_patience():
@@ -396,11 +543,18 @@ async def test_catch_up_is_skipped_once_the_silence_budget_is_spent(
     make_session, run_loop, quiet_s, monkeypatch
 ):
     """Answering a slightly stale question beats sounding like a dropped line."""
+    # Catch-up is the path taken when a reply is generated AFTER the settle window
+    # closed: a discarded prefetch, or the agent speaking during commit/TTS. These
+    # fakes model "the agent gets a word in while we are thinking" by injecting at
+    # persona-call time, which with prefetching lands INSIDE the window instead —
+    # where it is merged into the same turn (covered separately below). Pinning
+    # prefetch off here keeps this test on the ordering it was written to guard.
+    monkeypatch.setattr(mb.CallSession, "_start_prefetch", lambda self: None)
     session, _ws = make_session()
     monkeypatch.setattr(mb, "MAX_REPLY_DELAY_S", 0.0)  # budget already blown
     generated: list[str] = []
 
-    async def persona(scenario, history, latest=None, partial=False, repeated=False, partial_attempt=1):
+    async def persona(scenario, history, latest=None, partial=False, repeated=False, partial_attempt=1, **_kwargs):
         generated.append(latest)
         session.note_agent_utterance("and one more thing")
         return f"reply to <{latest}>", False, [{"role": "user", "content": latest or ""}]
@@ -436,7 +590,7 @@ async def test_waits_for_a_cut_off_question_to_finish(make_session, run_loop, qu
     session, _ws = make_session()
     asked: list[str] = []
 
-    async def persona(scenario, history, latest=None, partial=False, repeated=False, partial_attempt=1):
+    async def persona(scenario, history, latest=None, partial=False, repeated=False, partial_attempt=1, **_kwargs):
         asked.append(latest)
         return f"answer to <{latest}>", False, [{"role": "user", "content": latest or ""}]
 
@@ -473,12 +627,20 @@ async def test_shipped_turn_taking_values_are_sane():
     """The tuning knobs the tests patch down still have to be sensible as shipped."""
     from src import stt
 
-    # UtteranceEnd is the end-of-turn backstop; if it is not comfortably above
-    # endpointing it just becomes a second mid-sentence trigger.
-    assert stt.UTTERANCE_END_MS > stt.ENDPOINTING_MS + 400, (
+    # UtteranceEnd is the end-of-turn backstop, so it must not preempt the primary
+    # endpoint detector. It used to be required to clear endpointing by 400ms as well,
+    # on the theory that a close backstop fires mid-sentence — but `endpointing` is
+    # what decides where an utterance is SPLIT; the backstop only decides how long we
+    # wait for a split Deepgram never made. The margin bought latency, not safety, so
+    # what is pinned now is the ordering and Deepgram's own documented floor.
+    assert stt.UTTERANCE_END_MS > stt.ENDPOINTING_MS, (
         stt.ENDPOINTING_MS,
         stt.UTTERANCE_END_MS,
     )
+    assert stt.UTTERANCE_END_MS >= stt.DEEPGRAM_MIN_UTTERANCE_END_MS, stt.UTTERANCE_END_MS
+    # The safety net that replaced that margin: a sentence split early must still get
+    # collected rather than answered half-heard.
+    assert mb.UNFINISHED_WAITS >= 2 and mb.UNFINISHED_QUIET_S >= 1.0
     # Below ~500ms Deepgram finalises on an ordinary breath.
     assert 500 <= stt.ENDPOINTING_MS <= 1500, stt.ENDPOINTING_MS
 
@@ -538,12 +700,20 @@ def test_unfinished_detection_catches_a_punctuated_fragment():
 async def test_the_patient_never_speaks_straight_over_the_agents_last_word(
     make_session, run_loop, monkeypatch, quiet_s
 ):
-    """A fast turn must still leave an audible gap before the patient starts."""
+    """A fast turn must still leave an audible gap before the patient starts.
+
+    The floor is measured on the honest clock: `agent_stopped_at` is backdated by the
+    silence Deepgram already sat through, so this knob only holds a reply when the
+    agent's REAL silence is still under it. That makes it inert at its shipped 0.25s
+    (every fragment arrives with >= 0.8s of real silence banked) and is why the value
+    here has to clear the detection lag to be exercised at all.
+    """
     session, _ws = make_session(opening_line=None)
     # After make_session: the fixture zeroes this knob itself for the rest of the suite.
-    monkeypatch.setattr(mb, "MIN_GAP_BEFORE_SPEAK_S", quiet_s * 4)
+    hold = mb.DETECTION_LAG_S["speech_final"] + quiet_s * 4
+    monkeypatch.setattr(mb, "MIN_GAP_BEFORE_SPEAK_S", hold)
 
-    async def instant(scenario, history, latest=None, partial=False, repeated=False, partial_attempt=1):
+    async def instant(scenario, history, latest=None, partial=False, repeated=False, partial_attempt=1, **_kwargs):
         return "an instant reply", False, [{"role": "user", "content": latest or ""}]
 
     session.persona.next_line = instant
@@ -555,6 +725,46 @@ async def test_the_patient_never_speaks_straight_over_the_agents_last_word(
 
     await asyncio.sleep(quiet_s * 4 + 0.5)
     assert patient_lines(session) == ["an instant reply"], patient_lines(session)
+
+
+async def test_silence_is_measured_from_when_the_agent_stopped_not_when_deepgram_spoke():
+    """Every latency figure this project logged was wrong in the same direction.
+
+    A fragment only reaches us after Deepgram has sat on `endpointing` (speech_final)
+    or `utterance_end_ms` (UtteranceEnd) of silence. Stamping `agent_stopped_at` on
+    arrival therefore under-reported the gap the CALLER hears by exactly that much:
+    the archive's 1.26s median `reply_gap_s` was a real ~2.8s. The lag must stay tied
+    to the STT config rather than hardcoded, or the two drift apart silently again.
+    """
+    from src import stt
+
+    assert mb.DETECTION_LAG_S["speech_final"] == stt.ENDPOINTING_MS / 1000.0
+    assert mb.DETECTION_LAG_S["UtteranceEnd"] == stt.UTTERANCE_END_MS / 1000.0
+
+
+async def test_the_agent_hears_a_reply_within_about_two_seconds():
+    """The end-to-end budget, in the terms the person on the phone experiences it.
+
+    Reply gap = Deepgram's detection lag + our quiet window + one Groq call + time to
+    first TTS audio. Measured medians across the call archive supply the last two.
+    UtteranceEnd is the path that matters: it finalised 56% of all archived turns and
+    7 of 9 on simple_schedule, and at the old 1500ms/0.5s settings that path cost
+    ~3.1s, which is the "4 second wait" heard on the recording.
+    """
+    from src import stt
+
+    groq_median_s, tts_first_audio_median_s = 0.61, 0.28
+
+    # Groq runs INSIDE the settle window (see _start_prefetch), so a turn costs
+    # whichever of the two is longer, not their sum.
+    def budget(detection_s: float, window_s: float) -> float:
+        return detection_s + max(window_s, groq_median_s) + tts_first_audio_median_s
+
+    utterance_end = budget(stt.UTTERANCE_END_MS / 1000.0, mb.AGENT_QUIET_AFTER_UTTERANCE_END_S)
+    speech_final = budget(stt.ENDPOINTING_MS / 1000.0, mb.AGENT_QUIET_S)
+
+    assert utterance_end <= 2.0, f"UtteranceEnd path {utterance_end:.2f}s"
+    assert speech_final <= 2.0, f"speech_final path {speech_final:.2f}s"
 
 
 async def test_timing_is_recorded_for_every_turn(make_session, run_loop, quiet_s):
