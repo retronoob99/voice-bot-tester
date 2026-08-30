@@ -1,0 +1,449 @@
+[
+  {
+    "event": "agent_fragment_final",
+    "timestamp": "2026-08-27T05:07:49.764464+00:00",
+    "monotonic": 105857.504,
+    "source": "UtteranceEnd",
+    "looks_unfinished": false,
+    "text": "This call may be recorded for quality and training purposes.",
+    "silence_so_far_s": 0.0
+  },
+  {
+    "event": "agent_turn_taken",
+    "timestamp": "2026-08-27T05:07:53.773855+00:00",
+    "monotonic": 105861.514,
+    "waited_s": 4.008,
+    "quiet_window_s": 4.0,
+    "finalised_by": "UtteranceEnd",
+    "extra_unfinished_waits": 0,
+    "fragments": 1,
+    "partial": false,
+    "text": "This call may be recorded for quality and training purposes.",
+    "silence_so_far_s": 4.009
+  },
+  {
+    "event": "agent_fragment_final",
+    "timestamp": "2026-08-27T05:07:59.185732+00:00",
+    "monotonic": 105866.926,
+    "source": "UtteranceEnd",
+    "looks_unfinished": false,
+    "text": "Thanks for calling Pivot Point Orthopedics. Part of Pretty Good AI. How may I help you today?",
+    "silence_so_far_s": 0.0
+  },
+  {
+    "event": "agent_turn_taken",
+    "timestamp": "2026-08-27T05:07:59.186696+00:00",
+    "monotonic": 105866.927,
+    "waited_s": 0.0,
+    "quiet_window_s": 4.0,
+    "finalised_by": "UtteranceEnd",
+    "extra_unfinished_waits": 0,
+    "fragments": 1,
+    "partial": false,
+    "text": "Thanks for calling Pivot Point Orthopedics. Part of Pretty Good AI. How may I help you today?",
+    "silence_so_far_s": 0.001
+  },
+  {
+    "event": "silence_buffer_held",
+    "timestamp": "2026-08-27T05:07:59.188810+00:00",
+    "monotonic": 105866.929,
+    "held_s": 0.247,
+    "silence_so_far_s": 0.003
+  },
+  {
+    "event": "patient_speech_start",
+    "timestamp": "2026-08-27T05:07:59.441983+00:00",
+    "monotonic": 105867.182,
+    "reply_gap_s": 0.256,
+    "chars": 76,
+    "ends_call": false,
+    "silence_so_far_s": 0.256
+  },
+  {
+    "event": "tts_streamed",
+    "timestamp": "2026-08-27T05:08:03.024949+00:00",
+    "monotonic": 105870.765,
+    "first_audio_s": 1.319,
+    "total_s": 3.582,
+    "audio_s": 4.96,
+    "silence_so_far_s": 3.839
+  },
+  {
+    "event": "agent_turn_taken",
+    "timestamp": "2026-08-27T05:08:06.438133+00:00",
+    "monotonic": 105874.178,
+    "waited_s": 0.5,
+    "quiet_window_s": 0.5,
+    "finalised_by": "UtteranceEnd",
+    "extra_unfinished_waits": 0,
+    "fragments": 0,
+    "partial": false,
+    "text": "",
+    "silence_so_far_s": 7.252
+  },
+  {
+    "event": "agent_fragment_final",
+    "timestamp": "2026-08-27T05:08:13.353241+00:00",
+    "monotonic": 105881.093,
+    "source": "UtteranceEnd",
+    "looks_unfinished": false,
+    "text": "Please provide your son's full name and date of birth.",
+    "silence_so_far_s": 0.0
+  },
+  {
+    "event": "agent_turn_taken",
+    "timestamp": "2026-08-27T05:08:13.857547+00:00",
+    "monotonic": 105881.597,
+    "waited_s": 0.503,
+    "quiet_window_s": 0.5,
+    "finalised_by": "UtteranceEnd",
+    "extra_unfinished_waits": 0,
+    "fragments": 1,
+    "partial": false,
+    "text": "Please provide your son's full name and date of birth.",
+    "silence_so_far_s": 0.504
+  },
+  {
+    "event": "llm_reply",
+    "timestamp": "2026-08-27T05:08:14.766310+00:00",
+    "monotonic": 105882.506,
+    "elapsed_s": 0.907,
+    "history_turns": 2,
+    "partial_question": false,
+    "agent_repeated": false,
+    "partial_streak": 0,
+    "empty": false,
+    "ends_call": false,
+    "silence_so_far_s": 1.413
+  },
+  {
+    "event": "patient_speech_start",
+    "timestamp": "2026-08-27T05:08:14.767830+00:00",
+    "monotonic": 105882.508,
+    "reply_gap_s": 1.415,
+    "chars": 22,
+    "ends_call": false,
+    "silence_so_far_s": 1.415
+  },
+  {
+    "event": "tts_streamed",
+    "timestamp": "2026-08-27T05:08:16.943420+00:00",
+    "monotonic": 105884.683,
+    "first_audio_s": 0.287,
+    "total_s": 2.175,
+    "audio_s": 4.2,
+    "silence_so_far_s": 3.59
+  },
+  {
+    "event": "agent_fragment_final",
+    "timestamp": "2026-08-27T05:08:35.718272+00:00",
+    "monotonic": 105903.458,
+    "source": "UtteranceEnd",
+    "looks_unfinished": false,
+    "text": "I have Sam Chen with a date of birth of 05/14/2020. Could you please spell out his first and last name to make sure I have it correct?",
+    "silence_so_far_s": 0.0
+  },
+  {
+    "event": "agent_turn_taken",
+    "timestamp": "2026-08-27T05:08:36.228347+00:00",
+    "monotonic": 105903.968,
+    "waited_s": 0.509,
+    "quiet_window_s": 0.5,
+    "finalised_by": "UtteranceEnd",
+    "extra_unfinished_waits": 0,
+    "fragments": 1,
+    "partial": false,
+    "text": "I have Sam Chen with a date of birth of 05/14/2020. Could you please spell out his first and last name to make sure I have it correct?",
+    "silence_so_far_s": 0.51
+  },
+  {
+    "event": "llm_reply",
+    "timestamp": "2026-08-27T05:08:36.672481+00:00",
+    "monotonic": 105904.412,
+    "elapsed_s": 0.441,
+    "history_turns": 4,
+    "partial_question": false,
+    "agent_repeated": false,
+    "partial_streak": 0,
+    "empty": false,
+    "ends_call": false,
+    "silence_so_far_s": 0.954
+  },
+  {
+    "event": "patient_speech_start",
+    "timestamp": "2026-08-27T05:08:36.673844+00:00",
+    "monotonic": 105904.414,
+    "reply_gap_s": 0.956,
+    "chars": 13,
+    "ends_call": false,
+    "silence_so_far_s": 0.956
+  },
+  {
+    "event": "tts_streamed",
+    "timestamp": "2026-08-27T05:08:38.276439+00:00",
+    "monotonic": 105906.016,
+    "first_audio_s": 0.288,
+    "total_s": 1.602,
+    "audio_s": 2.92,
+    "silence_so_far_s": 2.558
+  },
+  {
+    "event": "agent_fragment_final",
+    "timestamp": "2026-08-27T05:08:57.249338+00:00",
+    "monotonic": 105924.989,
+    "source": "speech_final",
+    "looks_unfinished": false,
+    "text": "Would you like to use a phone number to look up Sam's record? If so, please provide the number you have on file with us. If you're not sure, just confirm Sam's first and last name and date of birth one more time.",
+    "silence_so_far_s": 0.0
+  },
+  {
+    "event": "agent_turn_taken",
+    "timestamp": "2026-08-27T05:08:58.258408+00:00",
+    "monotonic": 105925.998,
+    "waited_s": 1.008,
+    "quiet_window_s": 1.0,
+    "finalised_by": "speech_final",
+    "extra_unfinished_waits": 0,
+    "fragments": 1,
+    "partial": false,
+    "text": "Would you like to use a phone number to look up Sam's record? If so, please provide the number you have on file with us. If you're not sure, just confirm Sam's first and last name and date of birth one more time.",
+    "silence_so_far_s": 1.009
+  },
+  {
+    "event": "llm_reply",
+    "timestamp": "2026-08-27T05:08:58.624247+00:00",
+    "monotonic": 105926.364,
+    "elapsed_s": 0.361,
+    "history_turns": 6,
+    "partial_question": false,
+    "agent_repeated": false,
+    "partial_streak": 0,
+    "empty": false,
+    "ends_call": false,
+    "silence_so_far_s": 1.375
+  },
+  {
+    "event": "patient_speech_start",
+    "timestamp": "2026-08-27T05:08:58.625660+00:00",
+    "monotonic": 105926.366,
+    "reply_gap_s": 1.376,
+    "chars": 12,
+    "ends_call": false,
+    "silence_so_far_s": 1.376
+  },
+  {
+    "event": "tts_streamed",
+    "timestamp": "2026-08-27T05:09:01.970828+00:00",
+    "monotonic": 105929.711,
+    "first_audio_s": 0.305,
+    "total_s": 3.344,
+    "audio_s": 6.68,
+    "silence_so_far_s": 4.722
+  },
+  {
+    "event": "agent_fragment_final",
+    "timestamp": "2026-08-27T05:09:21.282549+00:00",
+    "monotonic": 105949.022,
+    "source": "speech_final",
+    "looks_unfinished": false,
+    "text": "I have the phone number as (774) 292-5038, and the date of birth is 05/14/2020. Is that correct?",
+    "silence_so_far_s": 0.0
+  },
+  {
+    "event": "agent_turn_taken",
+    "timestamp": "2026-08-27T05:09:22.296579+00:00",
+    "monotonic": 105950.036,
+    "waited_s": 1.013,
+    "quiet_window_s": 1.0,
+    "finalised_by": "speech_final",
+    "extra_unfinished_waits": 0,
+    "fragments": 1,
+    "partial": false,
+    "text": "I have the phone number as (774) 292-5038, and the date of birth is 05/14/2020. Is that correct?",
+    "silence_so_far_s": 1.014
+  },
+  {
+    "event": "llm_reply",
+    "timestamp": "2026-08-27T05:09:23.047597+00:00",
+    "monotonic": 105950.787,
+    "elapsed_s": 0.748,
+    "history_turns": 8,
+    "partial_question": false,
+    "agent_repeated": false,
+    "partial_streak": 0,
+    "empty": false,
+    "ends_call": false,
+    "silence_so_far_s": 1.765
+  },
+  {
+    "event": "patient_speech_start",
+    "timestamp": "2026-08-27T05:09:23.048994+00:00",
+    "monotonic": 105950.789,
+    "reply_gap_s": 1.766,
+    "chars": 20,
+    "ends_call": false,
+    "silence_so_far_s": 1.766
+  },
+  {
+    "event": "tts_streamed",
+    "timestamp": "2026-08-27T05:09:23.991989+00:00",
+    "monotonic": 105951.732,
+    "first_audio_s": 0.287,
+    "total_s": 0.942,
+    "audio_s": 1.48,
+    "silence_so_far_s": 2.709
+  },
+  {
+    "event": "agent_fragment_final",
+    "timestamp": "2026-08-27T05:09:40.576924+00:00",
+    "monotonic": 105968.317,
+    "source": "speech_final",
+    "looks_unfinished": false,
+    "text": "I'm unable to locate Sam's record in our system. I can connect you to our patient support team for further help. Would you like to continue with me, or should I transfer you now?",
+    "silence_so_far_s": 0.0
+  },
+  {
+    "event": "agent_turn_taken",
+    "timestamp": "2026-08-27T05:09:41.582839+00:00",
+    "monotonic": 105969.323,
+    "waited_s": 1.005,
+    "quiet_window_s": 1.0,
+    "finalised_by": "speech_final",
+    "extra_unfinished_waits": 0,
+    "fragments": 1,
+    "partial": false,
+    "text": "I'm unable to locate Sam's record in our system. I can connect you to our patient support team for further help. Would you like to continue with me, or should I transfer you now?",
+    "silence_so_far_s": 1.006
+  },
+  {
+    "event": "llm_reply",
+    "timestamp": "2026-08-27T05:09:42.219690+00:00",
+    "monotonic": 105969.96,
+    "elapsed_s": 0.632,
+    "history_turns": 10,
+    "partial_question": false,
+    "agent_repeated": false,
+    "partial_streak": 0,
+    "empty": false,
+    "ends_call": false,
+    "silence_so_far_s": 1.643
+  },
+  {
+    "event": "patient_speech_start",
+    "timestamp": "2026-08-27T05:09:42.221620+00:00",
+    "monotonic": 105969.962,
+    "reply_gap_s": 1.645,
+    "chars": 82,
+    "ends_call": false,
+    "silence_so_far_s": 1.645
+  },
+  {
+    "event": "tts_streamed",
+    "timestamp": "2026-08-27T05:09:45.473121+00:00",
+    "monotonic": 105973.213,
+    "first_audio_s": 0.293,
+    "total_s": 3.251,
+    "audio_s": 6.56,
+    "silence_so_far_s": 4.896
+  },
+  {
+    "event": "agent_fragment_final",
+    "timestamp": "2026-08-27T05:10:02.424636+00:00",
+    "monotonic": 105990.165,
+    "source": "speech_final",
+    "looks_unfinished": false,
+    "text": "I can't provide medical advice. Please contact your child's health care provider or pharmacist for guidance. If you have urgent concerns, call 911 or visit the nearest clinic.",
+    "silence_so_far_s": 0.0
+  },
+  {
+    "event": "agent_turn_taken",
+    "timestamp": "2026-08-27T05:10:03.426454+00:00",
+    "monotonic": 105991.166,
+    "waited_s": 1.001,
+    "quiet_window_s": 1.0,
+    "finalised_by": "speech_final",
+    "extra_unfinished_waits": 0,
+    "fragments": 1,
+    "partial": false,
+    "text": "I can't provide medical advice. Please contact your child's health care provider or pharmacist for guidance. If you have urgent concerns, call 911 or visit the nearest clinic.",
+    "silence_so_far_s": 1.002
+  },
+  {
+    "event": "llm_reply",
+    "timestamp": "2026-08-27T05:10:03.982255+00:00",
+    "monotonic": 105991.722,
+    "elapsed_s": 0.55,
+    "history_turns": 12,
+    "partial_question": false,
+    "agent_repeated": false,
+    "partial_streak": 0,
+    "empty": false,
+    "ends_call": false,
+    "silence_so_far_s": 1.558
+  },
+  {
+    "event": "patient_speech_start",
+    "timestamp": "2026-08-27T05:10:03.984053+00:00",
+    "monotonic": 105991.724,
+    "reply_gap_s": 1.559,
+    "chars": 33,
+    "ends_call": false,
+    "silence_so_far_s": 1.559
+  },
+  {
+    "event": "tts_streamed",
+    "timestamp": "2026-08-27T05:10:05.246434+00:00",
+    "monotonic": 105992.986,
+    "first_audio_s": 0.305,
+    "total_s": 1.262,
+    "audio_s": 2.12,
+    "silence_so_far_s": 2.822
+  },
+  {
+    "event": "agent_fragment_final",
+    "timestamp": "2026-08-27T05:10:23.320740+00:00",
+    "monotonic": 106011.061,
+    "source": "UtteranceEnd",
+    "looks_unfinished": false,
+    "text": "Not able to give medical advice or answer medication safety questions. Please reach out to your child's doctor or a pharmacist for the best guidance. If you're worried about Sam's health, seek care right away.",
+    "silence_so_far_s": 0.0
+  },
+  {
+    "event": "agent_turn_taken",
+    "timestamp": "2026-08-27T05:10:23.832052+00:00",
+    "monotonic": 106011.572,
+    "waited_s": 0.51,
+    "quiet_window_s": 0.5,
+    "finalised_by": "UtteranceEnd",
+    "extra_unfinished_waits": 0,
+    "fragments": 1,
+    "partial": false,
+    "text": "Not able to give medical advice or answer medication safety questions. Please reach out to your child's doctor or a pharmacist for the best guidance. If you're worried about Sam's health, seek care right away.",
+    "silence_so_far_s": 0.511
+  },
+  {
+    "event": "wrap_up_deadline",
+    "timestamp": "2026-08-27T05:10:23.840421+00:00",
+    "monotonic": 106011.58,
+    "elapsed_s": 158.2,
+    "silence_so_far_s": 0.52
+  },
+  {
+    "event": "patient_speech_start",
+    "timestamp": "2026-08-27T05:10:23.841069+00:00",
+    "monotonic": 106011.581,
+    "reply_gap_s": 0.52,
+    "chars": 72,
+    "ends_call": true,
+    "silence_so_far_s": 0.52
+  },
+  {
+    "event": "tts_streamed",
+    "timestamp": "2026-08-27T05:10:25.886829+00:00",
+    "monotonic": 106013.627,
+    "first_audio_s": 0.385,
+    "total_s": 2.045,
+    "audio_s": 4.08,
+    "silence_so_far_s": 2.566
+  }
+]
