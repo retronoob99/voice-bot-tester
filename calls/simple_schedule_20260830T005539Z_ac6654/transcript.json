@@ -1,0 +1,116 @@
+{
+  "call_uid": "simple_schedule_20260830T005539Z_ac6654",
+  "scenario": "simple_schedule",
+  "turns": [
+    {
+      "speaker": "agent",
+      "text": "This call may be recorded for quality and training purposes. Thanks for calling Pivot Point Orthopaedics. Part of Pretty Good AI. How may I help you today?",
+      "timestamp": "2026-08-30T00:55:57.592359+00:00"
+    },
+    {
+      "speaker": "patient",
+      "text": "Hi there, I'd like to book a routine annual checkup for next week, any afternoon after 1 PM.",
+      "timestamp": "2026-08-30T00:56:05.974648+00:00"
+    },
+    {
+      "speaker": "agent",
+      "text": "I see you're calling from the number we have on file. I speaking with Maria?",
+      "timestamp": "2026-08-30T00:56:15.057032+00:00"
+    },
+    {
+      "speaker": "patient",
+      "text": "Yes.",
+      "timestamp": "2026-08-30T00:56:16.277446+00:00"
+    },
+    {
+      "speaker": "agent",
+      "text": "Please provide your date of birth.",
+      "timestamp": "2026-08-30T00:56:23.135222+00:00"
+    },
+    {
+      "speaker": "patient",
+      "text": "March 12, 1991.",
+      "timestamp": "2026-08-30T00:56:26.331528+00:00"
+    },
+    {
+      "speaker": "agent",
+      "text": "Just to confirm, you'd like to book a general office visit for your routine annual checkup. Is that correct?",
+      "timestamp": "2026-08-30T00:56:42.195356+00:00"
+    },
+    {
+      "speaker": "patient",
+      "text": "What time is available?",
+      "timestamp": "2026-08-30T00:56:44.778742+00:00"
+    },
+    {
+      "speaker": "agent",
+      "text": "I'll check the schedule for available afternoon slots week once we confirm your appointment type. You're looking for a general office visit for a routine annual checkup. Right?",
+      "timestamp": "2026-08-30T00:56:56.642020+00:00"
+    },
+    {
+      "speaker": "patient",
+      "text": "Has that check been completed?",
+      "timestamp": "2026-08-30T00:56:59.159561+00:00"
+    },
+    {
+      "speaker": "agent",
+      "text": "Yes. Your visit reason is set for a routine annual checkup. Let me find available afternoon slots for next week. Your chart shows you already have an office visit booked for Tuesday, September first at 2PM. Would you like to keep this appointment? Reschedule it, or cancel it?",
+      "timestamp": "2026-08-30T00:57:20.658367+00:00"
+    },
+    {
+      "speaker": "patient",
+      "text": "What is the exact time?",
+      "timestamp": "2026-08-30T00:57:23.140119+00:00"
+    },
+    {
+      "speaker": "agent",
+      "text": "Your appointment is scheduled for Tuesday, September 1 at 2PM. Would you like to keep this time or make a change?",
+      "timestamp": "2026-08-30T00:57:35.285869+00:00"
+    },
+    {
+      "speaker": "patient",
+      "text": "Tuesday.",
+      "timestamp": "2026-08-30T00:57:36.780271+00:00"
+    },
+    {
+      "speaker": "agent",
+      "text": "Your appointment is set for Tuesday, September 1 at 2PM. Do you wanna keep this appointment or reschedule it to a different time?",
+      "timestamp": "2026-08-30T00:57:47.410704+00:00"
+    },
+    {
+      "speaker": "patient",
+      "text": "Could you tell me the provider's full name?",
+      "timestamp": "2026-08-30T00:57:50.957539+00:00"
+    },
+    {
+      "speaker": "agent",
+      "text": "I'll check which provider your appointment is with. One moment.",
+      "timestamp": "2026-08-30T00:58:00.898049+00:00"
+    },
+    {
+      "speaker": "patient",
+      "text": "What is the calendar date?",
+      "timestamp": "2026-08-30T00:58:03.579636+00:00"
+    },
+    {
+      "speaker": "agent",
+      "text": "Your appointment on Tuesday, September 1 at 2PM is with",
+      "timestamp": "2026-08-30T00:58:07.961206+00:00"
+    },
+    {
+      "speaker": "patient",
+      "text": "I didn't catch that\u2014could you repeat the provider's name?",
+      "timestamp": "2026-08-30T00:58:13.781497+00:00"
+    },
+    {
+      "speaker": "agent",
+      "text": "your appointment is on Tuesday, September 1 at 2PM with doctor Sebbig",
+      "timestamp": "2026-08-30T00:58:18.009553+00:00"
+    },
+    {
+      "speaker": "patient",
+      "text": "Thanks so much for your help today, that's everything I needed. Goodbye!",
+      "timestamp": "2026-08-30T00:58:23.259123+00:00"
+    }
+  ]
+}

@@ -1,0 +1,22 @@
+[2026-08-30T00:55:57.592359+00:00] AGENT: This call may be recorded for quality and training purposes. Thanks for calling Pivot Point Orthopaedics. Part of Pretty Good AI. How may I help you today?
+[2026-08-30T00:56:05.974648+00:00] PATIENT: Hi there, I'd like to book a routine annual checkup for next week, any afternoon after 1 PM.
+[2026-08-30T00:56:15.057032+00:00] AGENT: I see you're calling from the number we have on file. I speaking with Maria?
+[2026-08-30T00:56:16.277446+00:00] PATIENT: Yes.
+[2026-08-30T00:56:23.135222+00:00] AGENT: Please provide your date of birth.
+[2026-08-30T00:56:26.331528+00:00] PATIENT: March 12, 1991.
+[2026-08-30T00:56:42.195356+00:00] AGENT: Just to confirm, you'd like to book a general office visit for your routine annual checkup. Is that correct?
+[2026-08-30T00:56:44.778742+00:00] PATIENT: What time is available?
+[2026-08-30T00:56:56.642020+00:00] AGENT: I'll check the schedule for available afternoon slots week once we confirm your appointment type. You're looking for a general office visit for a routine annual checkup. Right?
+[2026-08-30T00:56:59.159561+00:00] PATIENT: Has that check been completed?
+[2026-08-30T00:57:20.658367+00:00] AGENT: Yes. Your visit reason is set for a routine annual checkup. Let me find available afternoon slots for next week. Your chart shows you already have an office visit booked for Tuesday, September first at 2PM. Would you like to keep this appointment? Reschedule it, or cancel it?
+[2026-08-30T00:57:23.140119+00:00] PATIENT: What is the exact time?
+[2026-08-30T00:57:35.285869+00:00] AGENT: Your appointment is scheduled for Tuesday, September 1 at 2PM. Would you like to keep this time or make a change?
+[2026-08-30T00:57:36.780271+00:00] PATIENT: Tuesday.
+[2026-08-30T00:57:47.410704+00:00] AGENT: Your appointment is set for Tuesday, September 1 at 2PM. Do you wanna keep this appointment or reschedule it to a different time?
+[2026-08-30T00:57:50.957539+00:00] PATIENT: Could you tell me the provider's full name?
+[2026-08-30T00:58:00.898049+00:00] AGENT: I'll check which provider your appointment is with. One moment.
+[2026-08-30T00:58:03.579636+00:00] PATIENT: What is the calendar date?
+[2026-08-30T00:58:07.961206+00:00] AGENT: Your appointment on Tuesday, September 1 at 2PM is with
+[2026-08-30T00:58:13.781497+00:00] PATIENT: I didn't catch that—could you repeat the provider's name?
+[2026-08-30T00:58:18.009553+00:00] AGENT: your appointment is on Tuesday, September 1 at 2PM with doctor Sebbig
+[2026-08-30T00:58:23.259123+00:00] PATIENT: Thanks so much for your help today, that's everything I needed. Goodbye!

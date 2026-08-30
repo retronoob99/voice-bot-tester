@@ -1,0 +1,679 @@
+[
+  {
+    "event": "agent_fragment_final",
+    "timestamp": "2026-08-30T00:55:48.759804+00:00",
+    "monotonic": 131076.077,
+    "source": "UtteranceEnd",
+    "detection_lag_s": 1.0,
+    "looks_unfinished": false,
+    "text": "This call may be recorded for quality and training purposes.",
+    "silence_so_far_s": 1.0
+  },
+  {
+    "event": "agent_turn_taken",
+    "timestamp": "2026-08-30T00:55:52.774032+00:00",
+    "monotonic": 131080.091,
+    "waited_s": 4.013,
+    "quiet_window_s": 4.0,
+    "finalised_by": "UtteranceEnd",
+    "extra_unfinished_waits": 0,
+    "fragments": 1,
+    "partial": false,
+    "text": "This call may be recorded for quality and training purposes.",
+    "silence_so_far_s": 5.014
+  },
+  {
+    "event": "agent_fragment_final",
+    "timestamp": "2026-08-30T00:55:57.591045+00:00",
+    "monotonic": 131084.908,
+    "source": "UtteranceEnd",
+    "detection_lag_s": 1.0,
+    "looks_unfinished": false,
+    "text": "Thanks for calling Pivot Point Orthopaedics. Part of Pretty Good AI. How may I help you today?",
+    "silence_so_far_s": 1.0
+  },
+  {
+    "event": "agent_turn_taken",
+    "timestamp": "2026-08-30T00:55:57.591870+00:00",
+    "monotonic": 131084.909,
+    "waited_s": 0.0,
+    "quiet_window_s": 4.0,
+    "finalised_by": "UtteranceEnd",
+    "extra_unfinished_waits": 0,
+    "fragments": 1,
+    "partial": false,
+    "text": "Thanks for calling Pivot Point Orthopaedics. Part of Pretty Good AI. How may I help you today?",
+    "silence_so_far_s": 1.001
+  },
+  {
+    "event": "patient_speech_start",
+    "timestamp": "2026-08-30T00:55:57.594101+00:00",
+    "monotonic": 131084.911,
+    "reply_gap_s": 1.003,
+    "chars": 92,
+    "ends_call": false,
+    "silence_so_far_s": 1.003
+  },
+  {
+    "event": "tts_streamed",
+    "timestamp": "2026-08-30T00:56:01.928445+00:00",
+    "monotonic": 131089.245,
+    "first_audio_s": 1.134,
+    "total_s": 4.334,
+    "audio_s": 6.92,
+    "silence_so_far_s": 5.337
+  },
+  {
+    "event": "agent_turn_taken",
+    "timestamp": "2026-08-30T00:56:06.289421+00:00",
+    "monotonic": 131093.606,
+    "waited_s": 0.313,
+    "quiet_window_s": 0.3,
+    "finalised_by": "UtteranceEnd",
+    "extra_unfinished_waits": 0,
+    "fragments": 0,
+    "partial": false,
+    "text": "",
+    "silence_so_far_s": 9.698
+  },
+  {
+    "event": "agent_fragment_final",
+    "timestamp": "2026-08-30T00:56:14.449141+00:00",
+    "monotonic": 131101.766,
+    "source": "speech_final",
+    "detection_lag_s": 0.8,
+    "looks_unfinished": false,
+    "text": "I see you're calling from the number we have on file. I speaking with Maria?",
+    "silence_so_far_s": 0.8
+  },
+  {
+    "event": "agent_turn_taken",
+    "timestamp": "2026-08-30T00:56:15.055304+00:00",
+    "monotonic": 131102.372,
+    "waited_s": 0.605,
+    "quiet_window_s": 0.6,
+    "finalised_by": "speech_final",
+    "extra_unfinished_waits": 0,
+    "fragments": 1,
+    "partial": false,
+    "text": "I see you're calling from the number we have on file. I speaking with Maria?",
+    "silence_so_far_s": 1.406
+  },
+  {
+    "event": "prefetch_used",
+    "timestamp": "2026-08-30T00:56:15.058077+00:00",
+    "monotonic": 131102.375,
+    "chars": 76,
+    "silence_so_far_s": 1.409
+  },
+  {
+    "event": "llm_reply",
+    "timestamp": "2026-08-30T00:56:15.058764+00:00",
+    "monotonic": 131102.376,
+    "elapsed_s": 0.001,
+    "history_turns": 2,
+    "partial_question": false,
+    "agent_repeated": false,
+    "partial_streak": 0,
+    "empty": false,
+    "ends_call": false,
+    "silence_so_far_s": 1.41
+  },
+  {
+    "event": "patient_speech_start",
+    "timestamp": "2026-08-30T00:56:15.059859+00:00",
+    "monotonic": 131102.377,
+    "reply_gap_s": 1.411,
+    "chars": 4,
+    "ends_call": false,
+    "silence_so_far_s": 1.411
+  },
+  {
+    "event": "tts_streamed",
+    "timestamp": "2026-08-30T00:56:15.651918+00:00",
+    "monotonic": 131102.969,
+    "first_audio_s": 0.299,
+    "total_s": 0.591,
+    "audio_s": 0.68,
+    "silence_so_far_s": 2.003
+  },
+  {
+    "event": "agent_fragment_final",
+    "timestamp": "2026-08-30T00:56:22.522917+00:00",
+    "monotonic": 131109.84,
+    "source": "speech_final",
+    "detection_lag_s": 0.8,
+    "looks_unfinished": false,
+    "text": "Please provide your date of birth.",
+    "silence_so_far_s": 0.8
+  },
+  {
+    "event": "agent_turn_taken",
+    "timestamp": "2026-08-30T00:56:23.134180+00:00",
+    "monotonic": 131110.451,
+    "waited_s": 0.61,
+    "quiet_window_s": 0.6,
+    "finalised_by": "speech_final",
+    "extra_unfinished_waits": 0,
+    "fragments": 1,
+    "partial": false,
+    "text": "Please provide your date of birth.",
+    "silence_so_far_s": 1.411
+  },
+  {
+    "event": "prefetch_used",
+    "timestamp": "2026-08-30T00:56:23.136061+00:00",
+    "monotonic": 131110.453,
+    "chars": 34,
+    "silence_so_far_s": 1.413
+  },
+  {
+    "event": "llm_reply",
+    "timestamp": "2026-08-30T00:56:23.136559+00:00",
+    "monotonic": 131110.453,
+    "elapsed_s": 0.001,
+    "history_turns": 4,
+    "partial_question": false,
+    "agent_repeated": false,
+    "partial_streak": 0,
+    "empty": false,
+    "ends_call": false,
+    "silence_so_far_s": 1.414
+  },
+  {
+    "event": "patient_speech_start",
+    "timestamp": "2026-08-30T00:56:23.137451+00:00",
+    "monotonic": 131110.454,
+    "reply_gap_s": 1.415,
+    "chars": 15,
+    "ends_call": false,
+    "silence_so_far_s": 1.415
+  },
+  {
+    "event": "tts_streamed",
+    "timestamp": "2026-08-30T00:56:24.602349+00:00",
+    "monotonic": 131111.919,
+    "first_audio_s": 0.29,
+    "total_s": 1.464,
+    "audio_s": 2.6,
+    "silence_so_far_s": 2.879
+  },
+  {
+    "event": "agent_fragment_final",
+    "timestamp": "2026-08-30T00:56:41.875308+00:00",
+    "monotonic": 131129.192,
+    "source": "UtteranceEnd",
+    "detection_lag_s": 1.0,
+    "looks_unfinished": false,
+    "text": "Just to confirm, you'd like to book a general office visit for your routine annual checkup. Is that correct?",
+    "silence_so_far_s": 1.0
+  },
+  {
+    "event": "agent_turn_taken",
+    "timestamp": "2026-08-30T00:56:42.193536+00:00",
+    "monotonic": 131129.51,
+    "waited_s": 0.316,
+    "quiet_window_s": 0.3,
+    "finalised_by": "UtteranceEnd",
+    "extra_unfinished_waits": 0,
+    "fragments": 1,
+    "partial": false,
+    "text": "Just to confirm, you'd like to book a general office visit for your routine annual checkup. Is that correct?",
+    "silence_so_far_s": 1.318
+  },
+  {
+    "event": "prefetch_used",
+    "timestamp": "2026-08-30T00:56:42.412438+00:00",
+    "monotonic": 131129.729,
+    "chars": 108,
+    "silence_so_far_s": 1.537
+  },
+  {
+    "event": "llm_reply",
+    "timestamp": "2026-08-30T00:56:42.413149+00:00",
+    "monotonic": 131129.73,
+    "elapsed_s": 0.217,
+    "history_turns": 6,
+    "partial_question": false,
+    "agent_repeated": false,
+    "partial_streak": 0,
+    "empty": false,
+    "ends_call": false,
+    "silence_so_far_s": 1.538
+  },
+  {
+    "event": "patient_speech_start",
+    "timestamp": "2026-08-30T00:56:42.414336+00:00",
+    "monotonic": 131129.731,
+    "reply_gap_s": 1.539,
+    "chars": 23,
+    "ends_call": false,
+    "silence_so_far_s": 1.539
+  },
+  {
+    "event": "tts_streamed",
+    "timestamp": "2026-08-30T00:56:43.536065+00:00",
+    "monotonic": 131130.853,
+    "first_audio_s": 0.295,
+    "total_s": 1.121,
+    "audio_s": 1.84,
+    "silence_so_far_s": 2.661
+  },
+  {
+    "event": "agent_fragment_final",
+    "timestamp": "2026-08-30T00:56:56.030849+00:00",
+    "monotonic": 131143.348,
+    "source": "speech_final",
+    "detection_lag_s": 0.8,
+    "looks_unfinished": false,
+    "text": "I'll check the schedule for available afternoon slots week once we confirm your appointment type. You're looking for a general office visit for a routine annual checkup. Right?",
+    "silence_so_far_s": 0.8
+  },
+  {
+    "event": "agent_turn_taken",
+    "timestamp": "2026-08-30T00:56:56.639072+00:00",
+    "monotonic": 131143.956,
+    "waited_s": 0.605,
+    "quiet_window_s": 0.6,
+    "finalised_by": "speech_final",
+    "extra_unfinished_waits": 0,
+    "fragments": 1,
+    "partial": false,
+    "text": "I'll check the schedule for available afternoon slots week once we confirm your appointment type. You're looking for a general office visit for a routine annual checkup. Right?",
+    "silence_so_far_s": 1.408
+  },
+  {
+    "event": "prefetch_used",
+    "timestamp": "2026-08-30T00:56:56.643037+00:00",
+    "monotonic": 131143.96,
+    "chars": 176,
+    "silence_so_far_s": 1.412
+  },
+  {
+    "event": "llm_reply",
+    "timestamp": "2026-08-30T00:56:56.643698+00:00",
+    "monotonic": 131143.961,
+    "elapsed_s": 0.001,
+    "history_turns": 8,
+    "partial_question": false,
+    "agent_repeated": false,
+    "partial_streak": 0,
+    "empty": false,
+    "ends_call": false,
+    "silence_so_far_s": 1.413
+  },
+  {
+    "event": "patient_speech_start",
+    "timestamp": "2026-08-30T00:56:56.644690+00:00",
+    "monotonic": 131143.962,
+    "reply_gap_s": 1.414,
+    "chars": 30,
+    "ends_call": false,
+    "silence_so_far_s": 1.414
+  },
+  {
+    "event": "tts_streamed",
+    "timestamp": "2026-08-30T00:56:57.802286+00:00",
+    "monotonic": 131145.119,
+    "first_audio_s": 0.249,
+    "total_s": 1.157,
+    "audio_s": 2.04,
+    "silence_so_far_s": 2.571
+  },
+  {
+    "event": "agent_fragment_final",
+    "timestamp": "2026-08-30T00:57:20.043254+00:00",
+    "monotonic": 131167.36,
+    "source": "speech_final",
+    "detection_lag_s": 0.8,
+    "looks_unfinished": false,
+    "text": "Yes. Your visit reason is set for a routine annual checkup. Let me find available afternoon slots for next week. Your chart shows you already have an office visit booked for Tuesday, September first at 2PM. Would you like to keep this appointment? Reschedule it, or cancel it?",
+    "silence_so_far_s": 0.8
+  },
+  {
+    "event": "agent_turn_taken",
+    "timestamp": "2026-08-30T00:57:20.653384+00:00",
+    "monotonic": 131167.97,
+    "waited_s": 0.604,
+    "quiet_window_s": 0.6,
+    "finalised_by": "speech_final",
+    "extra_unfinished_waits": 0,
+    "fragments": 1,
+    "partial": false,
+    "text": "Yes. Your visit reason is set for a routine annual checkup. Let me find available afternoon slots for next week. Your chart shows you already have an office visit booked for Tuesday, September first at 2PM. Would you like to keep this appointment? Reschedule it, or cancel it?",
+    "silence_so_far_s": 1.41
+  },
+  {
+    "event": "prefetch_used",
+    "timestamp": "2026-08-30T00:57:20.659457+00:00",
+    "monotonic": 131167.976,
+    "chars": 276,
+    "silence_so_far_s": 1.416
+  },
+  {
+    "event": "llm_reply",
+    "timestamp": "2026-08-30T00:57:20.660004+00:00",
+    "monotonic": 131167.977,
+    "elapsed_s": 0.001,
+    "history_turns": 10,
+    "partial_question": false,
+    "agent_repeated": false,
+    "partial_streak": 0,
+    "empty": false,
+    "ends_call": false,
+    "silence_so_far_s": 1.417
+  },
+  {
+    "event": "patient_speech_start",
+    "timestamp": "2026-08-30T00:57:20.661040+00:00",
+    "monotonic": 131167.978,
+    "reply_gap_s": 1.418,
+    "chars": 23,
+    "ends_call": false,
+    "silence_so_far_s": 1.418
+  },
+  {
+    "event": "tts_streamed",
+    "timestamp": "2026-08-30T00:57:21.813130+00:00",
+    "monotonic": 131169.13,
+    "first_audio_s": 0.283,
+    "total_s": 1.151,
+    "audio_s": 1.96,
+    "silence_so_far_s": 2.57
+  },
+  {
+    "event": "agent_fragment_final",
+    "timestamp": "2026-08-30T00:57:34.976143+00:00",
+    "monotonic": 131182.293,
+    "source": "UtteranceEnd",
+    "detection_lag_s": 1.0,
+    "looks_unfinished": false,
+    "text": "Your appointment is scheduled for Tuesday, September 1 at 2PM. Would you like to keep this time or make a change?",
+    "silence_so_far_s": 1.0
+  },
+  {
+    "event": "agent_turn_taken",
+    "timestamp": "2026-08-30T00:57:35.282909+00:00",
+    "monotonic": 131182.6,
+    "waited_s": 0.304,
+    "quiet_window_s": 0.3,
+    "finalised_by": "UtteranceEnd",
+    "extra_unfinished_waits": 0,
+    "fragments": 1,
+    "partial": false,
+    "text": "Your appointment is scheduled for Tuesday, September 1 at 2PM. Would you like to keep this time or make a change?",
+    "silence_so_far_s": 1.307
+  },
+  {
+    "event": "prefetch_used",
+    "timestamp": "2026-08-30T00:57:35.390166+00:00",
+    "monotonic": 131182.707,
+    "chars": 113,
+    "silence_so_far_s": 1.414
+  },
+  {
+    "event": "llm_reply",
+    "timestamp": "2026-08-30T00:57:35.391156+00:00",
+    "monotonic": 131182.708,
+    "elapsed_s": 0.105,
+    "history_turns": 12,
+    "partial_question": false,
+    "agent_repeated": false,
+    "partial_streak": 0,
+    "empty": false,
+    "ends_call": false,
+    "silence_so_far_s": 1.415
+  },
+  {
+    "event": "patient_speech_start",
+    "timestamp": "2026-08-30T00:57:35.392567+00:00",
+    "monotonic": 131182.71,
+    "reply_gap_s": 1.416,
+    "chars": 8,
+    "ends_call": false,
+    "silence_so_far_s": 1.416
+  },
+  {
+    "event": "tts_streamed",
+    "timestamp": "2026-08-30T00:57:36.028645+00:00",
+    "monotonic": 131183.346,
+    "first_audio_s": 0.242,
+    "total_s": 0.635,
+    "audio_s": 0.92,
+    "silence_so_far_s": 2.053
+  },
+  {
+    "event": "agent_fragment_final",
+    "timestamp": "2026-08-30T00:57:47.097032+00:00",
+    "monotonic": 131194.414,
+    "source": "UtteranceEnd",
+    "detection_lag_s": 1.0,
+    "looks_unfinished": false,
+    "text": "Your appointment is set for Tuesday, September 1 at 2PM. Do you wanna keep this appointment or reschedule it to a different time?",
+    "silence_so_far_s": 1.0
+  },
+  {
+    "event": "agent_turn_taken",
+    "timestamp": "2026-08-30T00:57:47.406324+00:00",
+    "monotonic": 131194.723,
+    "waited_s": 0.305,
+    "quiet_window_s": 0.3,
+    "finalised_by": "UtteranceEnd",
+    "extra_unfinished_waits": 0,
+    "fragments": 1,
+    "partial": false,
+    "text": "Your appointment is set for Tuesday, September 1 at 2PM. Do you wanna keep this appointment or reschedule it to a different time?",
+    "silence_so_far_s": 1.309
+  },
+  {
+    "event": "prefetch_used",
+    "timestamp": "2026-08-30T00:57:47.825385+00:00",
+    "monotonic": 131195.142,
+    "chars": 129,
+    "silence_so_far_s": 1.728
+  },
+  {
+    "event": "llm_reply",
+    "timestamp": "2026-08-30T00:57:47.826128+00:00",
+    "monotonic": 131195.143,
+    "elapsed_s": 0.414,
+    "history_turns": 14,
+    "partial_question": false,
+    "agent_repeated": false,
+    "partial_streak": 0,
+    "empty": false,
+    "ends_call": false,
+    "silence_so_far_s": 1.729
+  },
+  {
+    "event": "patient_speech_start",
+    "timestamp": "2026-08-30T00:57:47.827331+00:00",
+    "monotonic": 131195.144,
+    "reply_gap_s": 1.73,
+    "chars": 43,
+    "ends_call": false,
+    "silence_so_far_s": 1.73
+  },
+  {
+    "event": "tts_streamed",
+    "timestamp": "2026-08-30T00:57:49.292394+00:00",
+    "monotonic": 131196.609,
+    "first_audio_s": 0.304,
+    "total_s": 1.464,
+    "audio_s": 2.6,
+    "silence_so_far_s": 3.195
+  },
+  {
+    "event": "agent_fragment_final",
+    "timestamp": "2026-08-30T00:58:00.584623+00:00",
+    "monotonic": 131207.902,
+    "source": "UtteranceEnd",
+    "detection_lag_s": 1.0,
+    "looks_unfinished": false,
+    "text": "I'll check which provider your appointment is with. One moment.",
+    "silence_so_far_s": 1.0
+  },
+  {
+    "event": "agent_turn_taken",
+    "timestamp": "2026-08-30T00:58:00.895763+00:00",
+    "monotonic": 131208.213,
+    "waited_s": 0.308,
+    "quiet_window_s": 0.3,
+    "finalised_by": "UtteranceEnd",
+    "extra_unfinished_waits": 0,
+    "fragments": 1,
+    "partial": false,
+    "text": "I'll check which provider your appointment is with. One moment.",
+    "silence_so_far_s": 1.311
+  },
+  {
+    "event": "prefetch_used",
+    "timestamp": "2026-08-30T00:58:01.214369+00:00",
+    "monotonic": 131208.531,
+    "chars": 63,
+    "silence_so_far_s": 1.63
+  },
+  {
+    "event": "llm_reply",
+    "timestamp": "2026-08-30T00:58:01.215161+00:00",
+    "monotonic": 131208.532,
+    "elapsed_s": 0.316,
+    "history_turns": 16,
+    "partial_question": false,
+    "agent_repeated": false,
+    "partial_streak": 0,
+    "empty": false,
+    "ends_call": false,
+    "silence_so_far_s": 1.631
+  },
+  {
+    "event": "patient_speech_start",
+    "timestamp": "2026-08-30T00:58:01.216461+00:00",
+    "monotonic": 131208.533,
+    "reply_gap_s": 1.632,
+    "chars": 26,
+    "ends_call": false,
+    "silence_so_far_s": 1.632
+  },
+  {
+    "event": "tts_streamed",
+    "timestamp": "2026-08-30T00:58:02.345448+00:00",
+    "monotonic": 131209.662,
+    "first_audio_s": 0.3,
+    "total_s": 1.128,
+    "audio_s": 1.84,
+    "silence_so_far_s": 2.761
+  },
+  {
+    "event": "agent_fragment_final",
+    "timestamp": "2026-08-30T00:58:03.739224+00:00",
+    "monotonic": 131211.056,
+    "source": "speech_final",
+    "detection_lag_s": 0.8,
+    "looks_unfinished": true,
+    "text": "Your appointment on Tuesday, September 1 at 2PM is with",
+    "silence_so_far_s": 0.8
+  },
+  {
+    "event": "agent_turn_taken",
+    "timestamp": "2026-08-30T00:58:07.958359+00:00",
+    "monotonic": 131215.275,
+    "waited_s": 4.218,
+    "quiet_window_s": 1.2,
+    "finalised_by": "speech_final",
+    "extra_unfinished_waits": 3,
+    "fragments": 1,
+    "partial": true,
+    "text": "Your appointment on Tuesday, September 1 at 2PM is with",
+    "silence_so_far_s": 5.019
+  },
+  {
+    "event": "llm_reply",
+    "timestamp": "2026-08-30T00:58:08.442221+00:00",
+    "monotonic": 131215.759,
+    "elapsed_s": 0.48,
+    "history_turns": 18,
+    "partial_question": true,
+    "agent_repeated": false,
+    "partial_streak": 1,
+    "empty": false,
+    "ends_call": false,
+    "silence_so_far_s": 5.503
+  },
+  {
+    "event": "patient_speech_start",
+    "timestamp": "2026-08-30T00:58:08.444261+00:00",
+    "monotonic": 131215.761,
+    "reply_gap_s": 5.505,
+    "chars": 57,
+    "ends_call": false,
+    "silence_so_far_s": 5.505
+  },
+  {
+    "event": "tts_streamed",
+    "timestamp": "2026-08-30T00:58:10.896872+00:00",
+    "monotonic": 131218.214,
+    "first_audio_s": 0.243,
+    "total_s": 2.452,
+    "audio_s": 4.88,
+    "silence_so_far_s": 7.958
+  },
+  {
+    "event": "agent_fragment_final",
+    "timestamp": "2026-08-30T00:58:11.354329+00:00",
+    "monotonic": 131218.671,
+    "source": "speech_final",
+    "detection_lag_s": 0.8,
+    "looks_unfinished": true,
+    "text": "your appointment is on Tuesday, September 1 at 2PM with doctor Sebbig",
+    "silence_so_far_s": 0.8
+  },
+  {
+    "event": "agent_turn_taken",
+    "timestamp": "2026-08-30T00:58:18.006510+00:00",
+    "monotonic": 131225.323,
+    "waited_s": 4.224,
+    "quiet_window_s": 1.2,
+    "finalised_by": "speech_final",
+    "extra_unfinished_waits": 3,
+    "fragments": 1,
+    "partial": true,
+    "text": "your appointment is on Tuesday, September 1 at 2PM with doctor Sebbig",
+    "silence_so_far_s": 7.452
+  },
+  {
+    "event": "wrap_up_deadline",
+    "timestamp": "2026-08-30T00:58:18.010648+00:00",
+    "monotonic": 131225.328,
+    "elapsed_s": 153.5,
+    "silence_so_far_s": 7.456
+  },
+  {
+    "event": "patient_speech_start",
+    "timestamp": "2026-08-30T00:58:18.011542+00:00",
+    "monotonic": 131225.328,
+    "reply_gap_s": 7.457,
+    "chars": 72,
+    "ends_call": true,
+    "silence_so_far_s": 7.457
+  },
+  {
+    "event": "tts_streamed",
+    "timestamp": "2026-08-30T00:58:20.950925+00:00",
+    "monotonic": 131228.268,
+    "first_audio_s": 0.283,
+    "total_s": 2.939,
+    "audio_s": 4.0,
+    "silence_so_far_s": 10.397
+  },
+  {
+    "event": "agent_fragment_final",
+    "timestamp": "2026-08-30T00:58:21.136473+00:00",
+    "monotonic": 131228.453,
+    "source": "UtteranceEnd",
+    "detection_lag_s": 1.0,
+    "looks_unfinished": false,
+    "text": "Your appointment is with doctor Zubigniew Likoski.",
+    "silence_so_far_s": 1.0
+  }
+]

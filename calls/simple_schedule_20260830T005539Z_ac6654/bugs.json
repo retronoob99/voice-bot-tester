@@ -1,0 +1,9 @@
+[
+  {
+    "bug": "Turn\u2011taking interruption leading to incomplete response",
+    "severity": "Medium",
+    "details": "Agent broke off mid\u2011sentence when answering the calendar date: \"Your appointment on Tuesday, September 1 at 2PM is with\" then continued on the next line. This truncation prevents a clear short answer to the patient\u2019s question and constitutes a turn\u2011taking bug.",
+    "call_uid": "simple_schedule_20260830T005539Z_ac6654",
+    "scenario": "simple_schedule"
+  }
+]
