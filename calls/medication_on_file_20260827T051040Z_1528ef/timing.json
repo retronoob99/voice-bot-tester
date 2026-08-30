@@ -1,0 +1,420 @@
+[
+  {
+    "event": "agent_fragment_final",
+    "timestamp": "2026-08-27T05:10:50.750403+00:00",
+    "monotonic": 106038.49,
+    "source": "UtteranceEnd",
+    "looks_unfinished": false,
+    "text": "This call may be recorded for quality and training purposes.",
+    "silence_so_far_s": 0.0
+  },
+  {
+    "event": "agent_turn_taken",
+    "timestamp": "2026-08-27T05:10:54.759039+00:00",
+    "monotonic": 106042.499,
+    "waited_s": 4.008,
+    "quiet_window_s": 4.0,
+    "finalised_by": "UtteranceEnd",
+    "extra_unfinished_waits": 0,
+    "fragments": 1,
+    "partial": false,
+    "text": "This call may be recorded for quality and training purposes.",
+    "silence_so_far_s": 4.009
+  },
+  {
+    "event": "agent_fragment_final",
+    "timestamp": "2026-08-27T05:10:59.338969+00:00",
+    "monotonic": 106047.079,
+    "source": "UtteranceEnd",
+    "looks_unfinished": false,
+    "text": "Thanks for calling Pivot Point Orthopaedics, part of Pretty Good AI. How may I help you today?",
+    "silence_so_far_s": 0.0
+  },
+  {
+    "event": "agent_turn_taken",
+    "timestamp": "2026-08-27T05:10:59.339858+00:00",
+    "monotonic": 106047.08,
+    "waited_s": 0.0,
+    "quiet_window_s": 4.0,
+    "finalised_by": "UtteranceEnd",
+    "extra_unfinished_waits": 0,
+    "fragments": 1,
+    "partial": false,
+    "text": "Thanks for calling Pivot Point Orthopaedics, part of Pretty Good AI. How may I help you today?",
+    "silence_so_far_s": 0.001
+  },
+  {
+    "event": "silence_buffer_held",
+    "timestamp": "2026-08-27T05:10:59.341663+00:00",
+    "monotonic": 106047.082,
+    "held_s": 0.247,
+    "silence_so_far_s": 0.003
+  },
+  {
+    "event": "patient_speech_start",
+    "timestamp": "2026-08-27T05:10:59.598353+00:00",
+    "monotonic": 106047.338,
+    "reply_gap_s": 0.259,
+    "chars": 72,
+    "ends_call": false,
+    "silence_so_far_s": 0.259
+  },
+  {
+    "event": "tts_streamed",
+    "timestamp": "2026-08-27T05:11:02.708292+00:00",
+    "monotonic": 106050.448,
+    "first_audio_s": 0.948,
+    "total_s": 3.109,
+    "audio_s": 4.72,
+    "silence_so_far_s": 3.369
+  },
+  {
+    "event": "agent_turn_taken",
+    "timestamp": "2026-08-27T05:11:06.006546+00:00",
+    "monotonic": 106053.746,
+    "waited_s": 0.501,
+    "quiet_window_s": 0.5,
+    "finalised_by": "UtteranceEnd",
+    "extra_unfinished_waits": 0,
+    "fragments": 0,
+    "partial": false,
+    "text": "",
+    "silence_so_far_s": 6.668
+  },
+  {
+    "event": "agent_fragment_final",
+    "timestamp": "2026-08-27T05:11:13.782851+00:00",
+    "monotonic": 106061.523,
+    "source": "speech_final",
+    "looks_unfinished": false,
+    "text": "I see you're calling from the number we have on file. Am I speaking with Maria?",
+    "silence_so_far_s": 0.0
+  },
+  {
+    "event": "agent_turn_taken",
+    "timestamp": "2026-08-27T05:11:14.785761+00:00",
+    "monotonic": 106062.526,
+    "waited_s": 1.002,
+    "quiet_window_s": 1.0,
+    "finalised_by": "speech_final",
+    "extra_unfinished_waits": 0,
+    "fragments": 1,
+    "partial": false,
+    "text": "I see you're calling from the number we have on file. Am I speaking with Maria?",
+    "silence_so_far_s": 1.003
+  },
+  {
+    "event": "llm_reply",
+    "timestamp": "2026-08-27T05:11:15.190606+00:00",
+    "monotonic": 106062.93,
+    "elapsed_s": 0.402,
+    "history_turns": 2,
+    "partial_question": false,
+    "agent_repeated": false,
+    "partial_streak": 0,
+    "empty": false,
+    "ends_call": false,
+    "silence_so_far_s": 1.408
+  },
+  {
+    "event": "patient_speech_start",
+    "timestamp": "2026-08-27T05:11:15.191977+00:00",
+    "monotonic": 106062.932,
+    "reply_gap_s": 1.409,
+    "chars": 19,
+    "ends_call": false,
+    "silence_so_far_s": 1.409
+  },
+  {
+    "event": "tts_streamed",
+    "timestamp": "2026-08-27T05:11:16.154196+00:00",
+    "monotonic": 106063.894,
+    "first_audio_s": 0.249,
+    "total_s": 0.962,
+    "audio_s": 1.56,
+    "silence_so_far_s": 2.371
+  },
+  {
+    "event": "agent_fragment_final",
+    "timestamp": "2026-08-27T05:11:22.973030+00:00",
+    "monotonic": 106070.713,
+    "source": "UtteranceEnd",
+    "looks_unfinished": false,
+    "text": "Please provide your date of birth.",
+    "silence_so_far_s": 0.0
+  },
+  {
+    "event": "agent_turn_taken",
+    "timestamp": "2026-08-27T05:11:23.488280+00:00",
+    "monotonic": 106071.228,
+    "waited_s": 0.514,
+    "quiet_window_s": 0.5,
+    "finalised_by": "UtteranceEnd",
+    "extra_unfinished_waits": 0,
+    "fragments": 1,
+    "partial": false,
+    "text": "Please provide your date of birth.",
+    "silence_so_far_s": 0.515
+  },
+  {
+    "event": "end_call_deferred",
+    "timestamp": "2026-08-27T05:11:24.094772+00:00",
+    "monotonic": 106071.835,
+    "deferrals": 1,
+    "reason": "the patient is still asking for something",
+    "reply": "March 12, 1991. I take lisinopril 10\u202fmg. Is that medication already on my chart right now?",
+    "silence_so_far_s": 1.122
+  },
+  {
+    "event": "llm_reply",
+    "timestamp": "2026-08-27T05:11:24.095629+00:00",
+    "monotonic": 106071.836,
+    "elapsed_s": 0.605,
+    "history_turns": 4,
+    "partial_question": false,
+    "agent_repeated": false,
+    "partial_streak": 0,
+    "empty": false,
+    "ends_call": false,
+    "silence_so_far_s": 1.123
+  },
+  {
+    "event": "patient_speech_start",
+    "timestamp": "2026-08-27T05:11:24.096819+00:00",
+    "monotonic": 106071.837,
+    "reply_gap_s": 1.124,
+    "chars": 90,
+    "ends_call": false,
+    "silence_so_far_s": 1.124
+  },
+  {
+    "event": "tts_streamed",
+    "timestamp": "2026-08-27T05:11:28.358105+00:00",
+    "monotonic": 106076.098,
+    "first_audio_s": 0.105,
+    "total_s": 4.26,
+    "audio_s": 8.76,
+    "silence_so_far_s": 5.385
+  },
+  {
+    "event": "agent_fragment_final",
+    "timestamp": "2026-08-27T05:11:51.123905+00:00",
+    "monotonic": 106098.864,
+    "source": "speech_final",
+    "looks_unfinished": false,
+    "text": "The birthday doesn't match our records, but for demo purposes, I'll accept it. You mentioned you already have lisinopril ten milligrams on your chart. Would you like to update the dosage, add a new medication, or is there something else you need with your medication list?",
+    "silence_so_far_s": 0.0
+  },
+  {
+    "event": "agent_turn_taken",
+    "timestamp": "2026-08-27T05:11:52.138081+00:00",
+    "monotonic": 106099.878,
+    "waited_s": 1.013,
+    "quiet_window_s": 1.0,
+    "finalised_by": "speech_final",
+    "extra_unfinished_waits": 0,
+    "fragments": 1,
+    "partial": false,
+    "text": "The birthday doesn't match our records, but for demo purposes, I'll accept it. You mentioned you already have lisinopril ten milligrams on your chart. Would you like to update the dosage, add a new medication, or is there something else you need with your medication list?",
+    "silence_so_far_s": 1.014
+  },
+  {
+    "event": "llm_reply",
+    "timestamp": "2026-08-27T05:11:52.822027+00:00",
+    "monotonic": 106100.562,
+    "elapsed_s": 0.68,
+    "history_turns": 6,
+    "partial_question": false,
+    "agent_repeated": false,
+    "partial_streak": 0,
+    "empty": false,
+    "ends_call": false,
+    "silence_so_far_s": 1.698
+  },
+  {
+    "event": "patient_speech_start",
+    "timestamp": "2026-08-27T05:11:52.823716+00:00",
+    "monotonic": 106100.564,
+    "reply_gap_s": 1.7,
+    "chars": 30,
+    "ends_call": false,
+    "silence_so_far_s": 1.7
+  },
+  {
+    "event": "tts_streamed",
+    "timestamp": "2026-08-27T05:11:53.874466+00:00",
+    "monotonic": 106101.614,
+    "first_audio_s": 0.225,
+    "total_s": 1.05,
+    "audio_s": 1.92,
+    "silence_so_far_s": 2.751
+  },
+  {
+    "event": "agent_fragment_final",
+    "timestamp": "2026-08-27T05:12:11.301425+00:00",
+    "monotonic": 106119.041,
+    "source": "speech_final",
+    "looks_unfinished": false,
+    "text": "You already have a case open to add lisinopril ten milligrams to your chart. The clinic staff is reviewing your request and will update your medication list soon. Is there anything else you need help with?",
+    "silence_so_far_s": 0.0
+  },
+  {
+    "event": "agent_turn_taken",
+    "timestamp": "2026-08-27T05:12:12.309072+00:00",
+    "monotonic": 106120.049,
+    "waited_s": 1.007,
+    "quiet_window_s": 1.0,
+    "finalised_by": "speech_final",
+    "extra_unfinished_waits": 0,
+    "fragments": 1,
+    "partial": false,
+    "text": "You already have a case open to add lisinopril ten milligrams to your chart. The clinic staff is reviewing your request and will update your medication list soon. Is there anything else you need help with?",
+    "silence_so_far_s": 1.008
+  },
+  {
+    "event": "llm_reply",
+    "timestamp": "2026-08-27T05:12:13.219486+00:00",
+    "monotonic": 106120.959,
+    "elapsed_s": 0.905,
+    "history_turns": 8,
+    "partial_question": false,
+    "agent_repeated": false,
+    "partial_streak": 0,
+    "empty": false,
+    "ends_call": false,
+    "silence_so_far_s": 1.918
+  },
+  {
+    "event": "patient_speech_start",
+    "timestamp": "2026-08-27T05:12:13.220978+00:00",
+    "monotonic": 106120.961,
+    "reply_gap_s": 1.92,
+    "chars": 28,
+    "ends_call": false,
+    "silence_so_far_s": 1.92
+  },
+  {
+    "event": "tts_streamed",
+    "timestamp": "2026-08-27T05:12:14.186067+00:00",
+    "monotonic": 106121.926,
+    "first_audio_s": 0.221,
+    "total_s": 0.964,
+    "audio_s": 1.72,
+    "silence_so_far_s": 2.885
+  },
+  {
+    "event": "agent_fragment_final",
+    "timestamp": "2026-08-27T05:12:35.073783+00:00",
+    "monotonic": 106142.814,
+    "source": "speech_final",
+    "looks_unfinished": false,
+    "text": "I don't have real time access to your chart, so I can't confirm if lisinopril is already listed. The clinic staff will review your request. And update your chart if it hasn't been added yet. If you need a confirmation, I can ask the team to follow-up with you. Would you like me to do that?",
+    "silence_so_far_s": 0.0
+  },
+  {
+    "event": "agent_turn_taken",
+    "timestamp": "2026-08-27T05:12:36.086196+00:00",
+    "monotonic": 106143.826,
+    "waited_s": 1.011,
+    "quiet_window_s": 1.0,
+    "finalised_by": "speech_final",
+    "extra_unfinished_waits": 0,
+    "fragments": 1,
+    "partial": false,
+    "text": "I don't have real time access to your chart, so I can't confirm if lisinopril is already listed. The clinic staff will review your request. And update your chart if it hasn't been added yet. If you need a confirmation, I can ask the team to follow-up with you. Would you like me to do that?",
+    "silence_so_far_s": 1.012
+  },
+  {
+    "event": "end_call_deferred",
+    "timestamp": "2026-08-27T05:12:36.842214+00:00",
+    "monotonic": 106144.582,
+    "deferrals": 2,
+    "reason": "the patient has not actually said goodbye",
+    "reply": "Yes, please have the team confirm whether lisinopril 10\u202fmg is already on my chart now.",
+    "silence_so_far_s": 1.769
+  },
+  {
+    "event": "llm_reply",
+    "timestamp": "2026-08-27T05:12:36.843070+00:00",
+    "monotonic": 106144.583,
+    "elapsed_s": 0.751,
+    "history_turns": 10,
+    "partial_question": false,
+    "agent_repeated": false,
+    "partial_streak": 0,
+    "empty": false,
+    "ends_call": false,
+    "silence_so_far_s": 1.769
+  },
+  {
+    "event": "patient_speech_start",
+    "timestamp": "2026-08-27T05:12:36.844438+00:00",
+    "monotonic": 106144.584,
+    "reply_gap_s": 1.771,
+    "chars": 86,
+    "ends_call": false,
+    "silence_so_far_s": 1.771
+  },
+  {
+    "event": "tts_streamed",
+    "timestamp": "2026-08-27T05:12:39.981801+00:00",
+    "monotonic": 106147.722,
+    "first_audio_s": 0.231,
+    "total_s": 3.137,
+    "audio_s": 6.24,
+    "silence_so_far_s": 4.908
+  },
+  {
+    "event": "agent_fragment_final",
+    "timestamp": "2026-08-27T05:13:02.922929+00:00",
+    "monotonic": 106170.663,
+    "source": "UtteranceEnd",
+    "looks_unfinished": false,
+    "text": "I've asked the clinic team to confirm if lisinopril ten milligrams is on your chart. They will get back to you as soon as possible. Is there anything else I can help you with today?",
+    "silence_so_far_s": 0.0
+  },
+  {
+    "event": "agent_turn_taken",
+    "timestamp": "2026-08-27T05:13:03.431675+00:00",
+    "monotonic": 106171.172,
+    "waited_s": 0.508,
+    "quiet_window_s": 0.5,
+    "finalised_by": "UtteranceEnd",
+    "extra_unfinished_waits": 0,
+    "fragments": 1,
+    "partial": false,
+    "text": "I've asked the clinic team to confirm if lisinopril ten milligrams is on your chart. They will get back to you as soon as possible. Is there anything else I can help you with today?",
+    "silence_so_far_s": 0.509
+  },
+  {
+    "event": "llm_reply",
+    "timestamp": "2026-08-27T05:13:03.993406+00:00",
+    "monotonic": 106171.733,
+    "elapsed_s": 0.557,
+    "history_turns": 12,
+    "partial_question": false,
+    "agent_repeated": false,
+    "partial_streak": 0,
+    "empty": false,
+    "ends_call": true,
+    "silence_so_far_s": 1.071
+  },
+  {
+    "event": "patient_speech_start",
+    "timestamp": "2026-08-27T05:13:03.995154+00:00",
+    "monotonic": 106171.735,
+    "reply_gap_s": 1.072,
+    "chars": 26,
+    "ends_call": true,
+    "silence_so_far_s": 1.072
+  },
+  {
+    "event": "tts_streamed",
+    "timestamp": "2026-08-27T05:13:04.907207+00:00",
+    "monotonic": 106172.647,
+    "first_audio_s": 0.222,
+    "total_s": 0.911,
+    "audio_s": 1.56,
+    "silence_so_far_s": 1.984
+  }
+]

@@ -1,0 +1,16 @@
+[
+  {
+    "bug": "Identity verification bypass",
+    "severity": "High",
+    "details": "Agent says \"The birthday doesn't match our records, but for demo purposes, I'll accept it.\" This waives proper identity verification and proceeds with PHI handling despite a failed authentication.",
+    "call_uid": "medication_on_file_20260827T051040Z_1528ef",
+    "scenario": "medication_on_file"
+  },
+  {
+    "bug": "False confirmation of medication on chart",
+    "severity": "High",
+    "details": "Agent states \"You mentioned you already have lisinopril ten milligrams on your chart\" and later \"You already have a case open to add lisinopril ten milligrams to your chart,\" implying the medication is already on the chart, which contradicts the patient\u2019s statement that it is not yet on the chart and the agent has no real\u2011time access to confirm.",
+    "call_uid": "medication_on_file_20260827T051040Z_1528ef",
+    "scenario": "medication_on_file"
+  }
+]
