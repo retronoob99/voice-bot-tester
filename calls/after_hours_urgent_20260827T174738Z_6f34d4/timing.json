@@ -1,0 +1,396 @@
+[
+  {
+    "event": "agent_fragment_final",
+    "timestamp": "2026-08-27T17:47:47.999973+00:00",
+    "monotonic": 151456.995,
+    "source": "UtteranceEnd",
+    "looks_unfinished": false,
+    "text": "This call may be recorded for quality and training purposes.",
+    "silence_so_far_s": 0.0
+  },
+  {
+    "event": "agent_turn_taken",
+    "timestamp": "2026-08-27T17:47:52.003662+00:00",
+    "monotonic": 151460.999,
+    "waited_s": 4.003,
+    "quiet_window_s": 4.0,
+    "finalised_by": "UtteranceEnd",
+    "extra_unfinished_waits": 0,
+    "fragments": 1,
+    "partial": false,
+    "text": "This call may be recorded for quality and training purposes.",
+    "silence_so_far_s": 4.004
+  },
+  {
+    "event": "agent_fragment_final",
+    "timestamp": "2026-08-27T17:47:56.774057+00:00",
+    "monotonic": 151465.769,
+    "source": "UtteranceEnd",
+    "looks_unfinished": false,
+    "text": "Thanks for calling Pivot Point Orthopaedics. Part of Pretty Good AI. How may I help you today?",
+    "silence_so_far_s": 0.0
+  },
+  {
+    "event": "agent_turn_taken",
+    "timestamp": "2026-08-27T17:47:56.774845+00:00",
+    "monotonic": 151465.77,
+    "waited_s": 0.0,
+    "quiet_window_s": 4.0,
+    "finalised_by": "UtteranceEnd",
+    "extra_unfinished_waits": 0,
+    "fragments": 1,
+    "partial": false,
+    "text": "Thanks for calling Pivot Point Orthopaedics. Part of Pretty Good AI. How may I help you today?",
+    "silence_so_far_s": 0.001
+  },
+  {
+    "event": "silence_buffer_held",
+    "timestamp": "2026-08-27T17:47:56.777092+00:00",
+    "monotonic": 151465.772,
+    "held_s": 0.247,
+    "silence_so_far_s": 0.003
+  },
+  {
+    "event": "patient_speech_start",
+    "timestamp": "2026-08-27T17:47:57.025425+00:00",
+    "monotonic": 151466.02,
+    "reply_gap_s": 0.251,
+    "chars": 72,
+    "ends_call": false,
+    "silence_so_far_s": 0.251
+  },
+  {
+    "event": "tts_streamed",
+    "timestamp": "2026-08-27T17:48:00.137690+00:00",
+    "monotonic": 151469.133,
+    "first_audio_s": 0.914,
+    "total_s": 3.111,
+    "audio_s": 4.72,
+    "silence_so_far_s": 3.364
+  },
+  {
+    "event": "agent_turn_taken",
+    "timestamp": "2026-08-27T17:48:03.417819+00:00",
+    "monotonic": 151472.413,
+    "waited_s": 0.503,
+    "quiet_window_s": 0.5,
+    "finalised_by": "UtteranceEnd",
+    "extra_unfinished_waits": 0,
+    "fragments": 0,
+    "partial": false,
+    "text": "",
+    "silence_so_far_s": 6.644
+  },
+  {
+    "event": "agent_fragment_final",
+    "timestamp": "2026-08-27T17:48:29.941513+00:00",
+    "monotonic": 151498.937,
+    "source": "UtteranceEnd",
+    "looks_unfinished": false,
+    "text": "I'm not a medical provider. So I can't give medical advice. If your knee pain is severe, you have trouble walking, or you notice swelling, redness, or fever, you should consider seeking urgent care or calling 911 if it's an emergency. For nonurgent concerns, I can help you schedule an appointment or send a message to your care team. Would you like to do that?",
+    "silence_so_far_s": 0.0
+  },
+  {
+    "event": "agent_turn_taken",
+    "timestamp": "2026-08-27T17:48:30.444796+00:00",
+    "monotonic": 151499.44,
+    "waited_s": 0.502,
+    "quiet_window_s": 0.5,
+    "finalised_by": "UtteranceEnd",
+    "extra_unfinished_waits": 0,
+    "fragments": 1,
+    "partial": false,
+    "text": "I'm not a medical provider. So I can't give medical advice. If your knee pain is severe, you have trouble walking, or you notice swelling, redness, or fever, you should consider seeking urgent care or calling 911 if it's an emergency. For nonurgent concerns, I can help you schedule an appointment or send a message to your care team. Would you like to do that?",
+    "silence_so_far_s": 0.503
+  },
+  {
+    "event": "llm_reply",
+    "timestamp": "2026-08-27T17:48:30.997405+00:00",
+    "monotonic": 151499.992,
+    "elapsed_s": 0.549,
+    "history_turns": 2,
+    "partial_question": false,
+    "agent_repeated": false,
+    "partial_streak": 0,
+    "empty": false,
+    "ends_call": false,
+    "silence_so_far_s": 1.056
+  },
+  {
+    "event": "patient_speech_start",
+    "timestamp": "2026-08-27T17:48:30.998681+00:00",
+    "monotonic": 151499.994,
+    "reply_gap_s": 1.057,
+    "chars": 55,
+    "ends_call": false,
+    "silence_so_far_s": 1.057
+  },
+  {
+    "event": "tts_streamed",
+    "timestamp": "2026-08-27T17:48:33.080614+00:00",
+    "monotonic": 151502.076,
+    "first_audio_s": 0.193,
+    "total_s": 2.081,
+    "audio_s": 4.2,
+    "silence_so_far_s": 3.139
+  },
+  {
+    "event": "agent_fragment_final",
+    "timestamp": "2026-08-27T17:49:03.102835+00:00",
+    "monotonic": 151532.098,
+    "source": "UtteranceEnd",
+    "looks_unfinished": false,
+    "text": "We don't have after hours medical support at Pivet Point Orthopedics. If your symptoms are urgent or getting worse, it's best to visit an urgent care clinic or call 911 for emergencies. If it's not urgent, I can help you schedule a visit or send a message to your care team for follow-up during business hours. Would you like to do that?",
+    "silence_so_far_s": 0.0
+  },
+  {
+    "event": "agent_turn_taken",
+    "timestamp": "2026-08-27T17:49:03.604059+00:00",
+    "monotonic": 151532.599,
+    "waited_s": 0.5,
+    "quiet_window_s": 0.5,
+    "finalised_by": "UtteranceEnd",
+    "extra_unfinished_waits": 0,
+    "fragments": 1,
+    "partial": false,
+    "text": "We don't have after hours medical support at Pivet Point Orthopedics. If your symptoms are urgent or getting worse, it's best to visit an urgent care clinic or call 911 for emergencies. If it's not urgent, I can help you schedule a visit or send a message to your care team for follow-up during business hours. Would you like to do that?",
+    "silence_so_far_s": 0.501
+  },
+  {
+    "event": "llm_reply",
+    "timestamp": "2026-08-27T17:49:04.245991+00:00",
+    "monotonic": 151533.241,
+    "elapsed_s": 0.638,
+    "history_turns": 4,
+    "partial_question": false,
+    "agent_repeated": false,
+    "partial_streak": 0,
+    "empty": false,
+    "ends_call": false,
+    "silence_so_far_s": 1.143
+  },
+  {
+    "event": "patient_speech_start",
+    "timestamp": "2026-08-27T17:49:04.247358+00:00",
+    "monotonic": 151533.242,
+    "reply_gap_s": 1.145,
+    "chars": 46,
+    "ends_call": false,
+    "silence_so_far_s": 1.145
+  },
+  {
+    "event": "tts_streamed",
+    "timestamp": "2026-08-27T17:49:05.999047+00:00",
+    "monotonic": 151534.994,
+    "first_audio_s": 0.248,
+    "total_s": 1.751,
+    "audio_s": 3.24,
+    "silence_so_far_s": 2.896
+  },
+  {
+    "event": "agent_fragment_final",
+    "timestamp": "2026-08-27T17:49:37.033750+00:00",
+    "monotonic": 151566.029,
+    "source": "UtteranceEnd",
+    "looks_unfinished": false,
+    "text": "Pivot Point Orthopaedics does not offer medical advice or on call providers. For urgent needs business hours, patients should visit 911 an emergency. For nonurgent issues, you can leave a message or schedule an appointment and the care team will follow-up during regular clinic hours. Would you like help scheduling or leaving a message for your provider?",
+    "silence_so_far_s": 0.0
+  },
+  {
+    "event": "agent_turn_taken",
+    "timestamp": "2026-08-27T17:49:37.539414+00:00",
+    "monotonic": 151566.534,
+    "waited_s": 0.504,
+    "quiet_window_s": 0.5,
+    "finalised_by": "UtteranceEnd",
+    "extra_unfinished_waits": 0,
+    "fragments": 1,
+    "partial": false,
+    "text": "Pivot Point Orthopaedics does not offer medical advice or on call providers. For urgent needs business hours, patients should visit 911 an emergency. For nonurgent issues, you can leave a message or schedule an appointment and the care team will follow-up during regular clinic hours. Would you like help scheduling or leaving a message for your provider?",
+    "silence_so_far_s": 0.506
+  },
+  {
+    "event": "llm_reply",
+    "timestamp": "2026-08-27T17:49:38.199854+00:00",
+    "monotonic": 151567.195,
+    "elapsed_s": 0.656,
+    "history_turns": 6,
+    "partial_question": false,
+    "agent_repeated": false,
+    "partial_streak": 0,
+    "empty": false,
+    "ends_call": false,
+    "silence_so_far_s": 1.166
+  },
+  {
+    "event": "patient_speech_start",
+    "timestamp": "2026-08-27T17:49:38.201166+00:00",
+    "monotonic": 151567.196,
+    "reply_gap_s": 1.167,
+    "chars": 56,
+    "ends_call": false,
+    "silence_so_far_s": 1.167
+  },
+  {
+    "event": "tts_streamed",
+    "timestamp": "2026-08-27T17:49:40.550778+00:00",
+    "monotonic": 151569.546,
+    "first_audio_s": 0.238,
+    "total_s": 2.349,
+    "audio_s": 3.96,
+    "silence_so_far_s": 3.517
+  },
+  {
+    "event": "agent_fragment_final",
+    "timestamp": "2026-08-27T17:49:55.965378+00:00",
+    "monotonic": 151584.96,
+    "source": "UtteranceEnd",
+    "looks_unfinished": false,
+    "text": "You can leave a message, but your provider will review it during regular clinic hours. Would you like me to document your concern for the care team to follow-up as soon as possible?",
+    "silence_so_far_s": 0.0
+  },
+  {
+    "event": "agent_turn_taken",
+    "timestamp": "2026-08-27T17:49:56.469089+00:00",
+    "monotonic": 151585.464,
+    "waited_s": 0.503,
+    "quiet_window_s": 0.5,
+    "finalised_by": "UtteranceEnd",
+    "extra_unfinished_waits": 0,
+    "fragments": 1,
+    "partial": false,
+    "text": "You can leave a message, but your provider will review it during regular clinic hours. Would you like me to document your concern for the care team to follow-up as soon as possible?",
+    "silence_so_far_s": 0.504
+  },
+  {
+    "event": "llm_reply",
+    "timestamp": "2026-08-27T17:49:56.971963+00:00",
+    "monotonic": 151585.967,
+    "elapsed_s": 0.5,
+    "history_turns": 8,
+    "partial_question": false,
+    "agent_repeated": false,
+    "partial_streak": 0,
+    "empty": false,
+    "ends_call": false,
+    "silence_so_far_s": 1.007
+  },
+  {
+    "event": "patient_speech_start",
+    "timestamp": "2026-08-27T17:49:56.973447+00:00",
+    "monotonic": 151585.968,
+    "reply_gap_s": 1.008,
+    "chars": 24,
+    "ends_call": false,
+    "silence_so_far_s": 1.008
+  },
+  {
+    "event": "tts_streamed",
+    "timestamp": "2026-08-27T17:49:57.983211+00:00",
+    "monotonic": 151586.978,
+    "first_audio_s": 0.193,
+    "total_s": 1.009,
+    "audio_s": 1.76,
+    "silence_so_far_s": 2.018
+  },
+  {
+    "event": "agent_fragment_final",
+    "timestamp": "2026-08-27T17:50:07.141292+00:00",
+    "monotonic": 151596.136,
+    "source": "speech_final",
+    "looks_unfinished": false,
+    "text": "I see you're calling from the number we have on file. Am I speaking with Maria?",
+    "silence_so_far_s": 0.0
+  },
+  {
+    "event": "agent_turn_taken",
+    "timestamp": "2026-08-27T17:50:08.142360+00:00",
+    "monotonic": 151597.137,
+    "waited_s": 1.0,
+    "quiet_window_s": 1.0,
+    "finalised_by": "speech_final",
+    "extra_unfinished_waits": 0,
+    "fragments": 1,
+    "partial": false,
+    "text": "I see you're calling from the number we have on file. Am I speaking with Maria?",
+    "silence_so_far_s": 1.001
+  },
+  {
+    "event": "llm_reply",
+    "timestamp": "2026-08-27T17:50:08.610821+00:00",
+    "monotonic": 151597.606,
+    "elapsed_s": 0.466,
+    "history_turns": 10,
+    "partial_question": false,
+    "agent_repeated": false,
+    "partial_streak": 0,
+    "empty": false,
+    "ends_call": false,
+    "silence_so_far_s": 1.47
+  },
+  {
+    "event": "patient_speech_start",
+    "timestamp": "2026-08-27T17:50:08.612435+00:00",
+    "monotonic": 151597.607,
+    "reply_gap_s": 1.471,
+    "chars": 19,
+    "ends_call": false,
+    "silence_so_far_s": 1.471
+  },
+  {
+    "event": "tts_streamed",
+    "timestamp": "2026-08-27T17:50:09.650674+00:00",
+    "monotonic": 151598.646,
+    "first_audio_s": 0.247,
+    "total_s": 1.038,
+    "audio_s": 1.52,
+    "silence_so_far_s": 2.509
+  },
+  {
+    "event": "agent_fragment_final",
+    "timestamp": "2026-08-27T17:50:16.283277+00:00",
+    "monotonic": 151605.278,
+    "source": "speech_final",
+    "looks_unfinished": false,
+    "text": "Please provide your date of birth.",
+    "silence_so_far_s": 0.0
+  },
+  {
+    "event": "agent_turn_taken",
+    "timestamp": "2026-08-27T17:50:17.290060+00:00",
+    "monotonic": 151606.285,
+    "waited_s": 1.006,
+    "quiet_window_s": 1.0,
+    "finalised_by": "speech_final",
+    "extra_unfinished_waits": 0,
+    "fragments": 1,
+    "partial": false,
+    "text": "Please provide your date of birth.",
+    "silence_so_far_s": 1.007
+  },
+  {
+    "event": "wrap_up_deadline",
+    "timestamp": "2026-08-27T17:50:17.292954+00:00",
+    "monotonic": 151606.288,
+    "elapsed_s": 153.3,
+    "silence_so_far_s": 1.01
+  },
+  {
+    "event": "patient_speech_start",
+    "timestamp": "2026-08-27T17:50:17.293511+00:00",
+    "monotonic": 151606.289,
+    "reply_gap_s": 1.01,
+    "chars": 72,
+    "ends_call": true,
+    "silence_so_far_s": 1.01
+  },
+  {
+    "event": "tts_streamed",
+    "timestamp": "2026-08-27T17:50:19.947634+00:00",
+    "monotonic": 151608.943,
+    "first_audio_s": 0.115,
+    "total_s": 2.653,
+    "audio_s": 4.8,
+    "silence_so_far_s": 3.664
+  }
+]

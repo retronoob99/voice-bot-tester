@@ -1,0 +1,14 @@
+[2026-08-27T17:47:56.775301+00:00] AGENT: This call may be recorded for quality and training purposes. Thanks for calling Pivot Point Orthopaedics. Part of Pretty Good AI. How may I help you today?
+[2026-08-27T17:48:02.913461+00:00] PATIENT: Hi, my knee has got a lot worse this evening - what should I do tonight?
+[2026-08-27T17:48:30.447194+00:00] AGENT: I'm not a medical provider. So I can't give medical advice. If your knee pain is severe, you have trouble walking, or you notice swelling, redness, or fever, you should consider seeking urgent care or calling 911 if it's an emergency. For nonurgent concerns, I can help you schedule an appointment or send a message to your care team. Would you like to do that?
+[2026-08-27T17:48:35.612633+00:00] PATIENT: Is there anyone I can speak to outside of office hours?
+[2026-08-27T17:49:03.606661+00:00] AGENT: We don't have after hours medical support at Pivet Point Orthopedics. If your symptoms are urgent or getting worse, it's best to visit an urgent care clinic or call 911 for emergencies. If it's not urgent, I can help you schedule a visit or send a message to your care team for follow-up during business hours. Would you like to do that?
+[2026-08-27T17:49:07.983538+00:00] PATIENT: What is your clinic’s after‑hours arrangement?
+[2026-08-27T17:49:37.542569+00:00] AGENT: Pivot Point Orthopaedics does not offer medical advice or on call providers. For urgent needs business hours, patients should visit 911 an emergency. For nonurgent issues, you can leave a message or schedule an appointment and the care team will follow-up during regular clinic hours. Would you like help scheduling or leaving a message for your provider?
+[2026-08-27T17:49:42.750979+00:00] PATIENT: Can I leave a message for my provider to review tonight?
+[2026-08-27T17:49:56.471477+00:00] AGENT: You can leave a message, but your provider will review it during regular clinic hours. Would you like me to document your concern for the care team to follow-up as soon as possible?
+[2026-08-27T17:49:59.169562+00:00] PATIENT: Yes, please document it.
+[2026-08-27T17:50:08.144309+00:00] AGENT: I see you're calling from the number we have on file. Am I speaking with Maria?
+[2026-08-27T17:50:10.629336+00:00] PATIENT: Yes, this is Maria.
+[2026-08-27T17:50:17.291891+00:00] AGENT: Please provide your date of birth.
+[2026-08-27T17:50:22.904695+00:00] PATIENT: Thanks so much for your help today, that's everything I needed. Goodbye!

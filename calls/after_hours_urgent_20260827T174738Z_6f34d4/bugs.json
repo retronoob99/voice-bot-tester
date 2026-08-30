@@ -1,0 +1,16 @@
+[
+  {
+    "bug": "PHI disclosed without proper verification",
+    "severity": "High",
+    "details": "Agent said \"I see you're calling from the number we have on file. Am I speaking with Maria?\" confirming a patient record based solely on caller ID and without completing identity verification, disclosing protected health information.",
+    "call_uid": "after_hours_urgent_20260827T174738Z_6f34d4",
+    "scenario": "after_hours_urgent"
+  },
+  {
+    "bug": "Agent continued conversation after patient ended call",
+    "severity": "Medium",
+    "details": "Patient said \"Thanks so much for your help today, that's everything I needed. Goodbye!\" but agent responded with a new verification question \"I see you're calling from the number we have on file. Am I speaking with Maria?\" indicating a turn\u2011taking error.",
+    "call_uid": "after_hours_urgent_20260827T174738Z_6f34d4",
+    "scenario": "after_hours_urgent"
+  }
+]
