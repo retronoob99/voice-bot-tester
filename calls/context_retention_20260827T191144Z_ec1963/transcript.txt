@@ -1,0 +1,20 @@
+[2026-08-27T19:12:06.969288+00:00] AGENT: This call may be recorded for quality and training purposes. For calling Pivot Point Orthopaedics, part of Pretty Good AI. How may I help you today?
+[2026-08-27T19:12:11.969457+00:00] PATIENT: Hi, I'd like to book a follow-up appointment, please.
+[2026-08-27T19:12:23.962368+00:00] AGENT: I see you're calling from the number we have on file. Am I speaking with Maria?
+[2026-08-27T19:12:26.320971+00:00] PATIENT: Yes, this is Maria.
+[2026-08-27T19:12:34.305463+00:00] AGENT: Please provide your date of birth.
+[2026-08-27T19:12:42.246639+00:00] PATIENT: March 12, 1991. I have a penicillin allergy. Penicillin.
+[2026-08-27T19:12:53.091297+00:00] AGENT: You mentioned wanting a follow-up appointment. Is this for a re
+[2026-08-27T19:12:56.588873+00:00] PATIENT: Sorry, I didn't catch that—could you repeat the question?
+[2026-08-27T19:12:57.602290+00:00] AGENT: re Do you have a specific provider you'd like to see for your follow-up? Or are you open to any available provider?
+[2026-08-27T19:13:01.729634+00:00] PATIENT: Before I go - which allergy do you have recorded for me?
+[2026-08-27T19:13:05.859001+00:00] AGENT: Do you have a specific
+[2026-08-27T19:13:09.290952+00:00] PATIENT: I'm open to any available provider.
+[2026-08-27T19:13:14.124835+00:00] AGENT: You mentioned a penicillin allergy. Would you like me to add or update
+[2026-08-27T19:13:16.570917+00:00] PATIENT: No, that's fine.
+[2026-08-27T19:13:22.207394+00:00] AGENT: You already have a follow-up appointment booked for Thursday, August
+[2026-08-27T19:13:24.991316+00:00] PATIENT: Okay, that works.
+[2026-08-27T19:13:27.128046+00:00] AGENT: You're all set then. Your appointment is on Thursday, August 27 at 9AM.
+[2026-08-27T19:13:36.731670+00:00] PATIENT: Great, see you then.
+[2026-08-27T19:13:38.965845+00:00] AGENT: Great. Your follow-up appointment is confirmed for Thursday, August 27 at 9AM. If you need anything else, just let me know.
+[2026-08-27T19:13:45.446519+00:00] AGENT: See you then, Maria. Have a good day.

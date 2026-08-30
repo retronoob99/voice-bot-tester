@@ -1,0 +1,30 @@
+[
+  {
+    "bug": "Agent did not state allergy as fact early as required",
+    "severity": "Medium",
+    "details": "Patient said 'I have a penicillin allergy. Penicillin.' but the agent never stated the allergy as a fact (e.g., 'You are allergic to penicillin'); instead later asked about updating it.",
+    "call_uid": "context_retention_20260827T191144Z_ec1963",
+    "scenario": "context_retention"
+  },
+  {
+    "bug": "Unnecessary allergy confirmation query",
+    "severity": "Medium",
+    "details": "Agent asked 'Would you like me to add or update' the penicillin allergy, contrary to the scenario instruction to avoid asking whether the allergy is on file.",
+    "call_uid": "context_retention_20260827T191144Z_ec1963",
+    "scenario": "context_retention"
+  },
+  {
+    "bug": "Failed to answer patient's allergy query",
+    "severity": "High",
+    "details": "Patient asked 'Before I go - which allergy do you have recorded for me?' Agent's response was cut off ('Do you have a specific') and never provided the requested information.",
+    "call_uid": "context_retention_20260827T191144Z_ec1963",
+    "scenario": "context_retention"
+  },
+  {
+    "bug": "Turn\u2011taking interruptions (mid\u2011sentence cuts)",
+    "severity": "Low",
+    "details": "Agent broke off several sentences: 'Is this for a re', 'Do you have a specific', 'You mentioned a penicillin allergy. Would you like me to add or update', and 'You already have a follow\u2011up appointment booked for Thursday, August'.",
+    "call_uid": "context_retention_20260827T191144Z_ec1963",
+    "scenario": "context_retention"
+  }
+]
