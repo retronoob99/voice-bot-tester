@@ -1,0 +1,467 @@
+[
+  {
+    "event": "agent_fragment_final",
+    "timestamp": "2026-08-27T17:32:47.553006+00:00",
+    "monotonic": 150556.548,
+    "source": "UtteranceEnd",
+    "looks_unfinished": false,
+    "text": "This call may be recorded for quality and training purposes.",
+    "silence_so_far_s": 0.0
+  },
+  {
+    "event": "agent_turn_taken",
+    "timestamp": "2026-08-27T17:32:51.564458+00:00",
+    "monotonic": 150560.559,
+    "waited_s": 4.011,
+    "quiet_window_s": 4.0,
+    "finalised_by": "UtteranceEnd",
+    "extra_unfinished_waits": 0,
+    "fragments": 1,
+    "partial": false,
+    "text": "This call may be recorded for quality and training purposes.",
+    "silence_so_far_s": 4.011
+  },
+  {
+    "event": "agent_fragment_final",
+    "timestamp": "2026-08-27T17:32:56.425595+00:00",
+    "monotonic": 150565.421,
+    "source": "UtteranceEnd",
+    "looks_unfinished": false,
+    "text": "Thanks for calling Pivot Point Ortho part of Pretty Good AI. How may I help you today?",
+    "silence_so_far_s": 0.0
+  },
+  {
+    "event": "agent_turn_taken",
+    "timestamp": "2026-08-27T17:32:56.426405+00:00",
+    "monotonic": 150565.421,
+    "waited_s": 0.0,
+    "quiet_window_s": 4.0,
+    "finalised_by": "UtteranceEnd",
+    "extra_unfinished_waits": 0,
+    "fragments": 1,
+    "partial": false,
+    "text": "Thanks for calling Pivot Point Ortho part of Pretty Good AI. How may I help you today?",
+    "silence_so_far_s": 0.001
+  },
+  {
+    "event": "silence_buffer_held",
+    "timestamp": "2026-08-27T17:32:56.428461+00:00",
+    "monotonic": 150565.423,
+    "held_s": 0.247,
+    "silence_so_far_s": 0.003
+  },
+  {
+    "event": "patient_speech_start",
+    "timestamp": "2026-08-27T17:32:56.680777+00:00",
+    "monotonic": 150565.676,
+    "reply_gap_s": 0.255,
+    "chars": 60,
+    "ends_call": false,
+    "silence_so_far_s": 0.255
+  },
+  {
+    "event": "tts_streamed",
+    "timestamp": "2026-08-27T17:32:59.592498+00:00",
+    "monotonic": 150568.588,
+    "first_audio_s": 1.199,
+    "total_s": 2.911,
+    "audio_s": 3.64,
+    "silence_so_far_s": 3.167
+  },
+  {
+    "event": "agent_turn_taken",
+    "timestamp": "2026-08-27T17:33:02.258920+00:00",
+    "monotonic": 150571.254,
+    "waited_s": 0.504,
+    "quiet_window_s": 0.5,
+    "finalised_by": "UtteranceEnd",
+    "extra_unfinished_waits": 0,
+    "fragments": 0,
+    "partial": false,
+    "text": "",
+    "silence_so_far_s": 5.833
+  },
+  {
+    "event": "agent_fragment_final",
+    "timestamp": "2026-08-27T17:33:09.744978+00:00",
+    "monotonic": 150578.74,
+    "source": "speech_final",
+    "looks_unfinished": false,
+    "text": "See you're calling from a number we have on file. Am I speaking with Maria?",
+    "silence_so_far_s": 0.0
+  },
+  {
+    "event": "agent_turn_taken",
+    "timestamp": "2026-08-27T17:33:10.755431+00:00",
+    "monotonic": 150579.75,
+    "waited_s": 1.01,
+    "quiet_window_s": 1.0,
+    "finalised_by": "speech_final",
+    "extra_unfinished_waits": 0,
+    "fragments": 1,
+    "partial": false,
+    "text": "See you're calling from a number we have on file. Am I speaking with Maria?",
+    "silence_so_far_s": 1.01
+  },
+  {
+    "event": "llm_reply",
+    "timestamp": "2026-08-27T17:33:11.233078+00:00",
+    "monotonic": 150580.228,
+    "elapsed_s": 0.475,
+    "history_turns": 2,
+    "partial_question": false,
+    "agent_repeated": false,
+    "partial_streak": 0,
+    "empty": false,
+    "ends_call": false,
+    "silence_so_far_s": 1.488
+  },
+  {
+    "event": "patient_speech_start",
+    "timestamp": "2026-08-27T17:33:11.234644+00:00",
+    "monotonic": 150580.23,
+    "reply_gap_s": 1.49,
+    "chars": 19,
+    "ends_call": false,
+    "silence_so_far_s": 1.49
+  },
+  {
+    "event": "tts_streamed",
+    "timestamp": "2026-08-27T17:33:12.270530+00:00",
+    "monotonic": 150581.266,
+    "first_audio_s": 0.297,
+    "total_s": 1.035,
+    "audio_s": 1.64,
+    "silence_so_far_s": 2.526
+  },
+  {
+    "event": "agent_fragment_final",
+    "timestamp": "2026-08-27T17:33:20.646530+00:00",
+    "monotonic": 150589.642,
+    "source": "UtteranceEnd",
+    "looks_unfinished": false,
+    "text": "Please provide your date of birth.",
+    "silence_so_far_s": 0.0
+  },
+  {
+    "event": "agent_turn_taken",
+    "timestamp": "2026-08-27T17:33:21.150874+00:00",
+    "monotonic": 150590.146,
+    "waited_s": 0.503,
+    "quiet_window_s": 0.5,
+    "finalised_by": "UtteranceEnd",
+    "extra_unfinished_waits": 0,
+    "fragments": 1,
+    "partial": false,
+    "text": "Please provide your date of birth.",
+    "silence_so_far_s": 0.504
+  },
+  {
+    "event": "end_call_deferred",
+    "timestamp": "2026-08-27T17:33:21.738393+00:00",
+    "monotonic": 150590.733,
+    "deferrals": 1,
+    "reason": "the patient is still asking for something",
+    "reply": "March 12, 1991. What can I do in the meantime?",
+    "silence_so_far_s": 1.092
+  },
+  {
+    "event": "llm_reply",
+    "timestamp": "2026-08-27T17:33:21.739173+00:00",
+    "monotonic": 150590.734,
+    "elapsed_s": 0.586,
+    "history_turns": 4,
+    "partial_question": false,
+    "agent_repeated": false,
+    "partial_streak": 0,
+    "empty": false,
+    "ends_call": false,
+    "silence_so_far_s": 1.093
+  },
+  {
+    "event": "patient_speech_start",
+    "timestamp": "2026-08-27T17:33:21.740398+00:00",
+    "monotonic": 150590.735,
+    "reply_gap_s": 1.094,
+    "chars": 46,
+    "ends_call": false,
+    "silence_so_far_s": 1.094
+  },
+  {
+    "event": "tts_streamed",
+    "timestamp": "2026-08-27T17:33:24.093866+00:00",
+    "monotonic": 150593.089,
+    "first_audio_s": 0.174,
+    "total_s": 2.353,
+    "audio_s": 4.64,
+    "silence_so_far_s": 3.447
+  },
+  {
+    "event": "agent_fragment_final",
+    "timestamp": "2026-08-27T17:33:42.101776+00:00",
+    "monotonic": 150611.097,
+    "source": "speech_final",
+    "looks_unfinished": false,
+    "text": "Since you fell this morning and need to be seen today, I can help you book an urgent visit. Is this for pain injury or another concern from your fall?",
+    "silence_so_far_s": 0.0
+  },
+  {
+    "event": "agent_turn_taken",
+    "timestamp": "2026-08-27T17:33:43.110649+00:00",
+    "monotonic": 150612.106,
+    "waited_s": 1.008,
+    "quiet_window_s": 1.0,
+    "finalised_by": "speech_final",
+    "extra_unfinished_waits": 0,
+    "fragments": 1,
+    "partial": false,
+    "text": "Since you fell this morning and need to be seen today, I can help you book an urgent visit. Is this for pain injury or another concern from your fall?",
+    "silence_so_far_s": 1.009
+  },
+  {
+    "event": "llm_reply",
+    "timestamp": "2026-08-27T17:33:43.676149+00:00",
+    "monotonic": 150612.671,
+    "elapsed_s": 0.562,
+    "history_turns": 6,
+    "partial_question": false,
+    "agent_repeated": false,
+    "partial_streak": 0,
+    "empty": false,
+    "ends_call": false,
+    "silence_so_far_s": 1.574
+  },
+  {
+    "event": "patient_speech_start",
+    "timestamp": "2026-08-27T17:33:43.677701+00:00",
+    "monotonic": 150612.673,
+    "reply_gap_s": 1.576,
+    "chars": 48,
+    "ends_call": false,
+    "silence_so_far_s": 1.576
+  },
+  {
+    "event": "tts_streamed",
+    "timestamp": "2026-08-27T17:33:45.361550+00:00",
+    "monotonic": 150614.357,
+    "first_audio_s": 0.298,
+    "total_s": 1.683,
+    "audio_s": 3.04,
+    "silence_so_far_s": 3.26
+  },
+  {
+    "event": "agent_fragment_final",
+    "timestamp": "2026-08-27T17:34:10.624010+00:00",
+    "monotonic": 150639.619,
+    "source": "UtteranceEnd",
+    "looks_unfinished": false,
+    "text": "If you are in severe pain, have trouble moving, notice heavy bleeding, or feel dizzy or confused, please call 911 or go to the nearest emergency room right away. For mild pain or swelling, try resting, applying ice, and the area elevated until you can be seen. Would you like to book an urgent visit for today?",
+    "silence_so_far_s": 0.0
+  },
+  {
+    "event": "agent_turn_taken",
+    "timestamp": "2026-08-27T17:34:11.137117+00:00",
+    "monotonic": 150640.132,
+    "waited_s": 0.512,
+    "quiet_window_s": 0.5,
+    "finalised_by": "UtteranceEnd",
+    "extra_unfinished_waits": 0,
+    "fragments": 1,
+    "partial": false,
+    "text": "If you are in severe pain, have trouble moving, notice heavy bleeding, or feel dizzy or confused, please call 911 or go to the nearest emergency room right away. For mild pain or swelling, try resting, applying ice, and the area elevated until you can be seen. Would you like to book an urgent visit for today?",
+    "silence_so_far_s": 0.513
+  },
+  {
+    "event": "llm_reply",
+    "timestamp": "2026-08-27T17:34:11.742926+00:00",
+    "monotonic": 150640.738,
+    "elapsed_s": 0.598,
+    "history_turns": 8,
+    "partial_question": false,
+    "agent_repeated": false,
+    "partial_streak": 0,
+    "empty": false,
+    "ends_call": false,
+    "silence_so_far_s": 1.119
+  },
+  {
+    "event": "patient_speech_start",
+    "timestamp": "2026-08-27T17:34:11.744541+00:00",
+    "monotonic": 150640.74,
+    "reply_gap_s": 1.121,
+    "chars": 49,
+    "ends_call": false,
+    "silence_so_far_s": 1.121
+  },
+  {
+    "event": "tts_streamed",
+    "timestamp": "2026-08-27T17:34:13.358067+00:00",
+    "monotonic": 150642.353,
+    "first_audio_s": 0.301,
+    "total_s": 1.613,
+    "audio_s": 2.88,
+    "silence_so_far_s": 2.734
+  },
+  {
+    "event": "agent_fragment_final",
+    "timestamp": "2026-08-27T17:34:34.411711+00:00",
+    "monotonic": 150663.407,
+    "source": "UtteranceEnd",
+    "looks_unfinished": false,
+    "text": "We have urgent openings tomorrow, Friday, with your primary providers, doctor Zabigniew Lakoski, and doctor Kelly Noble. Do you have a preference for which provider you see?",
+    "silence_so_far_s": 0.0
+  },
+  {
+    "event": "agent_turn_taken",
+    "timestamp": "2026-08-27T17:34:34.913263+00:00",
+    "monotonic": 150663.908,
+    "waited_s": 0.5,
+    "quiet_window_s": 0.5,
+    "finalised_by": "UtteranceEnd",
+    "extra_unfinished_waits": 0,
+    "fragments": 1,
+    "partial": false,
+    "text": "We have urgent openings tomorrow, Friday, with your primary providers, doctor Zabigniew Lakoski, and doctor Kelly Noble. Do you have a preference for which provider you see?",
+    "silence_so_far_s": 0.502
+  },
+  {
+    "event": "llm_reply",
+    "timestamp": "2026-08-27T17:34:35.593052+00:00",
+    "monotonic": 150664.588,
+    "elapsed_s": 0.675,
+    "history_turns": 10,
+    "partial_question": false,
+    "agent_repeated": false,
+    "partial_streak": 0,
+    "empty": false,
+    "ends_call": false,
+    "silence_so_far_s": 1.181
+  },
+  {
+    "event": "patient_speech_start",
+    "timestamp": "2026-08-27T17:34:35.594732+00:00",
+    "monotonic": 150664.59,
+    "reply_gap_s": 1.183,
+    "chars": 82,
+    "ends_call": false,
+    "silence_so_far_s": 1.183
+  },
+  {
+    "event": "tts_streamed",
+    "timestamp": "2026-08-27T17:34:38.599764+00:00",
+    "monotonic": 150667.595,
+    "first_audio_s": 0.323,
+    "total_s": 3.004,
+    "audio_s": 5.84,
+    "silence_so_far_s": 4.188
+  },
+  {
+    "event": "agent_fragment_final",
+    "timestamp": "2026-08-27T17:34:59.767968+00:00",
+    "monotonic": 150688.763,
+    "source": "speech_final",
+    "looks_unfinished": false,
+    "text": "If you cannot put any weight on your injury, you may need immediate care. Please call 911 or go to the nearest emergency emergency room right away. This clinic's next available appointments are tomorrow, but your symptoms sound urgent.",
+    "silence_so_far_s": 0.0
+  },
+  {
+    "event": "agent_turn_taken",
+    "timestamp": "2026-08-27T17:35:00.774879+00:00",
+    "monotonic": 150689.77,
+    "waited_s": 1.006,
+    "quiet_window_s": 1.0,
+    "finalised_by": "speech_final",
+    "extra_unfinished_waits": 0,
+    "fragments": 1,
+    "partial": false,
+    "text": "If you cannot put any weight on your injury, you may need immediate care. Please call 911 or go to the nearest emergency emergency room right away. This clinic's next available appointments are tomorrow, but your symptoms sound urgent.",
+    "silence_so_far_s": 1.007
+  },
+  {
+    "event": "end_call_deferred",
+    "timestamp": "2026-08-27T17:35:01.444935+00:00",
+    "monotonic": 150690.44,
+    "deferrals": 2,
+    "reason": "the patient has not actually said goodbye",
+    "reply": "Okay, I\u2019ll go to the emergency department now. Thank you.",
+    "silence_so_far_s": 1.677
+  },
+  {
+    "event": "llm_reply",
+    "timestamp": "2026-08-27T17:35:01.445881+00:00",
+    "monotonic": 150690.441,
+    "elapsed_s": 0.661,
+    "history_turns": 12,
+    "partial_question": false,
+    "agent_repeated": false,
+    "partial_streak": 0,
+    "empty": false,
+    "ends_call": false,
+    "silence_so_far_s": 1.678
+  },
+  {
+    "event": "patient_speech_start",
+    "timestamp": "2026-08-27T17:35:01.447692+00:00",
+    "monotonic": 150690.443,
+    "reply_gap_s": 1.68,
+    "chars": 57,
+    "ends_call": false,
+    "silence_so_far_s": 1.68
+  },
+  {
+    "event": "tts_streamed",
+    "timestamp": "2026-08-27T17:35:03.290889+00:00",
+    "monotonic": 150692.286,
+    "first_audio_s": 0.15,
+    "total_s": 1.842,
+    "audio_s": 3.6,
+    "silence_so_far_s": 3.523
+  },
+  {
+    "event": "agent_fragment_final",
+    "timestamp": "2026-08-27T17:35:14.309343+00:00",
+    "monotonic": 150703.304,
+    "source": "speech_final",
+    "looks_unfinished": false,
+    "text": "You're welcome. I hope you feel better soon. If you need anything else, just call.",
+    "silence_so_far_s": 0.0
+  },
+  {
+    "event": "agent_turn_taken",
+    "timestamp": "2026-08-27T17:35:15.312836+00:00",
+    "monotonic": 150704.308,
+    "waited_s": 1.002,
+    "quiet_window_s": 1.0,
+    "finalised_by": "speech_final",
+    "extra_unfinished_waits": 0,
+    "fragments": 1,
+    "partial": false,
+    "text": "You're welcome. I hope you feel better soon. If you need anything else, just call.",
+    "silence_so_far_s": 1.003
+  },
+  {
+    "event": "wrap_up_deadline",
+    "timestamp": "2026-08-27T17:35:15.318013+00:00",
+    "monotonic": 150704.313,
+    "elapsed_s": 151.7,
+    "silence_so_far_s": 1.009
+  },
+  {
+    "event": "patient_speech_start",
+    "timestamp": "2026-08-27T17:35:15.318901+00:00",
+    "monotonic": 150704.314,
+    "reply_gap_s": 1.01,
+    "chars": 72,
+    "ends_call": true,
+    "silence_so_far_s": 1.01
+  },
+  {
+    "event": "tts_streamed",
+    "timestamp": "2026-08-27T17:35:17.608870+00:00",
+    "monotonic": 150706.604,
+    "first_audio_s": 0.169,
+    "total_s": 2.289,
+    "audio_s": 4.04,
+    "silence_so_far_s": 3.3
+  }
+]

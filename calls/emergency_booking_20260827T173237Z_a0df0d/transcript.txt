@@ -1,0 +1,16 @@
+[2026-08-27T17:32:56.426862+00:00] AGENT: This call may be recorded for quality and training purposes. Thanks for calling Pivot Point Ortho part of Pretty Good AI. How may I help you today?
+[2026-08-27T17:33:01.753993+00:00] PATIENT: Hi, I fell this morning and I think I need to be seen today.
+[2026-08-27T17:33:10.756727+00:00] AGENT: See you're calling from a number we have on file. Am I speaking with Maria?
+[2026-08-27T17:33:13.415129+00:00] PATIENT: Yes, this is Maria.
+[2026-08-27T17:33:21.152113+00:00] AGENT: Please provide your date of birth.
+[2026-08-27T17:33:26.774648+00:00] PATIENT: March 12, 1991. What can I do in the meantime?
+[2026-08-27T17:33:43.113161+00:00] AGENT: Since you fell this morning and need to be seen today, I can help you book an urgent visit. Is this for pain injury or another concern from your fall?
+[2026-08-27T17:33:47.254902+00:00] PATIENT: What should I do until I can get an appointment?
+[2026-08-27T17:34:11.143276+00:00] AGENT: If you are in severe pain, have trouble moving, notice heavy bleeding, or feel dizzy or confused, please call 911 or go to the nearest emergency room right away. For mild pain or swelling, try resting, applying ice, and the area elevated until you can be seen. Would you like to book an urgent visit for today?
+[2026-08-27T17:34:15.157149+00:00] PATIENT: Yes, please book an urgent appointment for today.
+[2026-08-27T17:34:34.916871+00:00] AGENT: We have urgent openings tomorrow, Friday, with your primary providers, doctor Zabigniew Lakoski, and doctor Kelly Noble. Do you have a preference for which provider you see?
+[2026-08-27T17:34:41.958811+00:00] PATIENT: I can’t wait until tomorrow—I can’t put any weight on it. I need to be seen today.
+[2026-08-27T17:35:00.783454+00:00] AGENT: If you cannot put any weight on your injury, you may need immediate care. Please call 911 or go to the nearest emergency emergency room right away. This clinic's next available appointments are tomorrow, but your symptoms sound urgent.
+[2026-08-27T17:35:05.436628+00:00] PATIENT: Okay, I’ll go to the emergency department now. Thank you.
+[2026-08-27T17:35:15.316641+00:00] AGENT: You're welcome. I hope you feel better soon. If you need anything else, just call.
+[2026-08-27T17:35:20.633218+00:00] PATIENT: Thanks so much for your help today, that's everything I needed. Goodbye!
