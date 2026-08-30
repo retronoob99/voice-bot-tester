@@ -1,0 +1,23 @@
+[
+  {
+    "bug": "Failure to answer insurance coverage, cost, and referral questions and no escalation",
+    "severity": "High",
+    "details": "Patient asked: \"How much would a routine checkup cost me out of pocket with my Blue Shield PPO?\" and \"Do I need a referral for that routine checkup?\" Agent never provided an answer or a statement that it cannot confirm and should route to billing/insurer. Instead it kept asking for verification, leaving the patient without the requested information.",
+    "call_uid": "insurance_question_20260827T174135Z_5bc101",
+    "scenario": "insurance_question"
+  },
+  {
+    "bug": "Repeated request for already confirmed phone number",
+    "severity": "Medium",
+    "details": "Agent confirmed phone number as (774) 292-5038 after patient provided it, then later asked again: \"First, can you confirm is 77429253 Is the phone number you have on file with us?\" This shows loss of previously gathered information and unnecessary repetition.",
+    "call_uid": "insurance_question_20260827T174135Z_5bc101",
+    "scenario": "insurance_question"
+  },
+  {
+    "bug": "Garbled/incomplete verification question",
+    "severity": "Medium",
+    "details": "Agent's line after the cost question: \"First, can you confirm is 77429253 Is the phone number you have on file with us?\" is cut off and incoherent, indicating a turn\u2011taking or speech synthesis error where the agent did not finish its sentence before awaiting a response.",
+    "call_uid": "insurance_question_20260827T174135Z_5bc101",
+    "scenario": "insurance_question"
+  }
+]

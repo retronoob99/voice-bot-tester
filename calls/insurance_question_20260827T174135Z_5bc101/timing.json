@@ -1,0 +1,396 @@
+[
+  {
+    "event": "agent_fragment_final",
+    "timestamp": "2026-08-27T17:41:45.420582+00:00",
+    "monotonic": 151094.416,
+    "source": "UtteranceEnd",
+    "looks_unfinished": false,
+    "text": "This call may be recorded for quality and training purposes.",
+    "silence_so_far_s": 0.0
+  },
+  {
+    "event": "agent_turn_taken",
+    "timestamp": "2026-08-27T17:41:49.430400+00:00",
+    "monotonic": 151098.425,
+    "waited_s": 4.009,
+    "quiet_window_s": 4.0,
+    "finalised_by": "UtteranceEnd",
+    "extra_unfinished_waits": 0,
+    "fragments": 1,
+    "partial": false,
+    "text": "This call may be recorded for quality and training purposes.",
+    "silence_so_far_s": 4.01
+  },
+  {
+    "event": "agent_fragment_final",
+    "timestamp": "2026-08-27T17:41:53.818290+00:00",
+    "monotonic": 151102.813,
+    "source": "speech_final",
+    "looks_unfinished": false,
+    "text": "Thanks for calling Pivot Point Orthopaedics, part of Pretty Good AI. How may I help you today?",
+    "silence_so_far_s": 0.0
+  },
+  {
+    "event": "agent_turn_taken",
+    "timestamp": "2026-08-27T17:41:53.819164+00:00",
+    "monotonic": 151102.814,
+    "waited_s": 0.0,
+    "quiet_window_s": 4.0,
+    "finalised_by": "speech_final",
+    "extra_unfinished_waits": 0,
+    "fragments": 1,
+    "partial": false,
+    "text": "Thanks for calling Pivot Point Orthopaedics, part of Pretty Good AI. How may I help you today?",
+    "silence_so_far_s": 0.001
+  },
+  {
+    "event": "silence_buffer_held",
+    "timestamp": "2026-08-27T17:41:53.821153+00:00",
+    "monotonic": 151102.816,
+    "held_s": 0.247,
+    "silence_so_far_s": 0.003
+  },
+  {
+    "event": "patient_speech_start",
+    "timestamp": "2026-08-27T17:41:54.069312+00:00",
+    "monotonic": 151103.064,
+    "reply_gap_s": 0.251,
+    "chars": 57,
+    "ends_call": false,
+    "silence_so_far_s": 0.251
+  },
+  {
+    "event": "tts_streamed",
+    "timestamp": "2026-08-27T17:41:56.745309+00:00",
+    "monotonic": 151105.74,
+    "first_audio_s": 0.866,
+    "total_s": 2.675,
+    "audio_s": 3.72,
+    "silence_so_far_s": 2.927
+  },
+  {
+    "event": "agent_turn_taken",
+    "timestamp": "2026-08-27T17:41:59.989488+00:00",
+    "monotonic": 151108.985,
+    "waited_s": 1.009,
+    "quiet_window_s": 1.0,
+    "finalised_by": "speech_final",
+    "extra_unfinished_waits": 0,
+    "fragments": 0,
+    "partial": false,
+    "text": "",
+    "silence_so_far_s": 6.171
+  },
+  {
+    "event": "agent_fragment_final",
+    "timestamp": "2026-08-27T17:42:16.436773+00:00",
+    "monotonic": 151125.432,
+    "source": "UtteranceEnd",
+    "looks_unfinished": false,
+    "text": "Pivot Point Orthopedics accepts most insurance plans, including many PPO options. I can check your specific Blue Shield PPO coverage for you. May I verify your information to look this up?",
+    "silence_so_far_s": 0.0
+  },
+  {
+    "event": "agent_turn_taken",
+    "timestamp": "2026-08-27T17:42:16.947693+00:00",
+    "monotonic": 151125.943,
+    "waited_s": 0.51,
+    "quiet_window_s": 0.5,
+    "finalised_by": "UtteranceEnd",
+    "extra_unfinished_waits": 0,
+    "fragments": 1,
+    "partial": false,
+    "text": "Pivot Point Orthopedics accepts most insurance plans, including many PPO options. I can check your specific Blue Shield PPO coverage for you. May I verify your information to look this up?",
+    "silence_so_far_s": 0.511
+  },
+  {
+    "event": "llm_reply",
+    "timestamp": "2026-08-27T17:42:17.890607+00:00",
+    "monotonic": 151126.886,
+    "elapsed_s": 0.94,
+    "history_turns": 2,
+    "partial_question": false,
+    "agent_repeated": false,
+    "partial_streak": 0,
+    "empty": false,
+    "ends_call": false,
+    "silence_so_far_s": 1.454
+  },
+  {
+    "event": "patient_speech_start",
+    "timestamp": "2026-08-27T17:42:17.891971+00:00",
+    "monotonic": 151126.887,
+    "reply_gap_s": 1.455,
+    "chars": 79,
+    "ends_call": false,
+    "silence_so_far_s": 1.455
+  },
+  {
+    "event": "tts_streamed",
+    "timestamp": "2026-08-27T17:42:22.591567+00:00",
+    "monotonic": 151131.587,
+    "first_audio_s": 0.244,
+    "total_s": 4.699,
+    "audio_s": 9.8,
+    "silence_so_far_s": 6.155
+  },
+  {
+    "event": "agent_fragment_final",
+    "timestamp": "2026-08-27T17:42:44.057542+00:00",
+    "monotonic": 151153.053,
+    "source": "UtteranceEnd",
+    "looks_unfinished": false,
+    "text": "Thank you. I have your phone number as (774) 292-5038. Can you please confirm the spelling of your first and last name?",
+    "silence_so_far_s": 0.0
+  },
+  {
+    "event": "agent_turn_taken",
+    "timestamp": "2026-08-27T17:42:44.563178+00:00",
+    "monotonic": 151153.558,
+    "waited_s": 0.505,
+    "quiet_window_s": 0.5,
+    "finalised_by": "UtteranceEnd",
+    "extra_unfinished_waits": 0,
+    "fragments": 1,
+    "partial": false,
+    "text": "Thank you. I have your phone number as (774) 292-5038. Can you please confirm the spelling of your first and last name?",
+    "silence_so_far_s": 0.505
+  },
+  {
+    "event": "llm_reply",
+    "timestamp": "2026-08-27T17:42:45.021429+00:00",
+    "monotonic": 151154.016,
+    "elapsed_s": 0.456,
+    "history_turns": 4,
+    "partial_question": false,
+    "agent_repeated": false,
+    "partial_streak": 0,
+    "empty": false,
+    "ends_call": false,
+    "silence_so_far_s": 0.964
+  },
+  {
+    "event": "patient_speech_start",
+    "timestamp": "2026-08-27T17:42:45.022659+00:00",
+    "monotonic": 151154.018,
+    "reply_gap_s": 0.965,
+    "chars": 11,
+    "ends_call": false,
+    "silence_so_far_s": 0.965
+  },
+  {
+    "event": "tts_streamed",
+    "timestamp": "2026-08-27T17:42:45.750183+00:00",
+    "monotonic": 151154.745,
+    "first_audio_s": 0.204,
+    "total_s": 0.727,
+    "audio_s": 1.2,
+    "silence_so_far_s": 1.693
+  },
+  {
+    "event": "agent_fragment_final",
+    "timestamp": "2026-08-27T17:43:06.730800+00:00",
+    "monotonic": 151175.726,
+    "source": "UtteranceEnd",
+    "looks_unfinished": false,
+    "text": "Would you like me to look up your record using the phone number you have on file with us? If so, please provide that number. If you're not sure, could you please spell out your first and last name for me along with your date of birth?",
+    "silence_so_far_s": 0.0
+  },
+  {
+    "event": "agent_turn_taken",
+    "timestamp": "2026-08-27T17:43:07.239397+00:00",
+    "monotonic": 151176.234,
+    "waited_s": 0.508,
+    "quiet_window_s": 0.5,
+    "finalised_by": "UtteranceEnd",
+    "extra_unfinished_waits": 0,
+    "fragments": 1,
+    "partial": false,
+    "text": "Would you like me to look up your record using the phone number you have on file with us? If so, please provide that number. If you're not sure, could you please spell out your first and last name for me along with your date of birth?",
+    "silence_so_far_s": 0.509
+  },
+  {
+    "event": "llm_reply",
+    "timestamp": "2026-08-27T17:43:07.600826+00:00",
+    "monotonic": 151176.596,
+    "elapsed_s": 0.357,
+    "history_turns": 6,
+    "partial_question": false,
+    "agent_repeated": false,
+    "partial_streak": 0,
+    "empty": false,
+    "ends_call": false,
+    "silence_so_far_s": 0.87
+  },
+  {
+    "event": "patient_speech_start",
+    "timestamp": "2026-08-27T17:43:07.602313+00:00",
+    "monotonic": 151176.597,
+    "reply_gap_s": 0.872,
+    "chars": 29,
+    "ends_call": false,
+    "silence_so_far_s": 0.872
+  },
+  {
+    "event": "tts_streamed",
+    "timestamp": "2026-08-27T17:43:11.504997+00:00",
+    "monotonic": 151180.5,
+    "first_audio_s": 0.241,
+    "total_s": 3.902,
+    "audio_s": 7.76,
+    "silence_so_far_s": 4.774
+  },
+  {
+    "event": "agent_fragment_final",
+    "timestamp": "2026-08-27T17:43:34.731992+00:00",
+    "monotonic": 151203.727,
+    "source": "UtteranceEnd",
+    "looks_unfinished": false,
+    "text": "I have your phone number as (774) 292-5038, and your date of birth as 03/12/1991. Is that correct?",
+    "silence_so_far_s": 0.0
+  },
+  {
+    "event": "agent_turn_taken",
+    "timestamp": "2026-08-27T17:43:35.236892+00:00",
+    "monotonic": 151204.232,
+    "waited_s": 0.504,
+    "quiet_window_s": 0.5,
+    "finalised_by": "UtteranceEnd",
+    "extra_unfinished_waits": 0,
+    "fragments": 1,
+    "partial": false,
+    "text": "I have your phone number as (774) 292-5038, and your date of birth as 03/12/1991. Is that correct?",
+    "silence_so_far_s": 0.505
+  },
+  {
+    "event": "llm_reply",
+    "timestamp": "2026-08-27T17:43:35.886744+00:00",
+    "monotonic": 151204.882,
+    "elapsed_s": 0.647,
+    "history_turns": 8,
+    "partial_question": false,
+    "agent_repeated": false,
+    "partial_streak": 0,
+    "empty": false,
+    "ends_call": false,
+    "silence_so_far_s": 1.155
+  },
+  {
+    "event": "patient_speech_start",
+    "timestamp": "2026-08-27T17:43:35.888161+00:00",
+    "monotonic": 151204.883,
+    "reply_gap_s": 1.156,
+    "chars": 79,
+    "ends_call": false,
+    "silence_so_far_s": 1.156
+  },
+  {
+    "event": "tts_streamed",
+    "timestamp": "2026-08-27T17:43:38.460304+00:00",
+    "monotonic": 151207.455,
+    "first_audio_s": 0.224,
+    "total_s": 2.572,
+    "audio_s": 5.0,
+    "silence_so_far_s": 3.728
+  },
+  {
+    "event": "agent_fragment_final",
+    "timestamp": "2026-08-27T17:43:58.219918+00:00",
+    "monotonic": 151227.215,
+    "source": "speech_final",
+    "looks_unfinished": false,
+    "text": "I'll check your insurance details and coverage for a routine checkup. First, can you confirm is 77429253 Is the phone number you have on file with us?",
+    "silence_so_far_s": 0.0
+  },
+  {
+    "event": "agent_turn_taken",
+    "timestamp": "2026-08-27T17:43:59.229408+00:00",
+    "monotonic": 151228.224,
+    "waited_s": 1.009,
+    "quiet_window_s": 1.0,
+    "finalised_by": "speech_final",
+    "extra_unfinished_waits": 0,
+    "fragments": 1,
+    "partial": false,
+    "text": "I'll check your insurance details and coverage for a routine checkup. First, can you confirm is 77429253 Is the phone number you have on file with us?",
+    "silence_so_far_s": 1.009
+  },
+  {
+    "event": "llm_reply",
+    "timestamp": "2026-08-27T17:43:59.732674+00:00",
+    "monotonic": 151228.728,
+    "elapsed_s": 0.499,
+    "history_turns": 10,
+    "partial_question": false,
+    "agent_repeated": false,
+    "partial_streak": 0,
+    "empty": false,
+    "ends_call": false,
+    "silence_so_far_s": 1.513
+  },
+  {
+    "event": "patient_speech_start",
+    "timestamp": "2026-08-27T17:43:59.734380+00:00",
+    "monotonic": 151228.729,
+    "reply_gap_s": 1.515,
+    "chars": 46,
+    "ends_call": false,
+    "silence_so_far_s": 1.515
+  },
+  {
+    "event": "tts_streamed",
+    "timestamp": "2026-08-27T17:44:01.353739+00:00",
+    "monotonic": 151230.349,
+    "first_audio_s": 0.236,
+    "total_s": 1.619,
+    "audio_s": 2.96,
+    "silence_so_far_s": 3.134
+  },
+  {
+    "event": "agent_fragment_final",
+    "timestamp": "2026-08-27T17:44:22.995092+00:00",
+    "monotonic": 151251.99,
+    "source": "speech_final",
+    "looks_unfinished": false,
+    "text": "Referral requirements can depend on your specific Blue Shield PPO plan. Once I confirm your patient record, I can check your insurance details for you. The (774) 292-5038. The number you have on file with us?",
+    "silence_so_far_s": 0.0
+  },
+  {
+    "event": "agent_turn_taken",
+    "timestamp": "2026-08-27T17:44:24.004134+00:00",
+    "monotonic": 151252.999,
+    "waited_s": 1.008,
+    "quiet_window_s": 1.0,
+    "finalised_by": "speech_final",
+    "extra_unfinished_waits": 0,
+    "fragments": 1,
+    "partial": false,
+    "text": "Referral requirements can depend on your specific Blue Shield PPO plan. Once I confirm your patient record, I can check your insurance details for you. The (774) 292-5038. The number you have on file with us?",
+    "silence_so_far_s": 1.009
+  },
+  {
+    "event": "wrap_up_deadline",
+    "timestamp": "2026-08-27T17:44:24.013210+00:00",
+    "monotonic": 151253.008,
+    "elapsed_s": 162.8,
+    "silence_so_far_s": 1.018
+  },
+  {
+    "event": "patient_speech_start",
+    "timestamp": "2026-08-27T17:44:24.013947+00:00",
+    "monotonic": 151253.009,
+    "reply_gap_s": 1.019,
+    "chars": 72,
+    "ends_call": true,
+    "silence_so_far_s": 1.019
+  },
+  {
+    "event": "tts_streamed",
+    "timestamp": "2026-08-27T17:44:26.411028+00:00",
+    "monotonic": 151255.406,
+    "first_audio_s": 0.16,
+    "total_s": 2.396,
+    "audio_s": 4.8,
+    "silence_so_far_s": 3.416
+  }
+]

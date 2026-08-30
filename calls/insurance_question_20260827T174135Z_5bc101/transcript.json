@@ -1,0 +1,76 @@
+{
+  "call_uid": "insurance_question_20260827T174135Z_5bc101",
+  "scenario": "insurance_question",
+  "turns": [
+    {
+      "speaker": "agent",
+      "text": "This call may be recorded for quality and training purposes. Thanks for calling Pivot Point Orthopaedics, part of Pretty Good AI. How may I help you today?",
+      "timestamp": "2026-08-27T17:41:53.819615+00:00"
+    },
+    {
+      "speaker": "patient",
+      "text": "Hi, before I book anything - do you take Blue Shield PPO?",
+      "timestamp": "2026-08-27T17:41:58.979334+00:00"
+    },
+    {
+      "speaker": "agent",
+      "text": "Pivot Point Orthopedics accepts most insurance plans, including many PPO options. I can check your specific Blue Shield PPO coverage for you. May I verify your information to look this up?",
+      "timestamp": "2026-08-27T17:42:16.949481+00:00"
+    },
+    {
+      "speaker": "patient",
+      "text": "My name is Maria Chen, date of birth March 12, 1991, phone number 774-292-5038.",
+      "timestamp": "2026-08-27T17:42:28.207208+00:00"
+    },
+    {
+      "speaker": "agent",
+      "text": "Thank you. I have your phone number as (774) 292-5038. Can you please confirm the spelling of your first and last name?",
+      "timestamp": "2026-08-27T17:42:44.565055+00:00"
+    },
+    {
+      "speaker": "patient",
+      "text": "Maria Chen.",
+      "timestamp": "2026-08-27T17:42:46.644940+00:00"
+    },
+    {
+      "speaker": "agent",
+      "text": "Would you like me to look up your record using the phone number you have on file with us? If so, please provide that number. If you're not sure, could you please spell out your first and last name for me along with your date of birth?",
+      "timestamp": "2026-08-27T17:43:07.242808+00:00"
+    },
+    {
+      "speaker": "patient",
+      "text": "774-292-5038, March 12, 1991.",
+      "timestamp": "2026-08-27T17:43:15.905022+00:00"
+    },
+    {
+      "speaker": "agent",
+      "text": "I have your phone number as (774) 292-5038, and your date of birth as 03/12/1991. Is that correct?",
+      "timestamp": "2026-08-27T17:43:35.239098+00:00"
+    },
+    {
+      "speaker": "patient",
+      "text": "How much would a routine checkup cost me out of pocket with my Blue Shield PPO?",
+      "timestamp": "2026-08-27T17:43:41.347500+00:00"
+    },
+    {
+      "speaker": "agent",
+      "text": "I'll check your insurance details and coverage for a routine checkup. First, can you confirm is 77429253 Is the phone number you have on file with us?",
+      "timestamp": "2026-08-27T17:43:59.232676+00:00"
+    },
+    {
+      "speaker": "patient",
+      "text": "Do I need a referral for that routine checkup?",
+      "timestamp": "2026-08-27T17:44:03.187285+00:00"
+    },
+    {
+      "speaker": "agent",
+      "text": "Referral requirements can depend on your specific Blue Shield PPO plan. Once I confirm your patient record, I can check your insurance details for you. The (774) 292-5038. The number you have on file with us?",
+      "timestamp": "2026-08-27T17:44:24.012105+00:00"
+    },
+    {
+      "speaker": "patient",
+      "text": "Thanks so much for your help today, that's everything I needed. Goodbye!",
+      "timestamp": "2026-08-27T17:44:29.855053+00:00"
+    }
+  ]
+}
