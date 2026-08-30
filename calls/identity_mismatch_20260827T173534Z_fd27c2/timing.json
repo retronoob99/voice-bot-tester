@@ -1,0 +1,591 @@
+[
+  {
+    "event": "agent_fragment_final",
+    "timestamp": "2026-08-27T17:35:43.824100+00:00",
+    "monotonic": 150732.819,
+    "source": "UtteranceEnd",
+    "looks_unfinished": false,
+    "text": "This call may be recorded for quality and training purposes.",
+    "silence_so_far_s": 0.0
+  },
+  {
+    "event": "agent_turn_taken",
+    "timestamp": "2026-08-27T17:35:47.838543+00:00",
+    "monotonic": 150736.834,
+    "waited_s": 4.013,
+    "quiet_window_s": 4.0,
+    "finalised_by": "UtteranceEnd",
+    "extra_unfinished_waits": 0,
+    "fragments": 1,
+    "partial": false,
+    "text": "This call may be recorded for quality and training purposes.",
+    "silence_so_far_s": 4.014
+  },
+  {
+    "event": "agent_fragment_final",
+    "timestamp": "2026-08-27T17:35:51.804490+00:00",
+    "monotonic": 150740.8,
+    "source": "speech_final",
+    "looks_unfinished": false,
+    "text": "Thanks for calling Pivot Point Orthopaedics, part of Pretty Good AI. How may I help you today?",
+    "silence_so_far_s": 0.0
+  },
+  {
+    "event": "agent_turn_taken",
+    "timestamp": "2026-08-27T17:35:51.805364+00:00",
+    "monotonic": 150740.8,
+    "waited_s": 0.0,
+    "quiet_window_s": 4.0,
+    "finalised_by": "speech_final",
+    "extra_unfinished_waits": 0,
+    "fragments": 1,
+    "partial": false,
+    "text": "Thanks for calling Pivot Point Orthopaedics, part of Pretty Good AI. How may I help you today?",
+    "silence_so_far_s": 0.001
+  },
+  {
+    "event": "silence_buffer_held",
+    "timestamp": "2026-08-27T17:35:51.808167+00:00",
+    "monotonic": 150740.803,
+    "held_s": 0.246,
+    "silence_so_far_s": 0.004
+  },
+  {
+    "event": "patient_speech_start",
+    "timestamp": "2026-08-27T17:35:52.063979+00:00",
+    "monotonic": 150741.059,
+    "reply_gap_s": 0.259,
+    "chars": 46,
+    "ends_call": false,
+    "silence_so_far_s": 0.259
+  },
+  {
+    "event": "tts_streamed",
+    "timestamp": "2026-08-27T17:35:54.640941+00:00",
+    "monotonic": 150743.636,
+    "first_audio_s": 1.171,
+    "total_s": 2.576,
+    "audio_s": 2.96,
+    "silence_so_far_s": 2.836
+  },
+  {
+    "event": "agent_turn_taken",
+    "timestamp": "2026-08-27T17:35:57.438832+00:00",
+    "monotonic": 150746.434,
+    "waited_s": 1.002,
+    "quiet_window_s": 1.0,
+    "finalised_by": "speech_final",
+    "extra_unfinished_waits": 0,
+    "fragments": 0,
+    "partial": false,
+    "text": "",
+    "silence_so_far_s": 5.634
+  },
+  {
+    "event": "agent_fragment_final",
+    "timestamp": "2026-08-27T17:36:04.987325+00:00",
+    "monotonic": 150753.982,
+    "source": "speech_final",
+    "looks_unfinished": false,
+    "text": "I see you're calling from the number we have on file. Am I speaking with Maria?",
+    "silence_so_far_s": 0.0
+  },
+  {
+    "event": "agent_turn_taken",
+    "timestamp": "2026-08-27T17:36:05.991642+00:00",
+    "monotonic": 150754.987,
+    "waited_s": 1.003,
+    "quiet_window_s": 1.0,
+    "finalised_by": "speech_final",
+    "extra_unfinished_waits": 0,
+    "fragments": 1,
+    "partial": false,
+    "text": "I see you're calling from the number we have on file. Am I speaking with Maria?",
+    "silence_so_far_s": 1.004
+  },
+  {
+    "event": "llm_reply",
+    "timestamp": "2026-08-27T17:36:06.381944+00:00",
+    "monotonic": 150755.377,
+    "elapsed_s": 0.388,
+    "history_turns": 2,
+    "partial_question": false,
+    "agent_repeated": false,
+    "partial_streak": 0,
+    "empty": false,
+    "ends_call": false,
+    "silence_so_far_s": 1.395
+  },
+  {
+    "event": "patient_speech_start",
+    "timestamp": "2026-08-27T17:36:06.383335+00:00",
+    "monotonic": 150755.378,
+    "reply_gap_s": 1.396,
+    "chars": 19,
+    "ends_call": false,
+    "silence_so_far_s": 1.396
+  },
+  {
+    "event": "tts_streamed",
+    "timestamp": "2026-08-27T17:36:07.437987+00:00",
+    "monotonic": 150756.433,
+    "first_audio_s": 0.294,
+    "total_s": 1.054,
+    "audio_s": 1.64,
+    "silence_so_far_s": 2.451
+  },
+  {
+    "event": "agent_fragment_final",
+    "timestamp": "2026-08-27T17:36:15.819245+00:00",
+    "monotonic": 150764.814,
+    "source": "UtteranceEnd",
+    "looks_unfinished": false,
+    "text": "Please provide your date of birth.",
+    "silence_so_far_s": 0.0
+  },
+  {
+    "event": "agent_turn_taken",
+    "timestamp": "2026-08-27T17:36:16.321414+00:00",
+    "monotonic": 150765.316,
+    "waited_s": 0.501,
+    "quiet_window_s": 0.5,
+    "finalised_by": "UtteranceEnd",
+    "extra_unfinished_waits": 0,
+    "fragments": 1,
+    "partial": false,
+    "text": "Please provide your date of birth.",
+    "silence_so_far_s": 0.502
+  },
+  {
+    "event": "end_call_deferred",
+    "timestamp": "2026-08-27T17:36:16.929741+00:00",
+    "monotonic": 150765.925,
+    "deferrals": 1,
+    "reason": "the patient has not actually said goodbye",
+    "reply": "July 9, 1988. I'd like to schedule that checkup.",
+    "silence_so_far_s": 1.111
+  },
+  {
+    "event": "llm_reply",
+    "timestamp": "2026-08-27T17:36:16.930506+00:00",
+    "monotonic": 150765.926,
+    "elapsed_s": 0.607,
+    "history_turns": 4,
+    "partial_question": false,
+    "agent_repeated": false,
+    "partial_streak": 0,
+    "empty": false,
+    "ends_call": false,
+    "silence_so_far_s": 1.111
+  },
+  {
+    "event": "patient_speech_start",
+    "timestamp": "2026-08-27T17:36:16.931729+00:00",
+    "monotonic": 150765.927,
+    "reply_gap_s": 1.113,
+    "chars": 48,
+    "ends_call": false,
+    "silence_so_far_s": 1.113
+  },
+  {
+    "event": "tts_streamed",
+    "timestamp": "2026-08-27T17:36:19.605555+00:00",
+    "monotonic": 150768.601,
+    "first_audio_s": 0.18,
+    "total_s": 2.673,
+    "audio_s": 4.76,
+    "silence_so_far_s": 3.786
+  },
+  {
+    "event": "agent_fragment_final",
+    "timestamp": "2026-08-27T17:36:34.396450+00:00",
+    "monotonic": 150783.391,
+    "source": "UtteranceEnd",
+    "looks_unfinished": false,
+    "text": "Just to confirm, you'd like to book a general office visit for a routine checkup. Is that correct?",
+    "silence_so_far_s": 0.0
+  },
+  {
+    "event": "agent_turn_taken",
+    "timestamp": "2026-08-27T17:36:34.899378+00:00",
+    "monotonic": 150783.894,
+    "waited_s": 0.502,
+    "quiet_window_s": 0.5,
+    "finalised_by": "UtteranceEnd",
+    "extra_unfinished_waits": 0,
+    "fragments": 1,
+    "partial": false,
+    "text": "Just to confirm, you'd like to book a general office visit for a routine checkup. Is that correct?",
+    "silence_so_far_s": 0.503
+  },
+  {
+    "event": "end_call_deferred",
+    "timestamp": "2026-08-27T17:36:35.316137+00:00",
+    "monotonic": 150784.311,
+    "deferrals": 2,
+    "reason": "the patient has not actually said goodbye",
+    "reply": "Yes, that's correct.",
+    "silence_so_far_s": 0.92
+  },
+  {
+    "event": "llm_reply",
+    "timestamp": "2026-08-27T17:36:35.317110+00:00",
+    "monotonic": 150784.312,
+    "elapsed_s": 0.415,
+    "history_turns": 6,
+    "partial_question": false,
+    "agent_repeated": false,
+    "partial_streak": 0,
+    "empty": false,
+    "ends_call": false,
+    "silence_so_far_s": 0.921
+  },
+  {
+    "event": "patient_speech_start",
+    "timestamp": "2026-08-27T17:36:35.318825+00:00",
+    "monotonic": 150784.314,
+    "reply_gap_s": 0.922,
+    "chars": 20,
+    "ends_call": false,
+    "silence_so_far_s": 0.922
+  },
+  {
+    "event": "tts_streamed",
+    "timestamp": "2026-08-27T17:36:36.417703+00:00",
+    "monotonic": 150785.413,
+    "first_audio_s": 0.318,
+    "total_s": 1.098,
+    "audio_s": 1.56,
+    "silence_so_far_s": 2.021
+  },
+  {
+    "event": "agent_fragment_final",
+    "timestamp": "2026-08-27T17:36:45.442508+00:00",
+    "monotonic": 150794.438,
+    "source": "speech_final",
+    "looks_unfinished": false,
+    "text": "Do you have a specific provider you'd like to see, or are you open to any available provider?",
+    "silence_so_far_s": 0.0
+  },
+  {
+    "event": "agent_turn_taken",
+    "timestamp": "2026-08-27T17:36:46.446180+00:00",
+    "monotonic": 150795.441,
+    "waited_s": 1.003,
+    "quiet_window_s": 1.0,
+    "finalised_by": "speech_final",
+    "extra_unfinished_waits": 0,
+    "fragments": 1,
+    "partial": false,
+    "text": "Do you have a specific provider you'd like to see, or are you open to any available provider?",
+    "silence_so_far_s": 1.004
+  },
+  {
+    "event": "llm_reply",
+    "timestamp": "2026-08-27T17:36:47.192635+00:00",
+    "monotonic": 150796.188,
+    "elapsed_s": 0.744,
+    "history_turns": 8,
+    "partial_question": false,
+    "agent_repeated": false,
+    "partial_streak": 0,
+    "empty": false,
+    "ends_call": false,
+    "silence_so_far_s": 1.75
+  },
+  {
+    "event": "patient_speech_start",
+    "timestamp": "2026-08-27T17:36:47.194058+00:00",
+    "monotonic": 150796.189,
+    "reply_gap_s": 1.752,
+    "chars": 35,
+    "ends_call": false,
+    "silence_so_far_s": 1.752
+  },
+  {
+    "event": "tts_streamed",
+    "timestamp": "2026-08-27T17:36:48.605860+00:00",
+    "monotonic": 150797.601,
+    "first_audio_s": 0.261,
+    "total_s": 1.411,
+    "audio_s": 2.52,
+    "silence_so_far_s": 3.163
+  },
+  {
+    "event": "agent_fragment_final",
+    "timestamp": "2026-08-27T17:37:02.900271+00:00",
+    "monotonic": 150811.895,
+    "source": "UtteranceEnd",
+    "looks_unfinished": false,
+    "text": "You already have an office visit scheduled for Tuesday, September 1 at 2PM. Would you like to keep this appointment, reschedule it, or cancel it?",
+    "silence_so_far_s": 0.0
+  },
+  {
+    "event": "agent_turn_taken",
+    "timestamp": "2026-08-27T17:37:03.402600+00:00",
+    "monotonic": 150812.398,
+    "waited_s": 0.501,
+    "quiet_window_s": 0.5,
+    "finalised_by": "UtteranceEnd",
+    "extra_unfinished_waits": 0,
+    "fragments": 1,
+    "partial": false,
+    "text": "You already have an office visit scheduled for Tuesday, September 1 at 2PM. Would you like to keep this appointment, reschedule it, or cancel it?",
+    "silence_so_far_s": 0.502
+  },
+  {
+    "event": "llm_reply",
+    "timestamp": "2026-08-27T17:37:04.097512+00:00",
+    "monotonic": 150813.093,
+    "elapsed_s": 0.691,
+    "history_turns": 10,
+    "partial_question": false,
+    "agent_repeated": false,
+    "partial_streak": 0,
+    "empty": false,
+    "ends_call": false,
+    "silence_so_far_s": 1.197
+  },
+  {
+    "event": "patient_speech_start",
+    "timestamp": "2026-08-27T17:37:04.098829+00:00",
+    "monotonic": 150813.094,
+    "reply_gap_s": 1.199,
+    "chars": 64,
+    "ends_call": false,
+    "silence_so_far_s": 1.199
+  },
+  {
+    "event": "tts_streamed",
+    "timestamp": "2026-08-27T17:37:05.942006+00:00",
+    "monotonic": 150814.937,
+    "first_audio_s": 0.306,
+    "total_s": 1.843,
+    "audio_s": 3.36,
+    "silence_so_far_s": 3.042
+  },
+  {
+    "event": "agent_fragment_final",
+    "timestamp": "2026-08-27T17:37:22.348891+00:00",
+    "monotonic": 150831.344,
+    "source": "speech_final",
+    "looks_unfinished": false,
+    "text": "You can only have one office visit. Of this type booked at a time. Would you like to reschedule the appointment on September 1? Or cancel it so we can book a new one?",
+    "silence_so_far_s": 0.0
+  },
+  {
+    "event": "agent_turn_taken",
+    "timestamp": "2026-08-27T17:37:23.364485+00:00",
+    "monotonic": 150832.36,
+    "waited_s": 1.015,
+    "quiet_window_s": 1.0,
+    "finalised_by": "speech_final",
+    "extra_unfinished_waits": 0,
+    "fragments": 1,
+    "partial": false,
+    "text": "You can only have one office visit. Of this type booked at a time. Would you like to reschedule the appointment on September 1? Or cancel it so we can book a new one?",
+    "silence_so_far_s": 1.016
+  },
+  {
+    "event": "end_call_deferred",
+    "timestamp": "2026-08-27T17:37:24.171300+00:00",
+    "monotonic": 150833.166,
+    "deferrals": 3,
+    "reason": "the patient has not actually said goodbye",
+    "reply": "Cancel that appointment, please, and book a new routine checkup.",
+    "silence_so_far_s": 1.822
+  },
+  {
+    "event": "llm_reply",
+    "timestamp": "2026-08-27T17:37:24.172243+00:00",
+    "monotonic": 150833.167,
+    "elapsed_s": 0.801,
+    "history_turns": 12,
+    "partial_question": false,
+    "agent_repeated": false,
+    "partial_streak": 0,
+    "empty": false,
+    "ends_call": false,
+    "silence_so_far_s": 1.823
+  },
+  {
+    "event": "patient_speech_start",
+    "timestamp": "2026-08-27T17:37:24.173622+00:00",
+    "monotonic": 150833.169,
+    "reply_gap_s": 1.825,
+    "chars": 64,
+    "ends_call": false,
+    "silence_so_far_s": 1.825
+  },
+  {
+    "event": "tts_streamed",
+    "timestamp": "2026-08-27T17:37:26.374861+00:00",
+    "monotonic": 150835.37,
+    "first_audio_s": 0.304,
+    "total_s": 2.201,
+    "audio_s": 4.08,
+    "silence_so_far_s": 4.026
+  },
+  {
+    "event": "agent_fragment_final",
+    "timestamp": "2026-08-27T17:37:44.335738+00:00",
+    "monotonic": 150853.331,
+    "source": "speech_final",
+    "looks_unfinished": false,
+    "text": "You have two upcoming appointments, one today with Judy Hauser, and one on Tuesday, September 1 with z Big New Lekoski MD. Which appointment would you like to cancel?",
+    "silence_so_far_s": 0.0
+  },
+  {
+    "event": "agent_turn_taken",
+    "timestamp": "2026-08-27T17:37:45.346409+00:00",
+    "monotonic": 150854.341,
+    "waited_s": 1.01,
+    "quiet_window_s": 1.0,
+    "finalised_by": "speech_final",
+    "extra_unfinished_waits": 0,
+    "fragments": 1,
+    "partial": false,
+    "text": "You have two upcoming appointments, one today with Judy Hauser, and one on Tuesday, September 1 with z Big New Lekoski MD. Which appointment would you like to cancel?",
+    "silence_so_far_s": 1.011
+  },
+  {
+    "event": "end_call_deferred",
+    "timestamp": "2026-08-27T17:37:46.032501+00:00",
+    "monotonic": 150855.028,
+    "deferrals": 4,
+    "reason": "the patient has not actually said goodbye",
+    "reply": "Cancel both appointments, please.",
+    "silence_so_far_s": 1.697
+  },
+  {
+    "event": "llm_reply",
+    "timestamp": "2026-08-27T17:37:46.033357+00:00",
+    "monotonic": 150855.028,
+    "elapsed_s": 0.681,
+    "history_turns": 14,
+    "partial_question": false,
+    "agent_repeated": false,
+    "partial_streak": 0,
+    "empty": false,
+    "ends_call": false,
+    "silence_so_far_s": 1.698
+  },
+  {
+    "event": "patient_speech_start",
+    "timestamp": "2026-08-27T17:37:46.034656+00:00",
+    "monotonic": 150855.03,
+    "reply_gap_s": 1.699,
+    "chars": 33,
+    "ends_call": false,
+    "silence_so_far_s": 1.699
+  },
+  {
+    "event": "tts_streamed",
+    "timestamp": "2026-08-27T17:37:47.376000+00:00",
+    "monotonic": 150856.371,
+    "first_audio_s": 0.292,
+    "total_s": 1.341,
+    "audio_s": 2.28,
+    "silence_so_far_s": 3.04
+  },
+  {
+    "event": "agent_fragment_final",
+    "timestamp": "2026-08-27T17:37:58.664275+00:00",
+    "monotonic": 150867.659,
+    "source": "UtteranceEnd",
+    "looks_unfinished": false,
+    "text": "Can you share the reason you'd like to cancel both appointments?",
+    "silence_so_far_s": 0.0
+  },
+  {
+    "event": "agent_turn_taken",
+    "timestamp": "2026-08-27T17:37:59.168894+00:00",
+    "monotonic": 150868.164,
+    "waited_s": 0.504,
+    "quiet_window_s": 0.5,
+    "finalised_by": "UtteranceEnd",
+    "extra_unfinished_waits": 0,
+    "fragments": 1,
+    "partial": false,
+    "text": "Can you share the reason you'd like to cancel both appointments?",
+    "silence_so_far_s": 0.505
+  },
+  {
+    "event": "llm_reply",
+    "timestamp": "2026-08-27T17:37:59.767474+00:00",
+    "monotonic": 150868.762,
+    "elapsed_s": 0.595,
+    "history_turns": 16,
+    "partial_question": false,
+    "agent_repeated": false,
+    "partial_streak": 0,
+    "empty": false,
+    "ends_call": false,
+    "silence_so_far_s": 1.103
+  },
+  {
+    "event": "patient_speech_start",
+    "timestamp": "2026-08-27T17:37:59.769138+00:00",
+    "monotonic": 150868.764,
+    "reply_gap_s": 1.105,
+    "chars": 51,
+    "ends_call": false,
+    "silence_so_far_s": 1.105
+  },
+  {
+    "event": "tts_streamed",
+    "timestamp": "2026-08-27T17:38:01.771577+00:00",
+    "monotonic": 150870.767,
+    "first_audio_s": 0.294,
+    "total_s": 2.002,
+    "audio_s": 3.72,
+    "silence_so_far_s": 3.107
+  },
+  {
+    "event": "agent_fragment_final",
+    "timestamp": "2026-08-27T17:38:20.297229+00:00",
+    "monotonic": 150889.292,
+    "source": "UtteranceEnd",
+    "looks_unfinished": false,
+    "text": "Thanks for sharing. To confirm, you want to cancel your appointments today with Judy Hauser and on Tuesday, September 1 with Zeebignew Likoski MD. Is that correct?",
+    "silence_so_far_s": 0.0
+  },
+  {
+    "event": "agent_turn_taken",
+    "timestamp": "2026-08-27T17:38:20.805902+00:00",
+    "monotonic": 150889.801,
+    "waited_s": 0.508,
+    "quiet_window_s": 0.5,
+    "finalised_by": "UtteranceEnd",
+    "extra_unfinished_waits": 0,
+    "fragments": 1,
+    "partial": false,
+    "text": "Thanks for sharing. To confirm, you want to cancel your appointments today with Judy Hauser and on Tuesday, September 1 with Zeebignew Likoski MD. Is that correct?",
+    "silence_so_far_s": 0.509
+  },
+  {
+    "event": "wrap_up_deadline",
+    "timestamp": "2026-08-27T17:38:20.812768+00:00",
+    "monotonic": 150889.808,
+    "elapsed_s": 160.9,
+    "silence_so_far_s": 0.516
+  },
+  {
+    "event": "patient_speech_start",
+    "timestamp": "2026-08-27T17:38:20.813362+00:00",
+    "monotonic": 150889.808,
+    "reply_gap_s": 0.516,
+    "chars": 72,
+    "ends_call": true,
+    "silence_so_far_s": 0.516
+  },
+  {
+    "event": "tts_streamed",
+    "timestamp": "2026-08-27T17:38:22.979720+00:00",
+    "monotonic": 150891.975,
+    "first_audio_s": 0.168,
+    "total_s": 2.166,
+    "audio_s": 4.28,
+    "silence_so_far_s": 2.683
+  }
+]

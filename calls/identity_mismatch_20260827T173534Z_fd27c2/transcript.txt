@@ -1,0 +1,20 @@
+[2026-08-27T17:35:51.805903+00:00] AGENT: This call may be recorded for quality and training purposes. Thanks for calling Pivot Point Orthopaedics, part of Pretty Good AI. How may I help you today?
+[2026-08-27T17:35:56.435914+00:00] PATIENT: Hi, I'd like to book a routine checkup please.
+[2026-08-27T17:36:05.993090+00:00] AGENT: I see you're calling from the number we have on file. Am I speaking with Maria?
+[2026-08-27T17:36:08.559573+00:00] PATIENT: Yes, this is Maria.
+[2026-08-27T17:36:16.322414+00:00] AGENT: Please provide your date of birth.
+[2026-08-27T17:36:22.117389+00:00] PATIENT: July 9, 1988. I'd like to schedule that checkup.
+[2026-08-27T17:36:34.901359+00:00] AGENT: Just to confirm, you'd like to book a general office visit for a routine checkup. Is that correct?
+[2026-08-27T17:36:37.538772+00:00] PATIENT: Yes, that's correct.
+[2026-08-27T17:36:46.447982+00:00] AGENT: Do you have a specific provider you'd like to see, or are you open to any available provider?
+[2026-08-27T17:36:50.195938+00:00] PATIENT: I'm open to any available provider.
+[2026-08-27T17:37:03.405737+00:00] AGENT: You already have an office visit scheduled for Tuesday, September 1 at 2PM. Would you like to keep this appointment, reschedule it, or cancel it?
+[2026-08-27T17:37:07.993530+00:00] PATIENT: No, that's not mine; I'd like to schedule a new routine checkup.
+[2026-08-27T17:37:23.370131+00:00] AGENT: You can only have one office visit. Of this type booked at a time. Would you like to reschedule the appointment on September 1? Or cancel it so we can book a new one?
+[2026-08-27T17:37:28.773972+00:00] PATIENT: Cancel that appointment, please, and book a new routine checkup.
+[2026-08-27T17:37:45.350884+00:00] AGENT: You have two upcoming appointments, one today with Judy Hauser, and one on Tuesday, September 1 with z Big New Lekoski MD. Which appointment would you like to cancel?
+[2026-08-27T17:37:48.835350+00:00] PATIENT: Cancel both appointments, please.
+[2026-08-27T17:37:59.171712+00:00] AGENT: Can you share the reason you'd like to cancel both appointments?
+[2026-08-27T17:38:04.016560+00:00] PATIENT: I just need a new routine checkup slot; that's all.
+[2026-08-27T17:38:20.811849+00:00] AGENT: Thanks for sharing. To confirm, you want to cancel your appointments today with Judy Hauser and on Tuesday, September 1 with Zeebignew Likoski MD. Is that correct?
+[2026-08-27T17:38:25.967953+00:00] PATIENT: Thanks so much for your help today, that's everything I needed. Goodbye!
