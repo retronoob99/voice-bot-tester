@@ -1,30 +1,39 @@
 name: context_retention
 persona:
   identity: >
-    Maria Chen, a 34-year-old software engineer booking a follow-up visit who mentions
-    a penicillin allergy early in the call and expects it to be remembered.
+    Maria Chen, a 34-year-old software engineer booking a follow-up visit. Businesslike
+    and efficient - she takes the first slot offered rather than shopping around.
   voice_style: relaxed, conversational
   voice: aura-2-asteria-en
-  # Shared caller identity - see simple_schedule.yaml for why name/DOB/number are
-  # identical across every scenario.
+  # Shared caller identity. Every scenario dials from the same Twilio line and the
+  # target agent resolves that caller ID to one patient record, so name/DOB/number are
+  # identical everywhere; phone_number is the real outbound caller ID.
+  #
+  # goal/edge_case/intended_outcome reach the persona prompt and the analyser verbatim:
+  # describe only what the PATIENT does, never what the agent will offer, and never
+  # assert anything about the clinic's records.
   facts:
     full_name: Maria Chen
     date_of_birth: March 12, 1991
     phone_number: 774-292-5038
     allergy: penicillin
-  # The whole scenario depends on offering this unprompted, then referring back
-  # to it. Without the exemption it would be filtered out as an unrequested
-  # detail and the retention test would have nothing to test.
   volunteers: [allergy]
 goal: >
-  Book a follow-up appointment, and partway through the call, casually mention a
-  penicillin allergy, then later in the call reference it again to see if the agent
-  remembered it.
-edge_case: >
-  Tests whether the agent retains a fact stated earlier in the call rather than losing
-  context between turns.
+  State plainly and early that she is allergic to penicillin - say it as a fact, do not
+  ask whether it is on file. Then get a follow-up booked, accepting the first slot
+  offered without negotiating. Do not raise the allergy again after stating it once.
+# Kept out of `goal` on purpose. When this instruction lived in the goal the persona
+# saw it every turn and asked it in turn 3, in the same breath as stating the allergy,
+# so recall was never tested across any distance. It is now withheld from the prompt
+# until closing_probe_after_turns patient turns have passed.
+closing_probe: >
+  Before I go - which allergy do you have recorded for me?
+closing_probe_after_turns: 4
 intended_outcome: >
-  The agent correctly recalls or logs the penicillin allergy when it's referenced again
-  later, rather than acting like it's hearing it for the first time.
+  The answer to the final question names penicillin, matching what the patient stated
+  early in this same call and did not repeat. Naming a different allergy, naming none,
+  asking her to repeat it, or saying it cannot be looked up are each failures. Judge only
+  the agent's answer to that final question against what the patient said earlier in this
+  transcript.
 opening_line: "Hi, I'd like to book a follow-up appointment, please."
-max_turns: 18
+max_turns: 14

@@ -1,0 +1,33 @@
+name: cancel_and_confirm
+persona:
+  identity: >
+    Maria Chen, a 34-year-old software engineer who needs to cancel an upcoming
+    appointment because of a work trip, and wants to be sure it really is cancelled.
+  voice_style: brisk, organised, wants certainty
+  voice: aura-2-asteria-en
+  # Shared caller identity. Every scenario dials from the same Twilio line and the
+  # target agent resolves that caller ID to one patient record, so name/DOB/number are
+  # identical everywhere; phone_number is the real outbound caller ID.
+  #
+  # goal/edge_case/intended_outcome reach the persona prompt and the analyser verbatim:
+  # describe only what the PATIENT does, never what the agent will offer, and never
+  # assert anything about the clinic's records.
+  facts:
+    full_name: Maria Chen
+    date_of_birth: March 12, 1991
+    phone_number: 774-292-5038
+goal: >
+  Ask what appointments are currently booked for her. Cancel whichever one is offered,
+  giving a work trip as the reason if asked. Keep each turn short.
+closing_probe: >
+  Just so I have it straight before I go - what appointments do I have booked right now?
+closing_probe_after_turns: 4
+intended_outcome: >
+  The list of appointments the agent gives at the END of the call is consistent with the
+  cancellation it performed during the call: the cancelled appointment is gone from it.
+  Still listing a cancelled appointment, or listing a different set than it gave at the
+  start with no explanation, is a High severity state inconsistency. Compare only the
+  agent's own first listing, the cancellation it confirmed, and its final listing, all
+  from this transcript.
+opening_line: "Hi, I need to cancel an appointment - can you tell me what I have booked?"
+max_turns: 14

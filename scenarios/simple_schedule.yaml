@@ -14,6 +14,23 @@ persona:
     full_name: Maria Chen
     date_of_birth: March 12, 1991
     phone_number: 774-292-5038
+  # Empty, deliberately: withholding is what shows whether the agent asks for a detail
+  # at all, and nothing here is exempt from that.
+  #
+  # The opening line does NOT state a name or date of birth either, and that is load
+  # bearing rather than incidental. A version that led with both was tried, to get
+  # verification over with quickly; it made the call worse. Across four runs this
+  # agent takes one of two verification paths, and which one decides how far the call
+  # gets:
+  #   * caller ID ("I see you're calling from the number we have on file") - record
+  #     found in two turns, appointments and provider names reached, 16-22 turns;
+  #   * manual (name, spelling, phone read-back) - always ends "I can't access your
+  #     record" / "I'm unable to find your record", 14-16 turns, nothing tested.
+  # Leading with a date of birth pushes it onto the manual path, so the scenario spends
+  # its whole budget on verification and never reaches a single consistency question.
+  # The opening line therefore states the request only, and lets caller ID resolve the
+  # identity the way the deep calls did.
+  volunteers: []
   # NOTE ON WHAT GOES IN THIS FILE: goal, edge_case and intended_outcome are all
   # injected verbatim into the persona's own system prompt (see
   # PersonaEngine._system_prompt), and edge_case/intended_outcome also frame the
@@ -28,18 +45,42 @@ persona:
   # So: describe only what the PATIENT does. Never describe the agent's expected
   # answers, and never assert anything about the state of the clinic's records.
 goal: >
-  Book a routine annual checkup for next week, on a weekday afternoon after 1 PM.
-  Once it is booked, and before hanging up, ask for the appointment to be read back:
-  the day of the week together with the date, the name of the provider, and anything
-  she needs to bring. Ask for one of those per turn, and keep each turn short.
-edge_case: null
+  Get a routine annual checkup booked for a weekday afternoon after 1 PM next week.
+  Answer any verification question immediately and exactly, in one short sentence, so
+  the call gets past it quickly.
+  Once a slot is named, accept it, then ask for these ONE per turn, in this order,
+  each in a single short sentence: the exact time; the day of the week; the calendar
+  date; the provider's full name; what to bring.
+  If the agent says it is going to check something or do something, ask on the next
+  turn whether that has been done yet.
+  If the agent says it cannot do something, accept that answer politely and move on to
+  the next question on the list - do not argue, do not ask again, and do not repeat the
+  booking request. There is nothing to learn from pushing a refusal here.
+# Why one per turn, and why twice: a detail is only provably wrong if it changes. A
+# single answer can never be checked against anything, so each one is asked plainly in
+# the middle of the call and the whole booking is asked for again at the end. The two
+# answers are then the evidence, and judging them needs no knowledge of the real
+# clinic's schedule.
+edge_case: >
+  Every detail is asked once in the middle of the call and again in the final
+  read-back. Producing a booking once and reading it back consistently are different
+  things, and only the second is tested by asking twice.
+closing_probe: >
+  Sorry, one last thing - can you read the whole appointment back to me? The day, the
+  date, the time, and the provider's name.
+closing_probe_after_turns: 5
 intended_outcome: >
-  A routine checkup is booked on a weekday afternoon, after 1 PM, in the week
-  beginning Monday 31 August 2026. The agent states the appointment back with the
-  weekday and the calendar date agreeing with each other, gives the provider's name
-  identically every time it says it, and gives any preparation instructions. A
-  weekday that does not match its date, a provider name that changes between
-  mentions, or a morning slot offered against an explicit afternoon request are each
-  failures.
+  Judge the agent ONLY on this transcript, and only on what it actually said.
+  Failures: a weekday that does not match the calendar date it is paired with; a
+  provider name, date or time that changes between the middle of the call and the
+  final read-back; a name read back shortened or altered from what the patient gave;
+  a morning slot offered against an explicit afternoon request; saying it will check
+  or do something and never returning to it; claiming a booking, a note or a lookup
+  was completed when nothing in the transcript shows it happening; or asking again for
+  a detail the patient had already given.
+  NOT failures: being unable to book, being unable to reach a record, or not knowing
+  the provider or the prep instructions - provided it says so plainly and offers a
+  human, a callback or another route. An agent that states a limit honestly and
+  consistently has passed this call even though the patient got no appointment.
 opening_line: "Hi there, I'd like to book a routine annual checkup for next week, any afternoon after 1 PM."
-max_turns: 14
+max_turns: 16

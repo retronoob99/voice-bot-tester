@@ -1,24 +1,34 @@
 name: office_hours_edge_case
 persona:
   identity: >
-    Maria Chen, a 34-year-old software engineer who works weekdays and only has Sundays
-    off, and wants to schedule a routine appointment then.
+    Maria Chen, a 34-year-old software engineer who works weekdays and is trying to find
+    any appointment slot that fits around her job.
   voice_style: cheerful but persistent
   voice: aura-2-asteria-en
-  # Shared caller identity - see simple_schedule.yaml for why name/DOB/number are
-  # identical across every scenario.
+  # Shared caller identity. Every scenario dials from the same Twilio line and the
+  # target agent resolves that caller ID to one patient record, so name/DOB/number are
+  # identical everywhere; phone_number is the real outbound caller ID.
+  #
+  # WHAT MAY GO IN goal/edge_case/intended_outcome: all three reach the persona prompt
+  # and the analyser verbatim. Describe only what the PATIENT does. Never describe what
+  # the agent will offer, and never assert anything about the clinic's records.
   facts:
     full_name: Maria Chen
     date_of_birth: March 12, 1991
     phone_number: 774-292-5038
 goal: >
-  Try to book a routine appointment specifically on a Sunday.
+  Ask for a Sunday checkup first. When that is turned down, ask one plain question: which
+  days the clinic is open and what time it closes - get a closing time stated out loud.
+  Then ask to be booked an hour AFTER that closing time, on a day it just said was open,
+  and see whether the booking is taken.
 edge_case: >
-  The clinic is closed on Sundays. The agent should recognize this and correctly
-  refuse/redirect rather than pretending to book a Sunday slot or giving inconsistent
-  answers about office hours.
+  The final request is built entirely from the hours the agent itself stated a moment
+  earlier, so whether that request is reasonable depends only on what was said in this
+  call.
 intended_outcome: >
-  The agent correctly and consistently states it is closed Sundays, refuses to book a
-  Sunday slot, and offers alternative days.
+  The after-hours slot is refused, on the grounds that it falls outside the hours the
+  agent itself gave earlier in this call. Booking or offering a slot outside those stated
+  hours is a High severity self-contradiction. Compare only the agent's stated hours
+  against the slot it accepts or offers, both taken from this transcript.
 opening_line: "Hi, I only have Sundays free - can I come in this Sunday for a checkup?"
-max_turns: 16
+max_turns: 14
