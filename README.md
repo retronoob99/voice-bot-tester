@@ -135,7 +135,6 @@ scenarios/*.yaml         13 declarative test cases
 calls/<uid>/             per-call artefacts
 reports/bug_report.md    consolidated findings
 tests/                   157 offline tests
-PROJECT_WALKTHROUGH.md   design decisions, tuning, and what each fix cost
 ```
 
 ---
