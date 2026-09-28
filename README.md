@@ -1,4 +1,4 @@
-# Voice Bot Tester
+# Sentinel
 
 An outbound **patient simulator** that phones a clinic's AI voice agent, holds a
 natural spoken conversation driven by an LLM persona, and produces an audio
